@@ -1,0 +1,185 @@
+/* ──────────────────────────────────────────────────────────────────
+   Polymer — the per-patient tutorial surface (rendered notebook).
+   Tutorial-specific styles only; inherits all tokens + base classes
+   from styles.css (D2: IBM Carbon × Bloomberg). No new colors.
+   ────────────────────────────────────────────────────────────────── */
+
+/* ── The pipeline line (the loop), named under the lede ───────────── */
+.poly-pipe {
+  margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px;
+  color: var(--text-tertiary); line-height: 1.8; letter-spacing: 0.01em;
+  border-left: 2px solid var(--primary); padding: 4px 0 4px 14px; max-width: 86ch;
+}
+.poly-pipe .pp-label {
+  text-transform: uppercase; font-size: 10px; letter-spacing: 0.1em;
+  color: var(--text-muted); margin-right: 12px;
+}
+.poly-pipe .pp-arrow { color: var(--primary); margin: 0 3px; }
+.poly-pipe code { color: var(--text-primary); }
+
+.poly-runctl {
+  margin-top: 26px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.poly-runctl .rc-hint { font-size: 12.5px; color: var(--text-muted); }
+
+/* ── Sticky stage rail (progress + scrollspy nav) ─────────────────── */
+.stage-rail {
+  position: sticky; top: var(--header-h); z-index: 50;
+  background: rgba(244, 244, 245, 0.92);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.stage-rail-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 10px 24px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.stage-rail .sr-progress {
+  position: absolute; left: 0; top: 0; height: 2px; width: 0%;
+  background: var(--primary); transition: width 0.25s ease;
+}
+.sr-chip {
+  font: inherit; cursor: pointer; color: var(--text-tertiary);
+  background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+  border-radius: 2px; padding: 6px 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; letter-spacing: 0.01em;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+.sr-chip:hover { border-color: var(--primary); color: var(--text-primary); }
+.sr-chip.is-active { border-color: var(--primary); color: var(--primary); background: rgba(15,98,254,0.05); }
+.sr-chip .sr-n {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  width: 17px; height: 17px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid currentColor; flex-shrink: 0;
+}
+.sr-chip.is-done { color: var(--cpg-teal); border-color: var(--cpg-teal); }
+.sr-chip.is-done .sr-n::after { content: "✓"; }
+.sr-chip.is-done .sr-n { font-size: 9px; }
+.sr-chip.is-done .sr-n-txt { display: none; }
+
+/* ── Stage section ────────────────────────────────────────────────── */
+.stage { scroll-margin-top: calc(var(--header-h) + 60px); }
+.stage .stage-lede { font-size: 15px; line-height: 1.65; color: var(--text-secondary); max-width: 80ch; margin: 0 0 8px; }
+.stage .stage-lede + .stage-lede { margin-top: 12px; }
+.stage .stage-lede strong { color: var(--text-primary); }
+.stage .stage-lede code, .poly-note code {
+  font-family: var(--font-mono); font-size: 12px; background: var(--bg-deep);
+  padding: 1px 5px; border-radius: 2px; color: var(--text-primary);
+}
+
+/* headline metrics inside a stage */
+.poly-metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border-subtle); border-radius: 2px;
+  background: var(--bg-elevated); overflow: hidden; margin: 26px 0 4px;
+}
+.poly-metric { padding: 20px 22px; border-left: 1px solid var(--border-subtle); }
+.poly-metric:first-child { border-left: none; }
+.poly-metric .pm-val {
+  font-family: var(--font-mono); font-size: 30px; line-height: 1.05;
+  letter-spacing: -0.02em; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.poly-metric .pm-val.teal { color: var(--cpg-teal); }
+.poly-metric .pm-val.blue { color: var(--primary); }
+.poly-metric .pm-l { margin-top: 10px; font-size: 12.5px; line-height: 1.45; color: var(--text-tertiary); }
+
+/* ── Notebook cell (code + output) ────────────────────────────────── */
+.nb-cell {
+  margin-top: 24px; border: 1px solid var(--border-subtle); border-radius: 2px;
+  overflow: hidden; background: var(--bg-white);
+}
+.nb-cell.reveal { opacity: 0; transform: translateY(10px); }
+.nb-cell.reveal.is-in { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s cubic-bezier(.2,.8,.2,1); }
+
+.nb-toolbar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px; background: var(--bg-deep); border-bottom: 1px solid var(--border-subtle);
+}
+.nb-toolbar .nb-lang {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.nb-toolbar .nb-in {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+.nb-toolbar .nb-actions { margin-left: auto; display: flex; gap: 6px; }
+.nb-btn {
+  font: inherit; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em;
+  cursor: pointer; color: var(--text-tertiary);
+  background: var(--bg-white); border: 1px solid var(--border-subtle); border-radius: 2px;
+  padding: 4px 9px; transition: border-color 0.15s, color 0.15s;
+}
+.nb-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+/* code body (dark) */
+.nb-code {
+  margin: 0; background: #1A1A1F; color: #E4E4E7;
+  font-family: var(--font-mono); font-size: 12.5px; line-height: 1.65;
+  padding: 18px 20px; overflow-x: auto;
+}
+.nb-code code { font: inherit; white-space: pre; }
+.nb-cell.code-hidden .nb-code { display: none; }
+/* python syntax tokens */
+.nb-code .tok-cmt { color: #71717A; font-style: italic; }
+.nb-code .tok-kw  { color: #C792EA; }
+.nb-code .tok-str { color: #5FD0B0; }
+.nb-code .tok-num { color: #E8A35C; }
+.nb-code .tok-fn  { color: #6CB2FF; }
+.nb-code .tok-bi  { color: #82AAFF; }
+
+/* output region */
+.nb-out { border-top: 1px solid var(--border-subtle); }
+.nb-out-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--cpg-teal);
+  padding: 10px 16px 0;
+}
+.nb-stdout {
+  margin: 6px 0 0; padding: 4px 18px 16px;
+  font-family: var(--font-mono); font-size: 12px; line-height: 1.55;
+  color: var(--text-secondary); white-space: pre; overflow-x: auto;
+}
+.nb-fig { margin: 0; border-top: 1px solid var(--border-subtle); background: #fff; }
+.nb-fig img { width: 100%; height: auto; display: block; }
+.nb-fig figcaption {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--text-tertiary);
+  padding: 10px 16px; border-top: 1px solid var(--border-subtle); background: var(--bg-deep);
+}
+
+/* ── Closing: demo script ─────────────────────────────────────────── */
+.poly-script { margin-top: 28px; display: grid; gap: 12px; counter-reset: ps; }
+.poly-script .ps-item {
+  display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start;
+  border: 1px solid var(--border-subtle); border-radius: 2px; background: var(--bg-elevated);
+  padding: 16px 20px;
+}
+.poly-script .ps-n {
+  font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+.poly-script .ps-t { font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+.poly-script .ps-t strong { color: var(--text-primary); }
+
+.poly-note {
+  margin-top: 28px; padding: 16px 20px;
+  border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-amber);
+  border-radius: 2px; background: var(--bg-elevated);
+  font-size: 13px; line-height: 1.6; color: var(--text-secondary);
+}
+.poly-note strong { color: var(--text-primary); }
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 880px) {
+  .poly-metrics { grid-template-columns: 1fr; }
+  .poly-metric { border-left: none; border-top: 1px solid var(--border-subtle); }
+  .poly-metric:first-child { border-top: none; }
+  .stage-rail-inner { gap: 6px; padding: 8px 16px; }
+  .sr-chip .sr-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nb-cell.reveal { opacity: 1; transform: none; }
+  .stage-rail .sr-progress { transition: none; }
+}
