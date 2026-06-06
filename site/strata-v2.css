@@ -1,0 +1,270 @@
+/* ──────────────────────────────────────────────────────────────────
+   Strata v2 — cross-indication opportunity engine.
+   Additive styles only. Inherits all tokens + base from styles.css
+   and transcript / agent-explainer chrome from strata.css.
+   No new colors introduced outside the existing palette.
+   ────────────────────────────────────────────────────────────────── */
+
+/* ── Back-link + run control row ─────────────────────────────────── */
+.v2-runctl {
+  margin-top: 24px;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.v2-back {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em;
+  color: var(--text-muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.v2-back:hover { color: var(--primary); }
+
+/* ── Transcript + post-reveal sections start hidden ──────────────── */
+.v2-reveal { transition: opacity 0.4s ease; }
+.v2-reveal[hidden] { display: none; }
+
+/* ── Featured cards grid ─────────────────────────────────────────── */
+.opp-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px;
+}
+.opp-card {
+  border: 1px solid var(--border-subtle); border-radius: 2px;
+  background: var(--bg-elevated);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.opp-card-head {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-deep);
+}
+.opp-card-title {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.opp-card-drug {
+  font-size: 17px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em;
+}
+.opp-card-arrow {
+  color: var(--text-muted); font-size: 15px;
+}
+.opp-card-marker {
+  font-size: 17px; font-weight: 600; color: var(--primary); letter-spacing: -0.01em;
+}
+.opp-level-badge {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
+  padding: 2px 8px; border-radius: 2px; border: 1px solid var(--primary);
+  color: var(--primary); background: rgba(15,98,254,0.06);
+  white-space: nowrap;
+}
+.opp-card-tag {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 2px; border: 1px solid;
+  align-self: flex-start; white-space: nowrap;
+}
+.opp-tag-control { color: #15803D; border-color: #15803D; background: rgba(21,128,61,0.06); }
+.opp-tag-novel   { color: var(--accent-violet); border-color: var(--accent-violet); background: rgba(124,58,237,0.06); }
+
+.opp-card-pathway {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em;
+  color: var(--text-muted); margin-top: 6px;
+}
+
+/* ── Stats row ────────────────────────────────────────────────────── */
+.opp-stats {
+  display: flex; gap: 0; border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-white);
+}
+.opp-stat {
+  flex: 1; padding: 12px 14px; border-right: 1px solid var(--border-subtle);
+  display: flex; flex-direction: column; gap: 3px;
+}
+.opp-stat:last-child { border-right: none; }
+.opp-stat-val {
+  font-family: var(--font-mono); font-size: 15px; font-weight: 600;
+  color: var(--text-primary); font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+.opp-stat-val.neg { color: var(--cpg-teal); }
+.opp-stat-lbl {
+  font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--text-muted); line-height: 1.3;
+}
+
+/* ── Tissue recurrence panel ─────────────────────────────────────── */
+.opp-tissue-head {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-tertiary);
+  padding: 12px 16px 6px;
+}
+.opp-tissue-list {
+  padding: 0 16px 12px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.opp-tissue-row {
+  display: grid; grid-template-columns: 1fr 36px auto; gap: 8px;
+  align-items: center; font-size: 11px; line-height: 1.4;
+}
+.opp-tissue-name {
+  color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.opp-tissue-sig { color: var(--text-muted); }
+.opp-tissue-sig.is-sig { color: #15803D; font-weight: 600; }
+.opp-tissue-bar-wrap {
+  height: 6px; position: relative;
+  display: flex; align-items: center;
+}
+/* bars are drawn inline via JS using flex + a span */
+.opp-tissue-bar {
+  height: 6px; border-radius: 1px; min-width: 1px;
+  transition: width 0.4s ease;
+}
+.opp-tissue-bar.neg-bar { background: var(--cpg-teal); }
+.opp-tissue-bar.pos-bar { background: var(--accent-amber); }
+
+/* ── Mechanism card ──────────────────────────────────────────────── */
+.opp-mech {
+  border-top: 1px solid var(--border-subtle);
+  padding: 14px 16px; background: var(--bg-white);
+  flex: 1;
+}
+.opp-mech-state {
+  font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;
+  line-height: 1.4;
+}
+.opp-mech-kv {
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: 12px; line-height: 1.55; color: var(--text-secondary);
+}
+.opp-mech-k {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 1px;
+}
+.opp-level-note {
+  margin-top: 10px; padding: 8px 12px;
+  background: var(--bg-deep); border-radius: 2px;
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted);
+  line-height: 1.5; letter-spacing: 0.01em;
+}
+
+/* ── Replicated-by chips ─────────────────────────────────────────── */
+.opp-replicated {
+  border-top: 1px solid var(--border-subtle);
+  padding: 10px 16px 12px;
+  background: var(--bg-elevated);
+}
+.opp-replicated-lbl {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;
+}
+.opp-rep-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.opp-rep-chip {
+  font-family: var(--font-mono); font-size: 11px;
+  border: 1px solid var(--border-subtle); border-radius: 2px;
+  padding: 3px 9px; background: var(--bg-white);
+  color: var(--text-secondary);
+}
+.opp-rep-chip strong { color: var(--text-primary); }
+
+/* ── Negative control callout ─────────────────────────────────────── */
+.neg-control {
+  margin-top: 28px;
+  border: 1px solid var(--border-subtle); border-left: 3px solid var(--methyl-rose);
+  border-radius: 2px; background: var(--bg-elevated);
+  padding: 18px 20px;
+}
+.neg-control-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--methyl-rose); margin-bottom: 8px; display: block;
+}
+.neg-control p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
+.neg-control strong { color: var(--text-primary); }
+
+/* ── Opportunity table ────────────────────────────────────────────── */
+.opp-table-wrap {
+  margin-top: 28px;
+  border: 1px solid var(--border-subtle); border-radius: 2px; overflow: hidden;
+  background: var(--bg-elevated);
+}
+.opp-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-mono); font-size: 12.5px;
+}
+.opp-table caption {
+  font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em;
+  padding: 10px 16px; text-align: left; caption-side: bottom;
+  border-top: 1px solid var(--border-subtle);
+}
+.opp-table th {
+  text-align: left; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 500; padding: 10px 16px;
+  background: var(--bg-deep); border-bottom: 1px solid var(--border-subtle);
+}
+.opp-table th.num, .opp-table td.num {
+  text-align: right; font-variant-numeric: tabular-nums;
+}
+.opp-table td {
+  padding: 9px 16px; border-top: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+.opp-table tbody tr:first-child td { border-top: none; }
+.opp-table tbody tr:hover td { background: rgba(15,98,254,0.03); }
+.opp-table .td-drug { color: var(--text-primary); font-weight: 500; }
+.opp-table .td-marker { color: var(--primary); }
+.opp-table td.num.neg { color: var(--cpg-teal); }
+.opp-table td.num.pos { color: var(--accent-amber); }
+
+/* ── Evidence ladder ─────────────────────────────────────────────── */
+.evidence-ladder {
+  display: flex; gap: 0; margin-top: 28px;
+  border: 1px solid var(--border-subtle); border-radius: 2px; overflow: hidden;
+}
+.ev-rung {
+  flex: 1; padding: 14px 14px;
+  border-right: 1px solid var(--border-subtle);
+  display: flex; flex-direction: column; gap: 6px;
+  background: var(--bg-elevated);
+  transition: background 0.15s;
+}
+.ev-rung:last-child { border-right: none; }
+.ev-rung.is-active { background: rgba(15,98,254,0.06); }
+.ev-rung-level {
+  font-family: var(--font-mono); font-size: 14px; font-weight: 700;
+  color: var(--text-muted); line-height: 1;
+}
+.ev-rung.is-active .ev-rung-level { color: var(--primary); }
+.ev-rung-label { font-size: 11px; line-height: 1.4; color: var(--text-tertiary); }
+.ev-ladder-cap {
+  margin-top: 12px; font-family: var(--font-mono); font-size: 11px;
+  color: var(--text-muted); letter-spacing: 0.04em;
+}
+.ev-ladder-cap strong { color: var(--primary); }
+
+/* ── Prior art / honesty note ────────────────────────────────────── */
+.honesty-note {
+  margin-top: 24px;
+  border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-violet);
+  border-radius: 2px; background: var(--bg-elevated);
+  padding: 16px 20px;
+  font-size: 13px; line-height: 1.65; color: var(--text-secondary);
+}
+.honesty-note strong { color: var(--text-primary); }
+.honesty-note .hn-label {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--accent-violet);
+  display: block; margin-bottom: 6px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .opp-cards { grid-template-columns: 1fr; }
+  .evidence-ladder { flex-direction: column; }
+  .ev-rung { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+  .ev-rung:last-child { border-bottom: none; }
+}
+@media (max-width: 640px) {
+  .opp-stats { flex-wrap: wrap; }
+  .opp-stat { min-width: 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-step { opacity: 1; transform: none; animation: none; }
+  .t-cursor { animation: none; }
+  .opp-tissue-bar { transition: none; }
+}

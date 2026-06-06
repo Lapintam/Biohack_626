@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Strata v2 — cross-indication opportunity engine · MethylGKB</title>
+<meta name="description" content="Strata v2 ranks methylation-defined drug-response states across the indication taxonomy — mechanism-anchored, tissue-confound-controlled, evidence-graded." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="strata.css" />
+<link rel="stylesheet" href="strata-v2.css" />
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">METHYLGKB</a>
+  <span class="brand-divider"></span>
+  <span class="brand-sub">by Polymer Genomics</span>
+  <nav class="site-nav">
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="science.html">The Science</a>
+    <a class="nav-link" href="explore.html">Explore</a>
+    <a class="nav-link" href="strata.html">Strata</a>
+    <a class="nav-link is-active" href="strata-v2.html">Strata v2</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- §01 HERO -->
+  <section class="wrap hero" style="padding-bottom:48px;" id="heroSection">
+    <p class="section-marker">§01 — Strata v2 · cross-indication opportunity engine</p>
+    <h1 style="font-size:clamp(34px,5vw,52px);max-width:22ch;">
+      Start from the <span class="em">molecular state,</span> not the disease.
+    </h1>
+
+    <!-- thesis (data-driven, placeholder until JSON loads) -->
+    <p class="lede" id="thesisLede">
+      Rank methylation-defined drug-response states that hold across the indication taxonomy —
+      mechanism-anchored, tissue-confound-controlled, evidence-graded.
+    </p>
+
+    <!-- agent-explainer: What's different in v2 -->
+    <div class="agent-explainer" id="noveltyBox" style="max-width:72ch;margin-bottom:28px;" hidden>
+      <span class="ae-label">What's different in v2</span>
+      <p id="noveltyText"></p>
+      <p style="margin-top:10px;">
+        <strong>Research-use, GDSC cell-line proof-of-method.</strong>
+        The positive control is <strong>confirmation</strong> of known biology
+        (CDKN2A&rarr;palbociclib, published); novel leads are
+        <strong>screen-derived hypotheses</strong>, evidence-graded &mdash; not clinical claims.
+      </p>
+    </div>
+
+    <div class="v2-runctl">
+      <button class="btn btn-primary" id="runBtn">&#9654; Run discovery</button>
+      <a class="v2-back" href="strata.html">&larr; the v1 single-drug demo</a>
+    </div>
+  </section>
+
+  <!-- §02 AGENT TRANSCRIPT -->
+  <section class="wrap section" id="transcriptSection" style="padding-top:0;border-top:none;">
+    <p class="section-marker">§02 — Agent transcript</p>
+    <h2 class="h2">Watch the agent reason across indications.</h2>
+    <div class="agent-explainer">
+      <span class="ae-label">What the agent is doing</span>
+      <p>
+        The agent scans <strong>every drug's own pathway genes</strong> for a methylation state whose
+        response association is <strong>tissue-agnostic</strong> — surviving both tissue-adjustment and
+        within-tissue replication (&ge;3 independent cancer types). It recovers the known
+        <strong>9p21 / MTAP &rarr; palbociclib</strong> positive control cold, then surfaces novel leads
+        in the same unbiased pass. Below is a recorded run, played back step by step.
+      </p>
+    </div>
+    <div class="transcript" id="transcript" aria-live="polite"></div>
+  </section>
+
+  <!-- §03 FEATURED OPPORTUNITIES — revealed after transcript -->
+  <section class="wrap section v2-reveal" id="featuredSection" hidden>
+    <p class="section-marker">§03 — Featured opportunities</p>
+    <h2 class="h2">Positive control + two novel leads.</h2>
+    <p class="body">
+      The same unbiased screen recovers known biology (positive control) and surfaces
+      mechanism-anchored cross-indication hypotheses. Evidence licensing works by induction:
+      when the known positive control is recovered cold, the novel leads in the same output
+      inherit a license proportional to their evidence tier.
+    </p>
+    <div class="opp-cards" id="oppCards"></div>
+  </section>
+
+  <!-- §04 NEGATIVE CONTROL — revealed after transcript -->
+  <section class="wrap section v2-reveal" id="negSection" hidden style="padding-top:0;border-top:none;">
+    <p class="section-marker">§04 — Negative control</p>
+    <h2 class="h2">The engine isn't forcing results.</h2>
+    <div class="neg-control" id="negControl"></div>
+  </section>
+
+  <!-- §05 OPPORTUNITY MAP — revealed after transcript -->
+  <section class="wrap section v2-reveal" id="tableSection" hidden>
+    <p class="section-marker">§05 — Opportunity map · the portfolio</p>
+    <h2 class="h2">All L2&ndash;L3 candidates ranked.</h2>
+    <p class="body">
+      Every entry has survived tissue-adjustment and/or within-tissue replication.
+      These are not confirmations of prior literature &mdash; they are ranked hypotheses
+      for follow-up, licensed by the screen's own positive control.
+    </p>
+    <div class="opp-table-wrap">
+      <table class="opp-table" id="oppTable">
+        <thead>
+          <tr>
+            <th>Drug</th>
+            <th>Pathway</th>
+            <th>Marker</th>
+            <th>Level</th>
+            <th class="num">Tissue-adj r</th>
+            <th class="num">Pooled &rho;</th>
+            <th class="num">Within-sig tissues</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <caption>Ranked, mechanism-anchored, tissue-agnostic candidates — the portfolio triage view.</caption>
+      </table>
+    </div>
+  </section>
+
+  <!-- §06 EVIDENCE LADDER + HONESTY — revealed after transcript -->
+  <section class="wrap section v2-reveal" id="ladderSection" hidden>
+    <p class="section-marker">§06 — Evidence ladder · honest framing</p>
+    <h2 class="h2">How strong is the evidence?</h2>
+    <p class="body">
+      Each opportunity is graded against the ladder below.
+      v1 operated at <strong>L1</strong> (interpretable marker, known biology).
+      v2 targets <strong>L2&ndash;L3</strong>: tissue-agnostic associations
+      surviving within-tissue replication.
+    </p>
+    <div class="evidence-ladder" id="evidenceLadder"></div>
+    <p class="ev-ladder-cap" style="margin-top:12px;">
+      <strong>v1 &asymp; L1</strong> &middot; <strong>v2 targets L2&ndash;L3</strong>
+      &mdash; the positive control confirms L3 recovery; novel leads inherit that license.
+    </p>
+
+    <div class="honesty-note" style="margin-top:28px;">
+      <span class="hn-label">Prior art + scope limits</span>
+      Novel leads are hypotheses licensed by the positive control, not validated companion
+      diagnostics. Closest prior work:
+      <strong>Comms Biol 2023</strong> (cancer-type-stratified methylation-response biomarkers,
+      one cancer type at a time) and <strong>CellMinerCDB</strong> (per-query, interactive).
+      Strata v2 differs by ranking <em>across</em> the taxonomy with explicit tissue-confound
+      correction and pathway-anchored marker selection.
+      <br /><br />
+      Scope limit: tumor cell-line compartment only (GDSC). Not blood, liver, or patient data.
+      All leads require orthogonal experimental validation before any clinical interpretation.
+    </div>
+
+    <div class="hero-actions" style="margin-top:32px;">
+      <a class="btn btn-secondary" href="science.html">The evidence</a>
+      <a class="btn btn-secondary" href="strata.html">v1 single-drug demo</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-links">
+    <a href="index.html">Overview</a>
+    <span class="foot-dot">&middot;</span>
+    <a href="science.html">The Science</a>
+    <span class="foot-dot">&middot;</span>
+    <a href="explore.html">Explore</a>
+    <span class="foot-dot">&middot;</span>
+    <a href="strata.html">Strata</a>
+    <span class="foot-dot">&middot;</span>
+    <a href="strata-v2.html">Strata v2</a>
+  </div>
+  <div class="foot-meta">
+    <a class="ruo" href="#" title="Not for clinical or diagnostic use. Prototype. Data provided as-is.">Research use only</a>
+    <span class="foot-dot">&middot;</span>
+    <span class="copy">&copy; 2026 Polymer Genomics</span>
+  </div>
+</footer>
+
+<script src="strata-v2.js"></script>
+</body>
+</html>

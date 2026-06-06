@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+
+# Playwright / tooling artifacts
+**/.playwright-mcp/
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Strata data cache + outputs
+data/
+**/__pycache__/
+*.pyc
+.venv/
+outputs/
+.python-version
+
+# Secrets — never commit
+.env
+.env.*
+
+# Test + OS cruft
+.pytest_cache/
+.DS_Store

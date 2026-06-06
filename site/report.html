@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Report — MethylGKB</title>
+<meta name="description" content="From one tube of blood to a pharmacogenomic readout. A whole-blood methylome analyzed against MethylGKB into a clinical-style PGx report." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">METHYLGKB</a>
+  <span class="brand-divider"></span>
+  <span class="brand-sub">by Polymer Genomics</span>
+  <nav class="site-nav">
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="science.html">The Science</a>
+    <a class="nav-link" href="explore.html">Explore</a>
+    <a class="nav-link is-active" href="report.html">Report</a>
+    <a class="nav-link" href="strata.html">Strata</a>
+    <a class="btn btn-primary btn-sm" href="explore.html">Explore the base →</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap hero" style="padding-bottom:40px;">
+    <p class="section-marker">§01 — The report</p>
+    <h1 style="font-size:clamp(34px,5vw,48px);max-width:20ch;">From one tube of blood to a pharmacogenomic readout.</h1>
+    <p class="lede">
+      A single whole-blood methylation array, run against MethylGKB, returns an evidence-graded report:
+      which drugs are favorable, which need caution, which to avoid — with the methylation signal and the
+      claim behind every call.
+    </p>
+
+    <!-- The control: a live "analyze" moment for the demo -->
+    <div class="report-ctrl" id="reportCtrl">
+      <div class="rc-left">
+        <div class="rc-spec">
+          <span class="rc-k">Specimen</span><span class="rc-v">Whole blood · EDTA</span>
+          <span class="rc-k">Assay</span><span class="rc-v">Illumina EPIC v2 · ~937k CpG</span>
+          <span class="rc-k">Sample</span><span class="rc-v mono" id="sampleId">MGKB-DEMO-0001</span>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="runBtn">Analyze sample →</button>
+    </div>
+
+    <!-- Scan animation target -->
+    <div class="scan" id="scan" hidden>
+      <div class="scan-head"><span class="beta-strip-title" id="scanLabel">Reading methylome…</span><span class="beta-strip-title mono" id="scanPct">0%</span></div>
+      <div class="beta-track" id="scanTrack" aria-hidden="true"></div>
+      <div class="scan-sweep" id="scanSweep"></div>
+    </div>
+  </section>
+
+  <!-- REPORT (revealed after analysis) -->
+  <section class="wrap section" id="reportSection" style="padding-top:0;border-top:none;" hidden>
+
+    <div class="report-summary" id="reportSummary"></div>
+
+    <div id="reportMount"></div>
+
+    <div class="note" style="margin-top:36px;">
+      <strong>Illustrative prototype — research use only.</strong> Calls below are drawn from a seed corpus
+      and are not validated for clinical decision-making. The MGMT → temozolomide association is clinically
+      established; remaining rows are candidate/research-grade and shown to demonstrate the report shape.
+      Not a substitute for professional medical advice, diagnosis, or treatment.
+    </div>
+
+    <div class="hero-actions" style="margin-top:28px;">
+      <a class="btn btn-secondary" href="explore.html#api">See the claims behind this →</a>
+      <a class="btn btn-secondary" href="science.html">The evidence</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-links">
+    <a href="index.html">Overview</a>
+    <span class="foot-dot">·</span>
+    <a href="science.html">The Science</a>
+    <span class="foot-dot">·</span>
+    <a href="explore.html">Explore</a>
+    <span class="foot-dot">·</span>
+    <a href="report.html">Report</a>
+  </div>
+  <div class="foot-meta">
+    <a class="ruo" href="#" title="Not for clinical or diagnostic use. Prototype. Data provided as-is.">Research use only</a>
+    <span class="foot-dot">·</span>
+    <span class="copy">© 2026 Polymer Genomics</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

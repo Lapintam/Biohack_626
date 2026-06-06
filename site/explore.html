@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explore — MethylGKB</title>
+<meta name="description" content="Browse methylation → drug-response associations in MethylGKB, and preview the structured API surface built for agents." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">METHYLGKB</a>
+  <span class="brand-divider"></span>
+  <span class="brand-sub">by Polymer Genomics</span>
+  <nav class="site-nav">
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="science.html">The Science</a>
+    <a class="nav-link is-active" href="explore.html">Explore</a>
+    <a class="nav-link" href="report.html">Report</a>
+    <a class="nav-link" href="strata.html">Strata</a>
+    <a class="btn btn-primary btn-sm" href="report.html">See a report →</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap hero" style="padding-bottom:40px;">
+    <p class="section-marker">§01 — The knowledge base</p>
+    <h1 style="font-size:clamp(34px,5vw,48px);max-width:22ch;">Methylation → drug-response, as structured claims.</h1>
+    <p class="lede">
+      Each row is an evidence-graded association between a methylation locus and a drug response. This is a
+      prototype surface over a seed corpus — the shape is real even where the rows are illustrative.
+    </p>
+  </section>
+
+  <!-- BROWSE -->
+  <section class="wrap section" style="padding-top:0;border-top:none;">
+    <div class="rows" id="claimRows">
+      <a class="row" href="#api">
+        <div class="row-main">
+          <span class="row-name">MGMT promoter methylation → temozolomide response</span>
+          <span class="row-desc">Hypermethylation predicts response. Clinically deployed (glioblastoma).</span>
+        </div>
+        <span class="row-meta"><span class="badge grade">GRADE 1A</span></span>
+      </a>
+      <a class="row" href="#api">
+        <div class="row-main">
+          <span class="row-name">Methylation signature → cytotoxic sensitivity (pan-cell-line)</span>
+          <span class="row-desc">987 GDSC lines / 8 drugs, methylation-only model, AUROC ≤ 0.97.</span>
+        </div>
+        <span class="row-meta"><span class="badge grade">GRADE 2B</span></span>
+      </a>
+      <a class="row" href="#api">
+        <div class="row-main">
+          <span class="row-name">FDA vs CPIC dosing — shared drug set</span>
+          <span class="row-desc">Authorities concordant on only 5 of 39 overlapping drugs.</span>
+        </div>
+        <span class="row-meta"><span class="badge contradict">CONTRADICTS</span></span>
+      </a>
+      <a class="row" href="#api">
+        <div class="row-main">
+          <span class="row-name">Whole-blood methylation clock → drug clearance (candidate)</span>
+          <span class="row-desc">Proposed association awaiting verification against held-out cohort.</span>
+        </div>
+        <span class="row-meta">PENDING</span>
+      </a>
+    </div>
+    <p class="body muted" style="margin-top:16px;font-size:12px;font-family:var(--font-mono);letter-spacing:0.02em;">
+      4 of ~100 seed claims shown · full corpus + filters in build
+    </p>
+  </section>
+
+  <!-- THE CLAIM SHAPE -->
+  <section class="wrap section">
+    <p class="section-marker">§02 — The claim shape</p>
+    <h2 class="h2">Every association is a formal, provenance-stamped claim.</h2>
+    <p class="lead">Not a sentence — a structured object. That's what makes it cite-able, diffable, and auditable, and what lets an agent reason over it.</p>
+    <div class="claim" style="margin-top:32px;">
+      <div class="claim-head">
+        <span>claim · methylation/pgx</span>
+        <span>verdict: LICENSED</span>
+      </div>
+      <div class="claim-body">
+        <div class="kv"><span class="k">subject</span><span class="v">genomic_region · <span class="hl">MGMT promoter</span> · chr10:129,466,683–129,467,448 (hg38)</span></div>
+        <div class="kv"><span class="k">predicate</span><span class="v">predicts-response-to</span></div>
+        <div class="kv"><span class="k">object</span><span class="v"><span class="hl">temozolomide</span></span></div>
+        <div class="kv"><span class="k">direction</span><span class="v">hypermethylation → favorable response</span></div>
+        <div class="kv"><span class="k">evidence</span><span class="v"><span class="badge grade">PharmGKB 1A</span> &nbsp; <span class="badge licensed">LICENSED</span></span></div>
+        <div class="kv"><span class="k">provenance</span><span class="v">Hegi/Stupp lineage · data_version 2026.06 · content-hash 0x9f3c…a12</span></div>
+        <div class="kv"><span class="k">depends_on</span><span class="v">cpg_island:MGMT · assay:EPIC_v2</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API -->
+  <section class="wrap section" id="api">
+    <p class="section-marker">§03 — The interface</p>
+    <h2 class="h2">Query it. Built for humans and for agents.</h2>
+    <p class="lead">
+      Ask for an association by locus, drug, or grade and get a structured answer with receipts — every
+      response carries its evidence class, provenance, and version. The same anti-hallucination contract
+      that powers Polymer Genomics.
+    </p>
+
+    <div class="code"><span class="cmt"># request — what does the methylome say about temozolomide?</span>
+GET <span class="str">/v1/associations?drug=temozolomide&amp;source=methylation</span>
+
+<span class="cmt"># response</span>
+{
+  <span class="key">"association"</span>: {
+    <span class="key">"subject"</span>: <span class="str">"MGMT_promoter"</span>,
+    <span class="key">"predicate"</span>: <span class="str">"predicts-response-to"</span>,
+    <span class="key">"object"</span>: <span class="str">"temozolomide"</span>,
+    <span class="key">"direction"</span>: <span class="str">"hypermethylation_favorable"</span>,
+    <span class="key">"grade"</span>: <span class="str">"PharmGKB-1A"</span>,
+    <span class="key">"verdict"</span>: <span class="str">"LICENSED"</span>
+  },
+  <span class="key">"evidence_class"</span>: <span class="str">"K"</span>,        <span class="cmt">// curated</span>
+  <span class="key">"contradicts"</span>: [],
+  <span class="key">"provenance"</span>: { <span class="key">"data_version"</span>: <span class="str">"2026.06"</span>, <span class="key">"content_hash"</span>: <span class="str">"0x9f3c…a12"</span> },
+  <span class="key">"confidence"</span>: <span class="num">0.94</span>
+}</div>
+
+    <p class="body" style="margin-top:24px;">
+      Whether MethylGKB ends as a hosted API, an SDK, or the assay-plus-report behind a whole-blood test is
+      still open — the structured claim is the durable core, and every surface is a way to deliver it.
+    </p>
+    <div class="hero-actions" style="margin-top:28px;">
+      <a class="btn btn-primary" href="science.html">See the evidence →</a>
+      <a class="btn btn-secondary" href="index.html">Back to overview</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-links">
+    <a href="index.html">Overview</a>
+    <span class="foot-dot">·</span>
+    <a href="science.html">The Science</a>
+    <span class="foot-dot">·</span>
+    <a href="explore.html">Explore</a>
+    <span class="foot-dot">·</span>
+    <a href="#api">API</a>
+  </div>
+  <div class="foot-meta">
+    <a class="ruo" href="#" title="Not for clinical or diagnostic use. Prototype. Data provided as-is.">Research use only</a>
+    <span class="foot-dot">·</span>
+    <span class="copy">© 2026 Polymer Genomics</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

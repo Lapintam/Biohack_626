@@ -1,0 +1,628 @@
+{
+  "thesis": "Start from molecular state, not disease taxonomy. Rank methylation-defined drug-response states that hold ACROSS the indication taxonomy \u2014 mechanism-anchored, tissue-confound-controlled, evidence-graded.",
+  "novelty": "Existing work ranks methylation\u2013drug biomarkers one cancer type at a time (Comms Biol 2023) or one query at a time (CellMinerCDB); Strata ranks the methylation state ACROSS the taxonomy, anchored to the drug's own target/pathway to defeat the between-tissue co-methylation confound, and evidence-grades each opportunity.",
+  "evidence_ladder": [
+    {
+      "level": "L0",
+      "label": "pooled association"
+    },
+    {
+      "level": "L1",
+      "label": "interpretable marker / known biology"
+    },
+    {
+      "level": "L2",
+      "label": "survives tissue adjustment"
+    },
+    {
+      "level": "L3",
+      "label": "tissue-agnostic \u2014 consistent across \u22653 cancer types"
+    },
+    {
+      "level": "L4",
+      "label": "mechanism path (annotation)"
+    },
+    {
+      "level": "L5",
+      "label": "external/orthogonal support"
+    },
+    {
+      "level": "L6",
+      "label": "clinical evidence"
+    }
+  ],
+  "featured": {
+    "positive_control": {
+      "drug": "Palbociclib",
+      "marker": "MTAP",
+      "pathway": "Cell cycle",
+      "level": "L3",
+      "r_adj": -0.196,
+      "rho_pooled": -0.461,
+      "p_adj": 9.865086018985504e-09,
+      "within_sig": 5,
+      "n": 852,
+      "n_tissues": 14,
+      "per_tissue": [
+        {
+          "tissue": "Ovary",
+          "n": 41,
+          "rho": -0.565,
+          "sig": true
+        },
+        {
+          "tissue": "Head and Neck",
+          "n": 41,
+          "rho": -0.502,
+          "sig": true
+        },
+        {
+          "tissue": "Lung",
+          "n": 190,
+          "rho": -0.373,
+          "sig": true
+        },
+        {
+          "tissue": "Stomach",
+          "n": 28,
+          "rho": -0.354,
+          "sig": false
+        },
+        {
+          "tissue": "Pancreas",
+          "n": 31,
+          "rho": -0.322,
+          "sig": false
+        },
+        {
+          "tissue": "Large Intestine",
+          "n": 48,
+          "rho": -0.318,
+          "sig": true
+        },
+        {
+          "tissue": "Breast",
+          "n": 52,
+          "rho": -0.308,
+          "sig": true
+        },
+        {
+          "tissue": "Bone",
+          "n": 41,
+          "rho": -0.271,
+          "sig": false
+        },
+        {
+          "tissue": "Central Nervous System",
+          "n": 56,
+          "rho": -0.241,
+          "sig": false
+        },
+        {
+          "tissue": "Peripheral Nervous System",
+          "n": 31,
+          "rho": -0.157,
+          "sig": false
+        },
+        {
+          "tissue": "Haematopoietic and Lymphoid",
+          "n": 168,
+          "rho": -0.132,
+          "sig": false
+        },
+        {
+          "tissue": "Esophagus",
+          "n": 35,
+          "rho": -0.13,
+          "sig": false
+        },
+        {
+          "tissue": "Kidney",
+          "n": 33,
+          "rho": -0.044,
+          "sig": false
+        },
+        {
+          "tissue": "Skin",
+          "n": 57,
+          "rho": 0.011,
+          "sig": false
+        }
+      ],
+      "mechanism_card": {
+        "state": "9p21 / MTAP\u2013CDKN2A methylation\u2013silencing",
+        "known_biology": "CDKN2A/p16 loss removes the CDK4/6 brake \u2192 CDK4/6-inhibitor dependence; MTAP is the co-deleted 9p21 neighbor.",
+        "implication": "A pan-tissue 9p21-methylation state that predicts CDK4/6-inhibitor sensitivity across indications, not within one."
+      },
+      "level_note": "L3 \u00b7 CONFIRMATION (the CDKN2A\u2192palbociclib link is published, PLOS One 2019) \u2014 recovered cold + confound-controlled.",
+      "replicated_by": [
+        {
+          "drug": "Ribociclib",
+          "marker": "MTAP",
+          "note": "2nd CDK4/6 inhibitor, same 9p21 anchor (L2)"
+        }
+      ]
+    },
+    "novel_leads": [
+      {
+        "drug": "Rapamycin",
+        "marker": "INPP4B",
+        "pathway": "PI3K/MTOR signaling",
+        "level": "L3",
+        "r_adj": -0.213,
+        "rho_pooled": -0.166,
+        "p_adj": 6.502592461277402e-10,
+        "within_sig": 3,
+        "n": 835,
+        "n_tissues": 14,
+        "per_tissue": [
+          {
+            "tissue": "Haematopoietic and Lymphoid",
+            "n": 162,
+            "rho": -0.405,
+            "sig": true
+          },
+          {
+            "tissue": "Pancreas",
+            "n": 31,
+            "rho": -0.381,
+            "sig": true
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 45,
+            "rho": -0.368,
+            "sig": true
+          },
+          {
+            "tissue": "Ovary",
+            "n": 41,
+            "rho": -0.259,
+            "sig": false
+          },
+          {
+            "tissue": "Breast",
+            "n": 51,
+            "rho": -0.255,
+            "sig": false
+          },
+          {
+            "tissue": "Head and Neck",
+            "n": 41,
+            "rho": -0.215,
+            "sig": false
+          },
+          {
+            "tissue": "Stomach",
+            "n": 27,
+            "rho": -0.068,
+            "sig": false
+          },
+          {
+            "tissue": "Lung",
+            "n": 188,
+            "rho": 0.086,
+            "sig": false
+          },
+          {
+            "tissue": "Skin",
+            "n": 57,
+            "rho": 0.117,
+            "sig": false
+          },
+          {
+            "tissue": "Central Nervous System",
+            "n": 56,
+            "rho": 0.127,
+            "sig": false
+          },
+          {
+            "tissue": "Esophagus",
+            "n": 34,
+            "rho": 0.185,
+            "sig": false
+          },
+          {
+            "tissue": "Kidney",
+            "n": 33,
+            "rho": 0.229,
+            "sig": false
+          },
+          {
+            "tissue": "Bone",
+            "n": 40,
+            "rho": 0.273,
+            "sig": false
+          },
+          {
+            "tissue": "Peripheral Nervous System",
+            "n": 29,
+            "rho": 0.434,
+            "sig": false
+          }
+        ],
+        "mechanism_card": {
+          "state": "INPP4B methylation\u2013silencing (PI3K-pathway tumor suppressor)",
+          "known_biology": "INPP4B is a PI3K-pathway phosphatase; its silencing biases cells toward PI3K/AKT/mTOR dependence.",
+          "implication": "An INPP4B-methylated state may mark mTOR/PI3K-inhibitor responders across tissue boundaries."
+        },
+        "level_note": "L3 \u00b7 NOVEL HYPOTHESIS \u2014 replicated across 3 mTOR-pathway drugs (Rapamycin, Dactolisib, AZD8055).",
+        "replicated_by": [
+          {
+            "drug": "Dactolisib",
+            "marker": "INPP4B",
+            "note": "PI3K/mTOR dual inhibitor (L3)"
+          },
+          {
+            "drug": "AZD8055",
+            "marker": "INPP4B",
+            "note": "mTOR inhibitor (L3)"
+          }
+        ]
+      },
+      {
+        "drug": "SB216763",
+        "marker": "SFRP1",
+        "pathway": "WNT signaling",
+        "level": "L3",
+        "r_adj": -0.169,
+        "rho_pooled": -0.183,
+        "p_adj": 9.690960218010408e-07,
+        "within_sig": 6,
+        "n": 840,
+        "n_tissues": 14,
+        "per_tissue": [
+          {
+            "tissue": "Central Nervous System",
+            "n": 56,
+            "rho": -0.538,
+            "sig": true
+          },
+          {
+            "tissue": "Lung",
+            "n": 187,
+            "rho": -0.402,
+            "sig": true
+          },
+          {
+            "tissue": "Bone",
+            "n": 41,
+            "rho": -0.387,
+            "sig": true
+          },
+          {
+            "tissue": "Stomach",
+            "n": 28,
+            "rho": -0.377,
+            "sig": true
+          },
+          {
+            "tissue": "Esophagus",
+            "n": 35,
+            "rho": -0.37,
+            "sig": true
+          },
+          {
+            "tissue": "Kidney",
+            "n": 33,
+            "rho": -0.219,
+            "sig": false
+          },
+          {
+            "tissue": "Haematopoietic and Lymphoid",
+            "n": 167,
+            "rho": -0.156,
+            "sig": true
+          },
+          {
+            "tissue": "Pancreas",
+            "n": 31,
+            "rho": -0.156,
+            "sig": false
+          },
+          {
+            "tissue": "Peripheral Nervous System",
+            "n": 28,
+            "rho": -0.069,
+            "sig": false
+          },
+          {
+            "tissue": "Ovary",
+            "n": 41,
+            "rho": -0.065,
+            "sig": false
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 48,
+            "rho": -0.021,
+            "sig": false
+          },
+          {
+            "tissue": "Head and Neck",
+            "n": 39,
+            "rho": 0.018,
+            "sig": false
+          },
+          {
+            "tissue": "Skin",
+            "n": 56,
+            "rho": 0.049,
+            "sig": false
+          },
+          {
+            "tissue": "Breast",
+            "n": 50,
+            "rho": 0.081,
+            "sig": false
+          }
+        ],
+        "mechanism_card": {
+          "state": "SFRP1 promoter methylation (WNT-antagonist silencing)",
+          "known_biology": "SFRP1 is a secreted WNT antagonist among the most frequently methylation-silenced genes pan-cancer.",
+          "implication": "An SFRP1-methylated state recurring across \u22656 tissues \u2014 a candidate cross-indication WNT-pathway responder stratum."
+        },
+        "level_note": "L3 \u00b7 NOVEL HYPOTHESIS \u2014 the most cross-tissue lead (significant within 6 independent tissues).",
+        "replicated_by": [
+          {
+            "drug": "CHIR-99021",
+            "marker": "SFRP1",
+            "note": "2nd WNT/GSK3 modulator, same anchor (L2)"
+          }
+        ]
+      }
+    ],
+    "negative_control": {
+      "drug": "Temozolomide",
+      "marker": "MGMT",
+      "r_adj": 0.078,
+      "within_sig": 0,
+      "level": "L1",
+      "note": "MGMT \u2192 temozolomide shows NO tissue-agnostic sensitivity signal (r_adj positive, 0 tissues). The engine does not force the canonical gene-level story \u2014 an honest negative control."
+    }
+  },
+  "opportunity_table": [
+    {
+      "drug": "Nelarabine",
+      "pathway": "DNA replication",
+      "marker": "RRM1",
+      "level": "L3",
+      "r_adj": -0.281,
+      "rho_pooled": -0.012,
+      "within_sig": 3
+    },
+    {
+      "drug": "Entinostat",
+      "pathway": "Chromatin histone acetylation",
+      "marker": "HDAC1",
+      "level": "L3",
+      "r_adj": -0.23,
+      "rho_pooled": -0.019,
+      "within_sig": 3
+    },
+    {
+      "drug": "AZD5991",
+      "pathway": "Apoptosis regulation",
+      "marker": "BCL2L1",
+      "level": "L3",
+      "r_adj": -0.226,
+      "rho_pooled": -0.015,
+      "within_sig": 6
+    },
+    {
+      "drug": "Rapamycin",
+      "pathway": "PI3K/MTOR signaling",
+      "marker": "INPP4B",
+      "level": "L3",
+      "r_adj": -0.213,
+      "rho_pooled": -0.166,
+      "within_sig": 3
+    },
+    {
+      "drug": "Palbociclib",
+      "pathway": "Cell cycle",
+      "marker": "MTAP",
+      "level": "L3",
+      "r_adj": -0.196,
+      "rho_pooled": -0.461,
+      "within_sig": 5
+    },
+    {
+      "drug": "Bleomycin",
+      "pathway": "DNA replication",
+      "marker": "MGMT",
+      "level": "L3",
+      "r_adj": -0.194,
+      "rho_pooled": -0.027,
+      "within_sig": 3
+    },
+    {
+      "drug": "Axitinib",
+      "pathway": "RTK signaling",
+      "marker": "MET",
+      "level": "L3",
+      "r_adj": -0.192,
+      "rho_pooled": -0.437,
+      "within_sig": 3
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "pathway": "p53 pathway",
+      "marker": "CDKN2A",
+      "level": "L3",
+      "r_adj": -0.177,
+      "rho_pooled": -0.224,
+      "within_sig": 4
+    },
+    {
+      "drug": "SB216763",
+      "pathway": "WNT signaling",
+      "marker": "SFRP1",
+      "level": "L3",
+      "r_adj": -0.169,
+      "rho_pooled": -0.183,
+      "within_sig": 6
+    },
+    {
+      "drug": "Dactolisib",
+      "pathway": "PI3K/MTOR signaling",
+      "marker": "INPP4B",
+      "level": "L3",
+      "r_adj": -0.155,
+      "rho_pooled": -0.181,
+      "within_sig": 3
+    },
+    {
+      "drug": "ABT737",
+      "pathway": "Apoptosis regulation",
+      "marker": "MCL1",
+      "level": "L3",
+      "r_adj": -0.145,
+      "rho_pooled": 0.032,
+      "within_sig": 5
+    },
+    {
+      "drug": "MK-1775",
+      "pathway": "Cell cycle",
+      "marker": "PLK1",
+      "level": "L3",
+      "r_adj": -0.143,
+      "rho_pooled": -0.191,
+      "within_sig": 3
+    },
+    {
+      "drug": "AZD8055",
+      "pathway": "PI3K/MTOR signaling",
+      "marker": "INPP4B",
+      "level": "L3",
+      "r_adj": -0.141,
+      "rho_pooled": -0.172,
+      "within_sig": 3
+    },
+    {
+      "drug": "Vinorelbine",
+      "pathway": "Mitosis",
+      "marker": "TTK",
+      "level": "L3",
+      "r_adj": -0.139,
+      "rho_pooled": -0.091,
+      "within_sig": 3
+    },
+    {
+      "drug": "Telomerase Inhibitor IX",
+      "pathway": "Genome integrity",
+      "marker": "MLH1",
+      "level": "L3",
+      "r_adj": -0.139,
+      "rho_pooled": 0.041,
+      "within_sig": 3
+    },
+    {
+      "drug": "Topotecan",
+      "pathway": "DNA replication",
+      "marker": "MGMT",
+      "level": "L3",
+      "r_adj": -0.136,
+      "rho_pooled": -0.233,
+      "within_sig": 3
+    },
+    {
+      "drug": "CHIR-99021",
+      "pathway": "WNT signaling",
+      "marker": "SFRP1",
+      "level": "L2",
+      "r_adj": -0.251,
+      "rho_pooled": -0.357,
+      "within_sig": 1
+    },
+    {
+      "drug": "Tozasertib",
+      "pathway": "Mitosis",
+      "marker": "PLK1",
+      "level": "L2",
+      "r_adj": -0.197,
+      "rho_pooled": -0.237,
+      "within_sig": 1
+    },
+    {
+      "drug": "WEHI-539",
+      "pathway": "Apoptosis regulation",
+      "marker": "BBC3",
+      "level": "L2",
+      "r_adj": -0.195,
+      "rho_pooled": -0.121,
+      "within_sig": 2
+    },
+    {
+      "drug": "CCT-018159",
+      "pathway": "Protein stability and degradation",
+      "marker": "FBXW7",
+      "level": "L2",
+      "r_adj": -0.194,
+      "rho_pooled": 0.066,
+      "within_sig": 0
+    }
+  ],
+  "transcript": [
+    {
+      "type": "thought",
+      "text": "Goal: don't start from an indication \u2014 start from molecular state. Scan every drug's OWN target/pathway genes for a methylation state whose response association is tissue-agnostic (holds within tissues, not just pooled)."
+    },
+    {
+      "type": "tool_call",
+      "name": "scan_mechanism_anchored",
+      "args": {
+        "safeguard": "tissue-adjusted + within-tissue \u22653"
+      }
+    },
+    {
+      "type": "tool_result",
+      "name": "scan_mechanism_anchored",
+      "result": {
+        "L3": 16,
+        "L2": 83,
+        "ranked": "outputs/v2_mechanism_anchored.csv"
+      }
+    },
+    {
+      "type": "thought",
+      "text": "Positive control recovered COLD: 9p21/MTAP \u2192 palbociclib is L3 (survives tissue adjustment, significant in 5 tissues) \u2014 and it replicates on a second CDK4/6 inhibitor, ribociclib. Known biology recovered tissue-agnostically licenses the rest. (This link is published \u2014 confirmation, not discovery.)"
+    },
+    {
+      "type": "tool_call",
+      "name": "tissue_confound_check",
+      "args": {
+        "drug": "Palbociclib",
+        "marker": "MTAP"
+      }
+    },
+    {
+      "type": "tool_result",
+      "name": "tissue_confound_check",
+      "result": {
+        "verdict": "tissue-agnostic (L3)",
+        "within_tissue_sig": 5
+      }
+    },
+    {
+      "type": "thought",
+      "text": "Novel cross-indication lead: INPP4B methylation \u2192 mTOR/PI3K-inhibitor sensitivity, L3, and replicated across THREE mTOR-pathway drugs (Rapamycin, Dactolisib, AZD8055). A PI3K-pathway tumor-suppressor state that cuts across tissues \u2014 a hypothesis to follow up. SFRP1\u2192WNT is the most cross-tissue (6 tissues)."
+    },
+    {
+      "type": "thought",
+      "text": "Negative control holds: MGMT \u2192 temozolomide gives no tissue-agnostic signal. The engine isn't forcing canonical results \u2014 it reports what survives the safeguards."
+    },
+    {
+      "type": "tool_call",
+      "name": "write_opportunity_brief",
+      "args": {
+        "lead": "INPP4B \u2192 mTOR-pathway inhibitors"
+      }
+    },
+    {
+      "type": "thought",
+      "text": "# Cross-Indication Opportunity \u2014 INPP4B-methylated state \u00d7 mTOR-pathway inhibitors\n\n## Evidence (tissue-agnostic, mechanism-anchored)\nAn unbiased methylation screen, restricted to each drug's own pathway and corrected for tissue, surfaces **INPP4B promoter methylation** as a responder marker for mTOR/PI3K inhibitors \u2014 **tissue-adjusted r\u2248\u22120.21, significant within 3 independent tissues, and replicated across 3 drugs of the class** (Rapamycin, Dactolisib, AZD8055).\n\n## Why it's invisible to current taxonomy\nThe state is defined by a methylation event in a PIK3-pathway tumor suppressor, not by histology \u2014 it recurs across indications. It is **licensed by the same screen recovering the known 9p21\u2192CDK4/6i control cold**.\n\n## Commercial implication\nAn INPP4B-methylation companion-marker could define a cross-indication responder stratum for mTOR/PI3K inhibitors \u2014 a portfolio-triage hypothesis for follow-up, not a clinical claim. Evidence level **L3** (cell-line, research-use)."
+    }
+  ],
+  "generated": "rung-A mechanism-anchored, scripted"
+}
