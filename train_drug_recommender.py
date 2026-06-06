@@ -217,13 +217,64 @@ def main():
     for k in order_p:
         print(f"{drug_names[di[sel][k]]:<22}{te_pred_full[sel][k]:>10.3f}{y[sel][k]:>10.3f}")
 
-    # ---------- save pretrained encoder ----------
+    # ---------- save pretrained encoder (encoder only; legacy) ----------
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     path = os.path.join(OUTPUT_DIR, "methylation_encoder.pt")
     torch.save({"encoder": net.encoder.state_dict(), "panel": panel,
                 "mu": mu, "sd": sd, "ymu": ymu, "ysd": ysd,
                 "drug_names": drug_names, "n_genes": N_GENES, "emb": EMB}, path)
     print(f"\nsaved pretrained methylation encoder -> {path}")
+
+    # ---------- save FULL Polymer artifact (everything inference needs) ----------
+    panel_genes = [str(meth.columns[j]) for j in panel]
+
+    # per-drug average AUC (raw units), keyed by drug name -> the "everyone" prior
+    drug_mean_by_name = {drug_names[int(idx)]: float(v) for idx, v in drug_mean.items()}
+
+    # drug target / pathway for display (from the merged table if present)
+    drug_meta = {dn: {"target": "", "pathway": ""} for dn in drug_names}
+    merged_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gdsc2_merged.csv")
+    try:
+        mm = pd.read_csv(merged_csv, usecols=["DRUG_NAME", "PUTATIVE_TARGET", "PATHWAY_NAME"])
+        first = mm.groupby("DRUG_NAME").first()
+        for dn in drug_names:
+            if dn in first.index:
+                drug_meta[dn] = {"target": str(first.loc[dn, "PUTATIVE_TARGET"]),
+                                 "pathway": str(first.loc[dn, "PATHWAY_NAME"])}
+    except Exception as e:
+        print(f"(drug metadata unavailable: {e})")
+
+    # a few held-out example "patients" (raw panel betas) for the demo's Load Example
+    examples = []
+    seen_ct = set()
+    for L, npairs in sorted(cand, key=lambda t: -t[1]):
+        cidL = lines[L]
+        ctL = anno.reindex([cidL])["cancer_type"].iloc[0] if cidL in anno.index else "Unknown"
+        if ctL in seen_ct or npairs < 20:
+            continue
+        seen_ct.add(ctL)
+        selL = te_idx[li[te_idx] == L]
+        true_top = [drug_names[int(di[selL][k])] for k in np.argsort(y[selL])[:5]]
+        betas = {g: round(float(M[L, gi]), 4) for gi, g in enumerate(panel_genes)}
+        examples.append({"label": f"{ctL} — {cidL}", "cancer_type": str(ctL),
+                         "betas": betas, "true_top_sensitive": true_top})
+        if len(examples) >= 5:
+            break
+
+    poly = os.path.join(OUTPUT_DIR, "polymer_model.pt")
+    torch.save({
+        "model_state": net.state_dict(),
+        "panel_genes": panel_genes,
+        "mu": np.asarray(mu), "sd": np.asarray(sd), "ymu": float(ymu), "ysd": float(ysd),
+        "drug_names": drug_names, "drug_meta": drug_meta, "drug_mean": drug_mean_by_name,
+        "n_genes": N_GENES, "emb": EMB, "hid": HID, "n_drugs": n_drugs,
+        "examples": examples,
+        "metrics": {"rmse": float(m_rmse), "r": float(m_r),
+                    "base_rmse": float(b_rmse), "base_r": float(b_r),
+                    "demeaned_rho": float(np.nanmean(dem_rhos)),
+                    "n_train_lines": int(train_line_mask.sum())},
+    }, poly)
+    print(f"saved FULL Polymer artifact -> {poly}  ({len(examples)} example patients)")
 
 
 if __name__ == "__main__":
