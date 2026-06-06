@@ -1,0 +1,176 @@
+{
+  "type": "drug",
+  "drug": "PLX-4720",
+  "target": "BRAF",
+  "pathway": "ERK MAPK signaling",
+  "funnel": {
+    "genes_scanned": 13798,
+    "response_candidates": 18,
+    "functionally_silenced": 6,
+    "externally_replicated": 1,
+    "lines": 445
+  },
+  "leads": [
+    {
+      "gene": "BIVM",
+      "direction": "resistant",
+      "gdsc_r": 0.168,
+      "prism_r": 0.134,
+      "prism_p": 0.0492,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.238,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "RAMP1",
+      "direction": "sensitive",
+      "gdsc_r": -0.215,
+      "prism_r": -0.098,
+      "prism_p": 0.2818,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.49,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 12,
+        "same_direction": 6,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "PLOD2",
+      "direction": "sensitive",
+      "gdsc_r": -0.172,
+      "prism_r": -0.054,
+      "prism_p": 0.4375,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.521,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "ELF4",
+      "direction": "sensitive",
+      "gdsc_r": -0.167,
+      "prism_r": -0.0,
+      "prism_p": 0.9975,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.213,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "PHF10",
+      "direction": "sensitive",
+      "gdsc_r": -0.157,
+      "prism_r": -0.095,
+      "prism_p": 0.1583,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.151,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 4,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "EFHD1",
+      "direction": "sensitive",
+      "gdsc_r": -0.142,
+      "prism_r": 0.166,
+      "prism_p": 0.0132,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.548,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "BIVM",
+    "direction": "resistant",
+    "gdsc_r": 0.168,
+    "prism_r": 0.134,
+    "prism_p": 0.0492,
+    "ctrp_r": null,
+    "ctrp_p": null,
+    "silencing_r": -0.238,
+    "screens": [
+      "GDSC",
+      "PRISM"
+    ],
+    "n_screens": 2,
+    "evidence_level": "L4",
+    "replicated": true,
+    "recurrence": {
+      "tissues_tested": 14,
+      "same_direction": 6,
+      "significant": 0
+    },
+    "gene_note": ""
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "drug",
+  "drug": "Alpelisib",
+  "target": "PI3Kalpha",
+  "pathway": "PI3K/MTOR signaling",
+  "funnel": {
+    "genes_scanned": 13792,
+    "response_candidates": 3,
+    "functionally_silenced": 0,
+    "externally_replicated": 0,
+    "lines": 447
+  },
+  "leads": [],
+  "hero": null,
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

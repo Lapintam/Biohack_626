@@ -1,0 +1,202 @@
+{
+  "type": "drug",
+  "drug": "Gemcitabine",
+  "target": "Pyrimidine antimetabolite",
+  "pathway": "DNA replication",
+  "funnel": {
+    "genes_scanned": 13801,
+    "response_candidates": 20,
+    "functionally_silenced": 7,
+    "externally_replicated": 3,
+    "lines": 446
+  },
+  "leads": [
+    {
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "gdsc_r": 0.192,
+      "prism_r": 0.183,
+      "prism_p": 0.0236,
+      "ctrp_r": 0.213,
+      "ctrp_p": 5e-05,
+      "silencing_r": -0.657,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 13,
+        "significant": 4
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "PRR7",
+      "direction": "resistant",
+      "gdsc_r": 0.14,
+      "prism_r": 0.278,
+      "prism_p": 0.0005,
+      "ctrp_r": 0.041,
+      "ctrp_p": 0.43489,
+      "silencing_r": -0.28,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "ELOVL2-AS1",
+      "direction": "resistant",
+      "gdsc_r": 0.138,
+      "prism_r": -0.097,
+      "prism_p": 0.2334,
+      "ctrp_r": 0.109,
+      "ctrp_p": 0.03943,
+      "silencing_r": -0.59,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 3
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "C1orf54",
+      "direction": "resistant",
+      "gdsc_r": 0.226,
+      "prism_r": 0.123,
+      "prism_p": 0.1331,
+      "ctrp_r": 0.061,
+      "ctrp_p": 0.25138,
+      "silencing_r": -0.397,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 11,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "MARCH10",
+      "direction": "sensitive",
+      "gdsc_r": -0.164,
+      "prism_r": -0.074,
+      "prism_p": 0.3633,
+      "ctrp_r": -0.098,
+      "ctrp_p": 0.065,
+      "silencing_r": -0.164,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 12,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "MYBPHL",
+      "direction": "resistant",
+      "gdsc_r": 0.141,
+      "prism_r": 0.05,
+      "prism_p": 0.5389,
+      "ctrp_r": 0.034,
+      "ctrp_p": 0.52557,
+      "silencing_r": -0.103,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "ECI1",
+      "direction": "resistant",
+      "gdsc_r": 0.127,
+      "prism_r": 0.152,
+      "prism_p": 0.0596,
+      "ctrp_r": 0.047,
+      "ctrp_p": 0.37534,
+      "silencing_r": -0.101,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 2
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "SLFN11",
+    "direction": "resistant",
+    "gdsc_r": 0.192,
+    "prism_r": 0.183,
+    "prism_p": 0.0236,
+    "ctrp_r": 0.213,
+    "ctrp_p": 5e-05,
+    "silencing_r": -0.657,
+    "screens": [
+      "GDSC",
+      "PRISM",
+      "CTRP"
+    ],
+    "n_screens": 3,
+    "evidence_level": "L5",
+    "replicated": true,
+    "recurrence": {
+      "tissues_tested": 14,
+      "same_direction": 13,
+      "significant": 4
+    },
+    "gene_note": ""
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

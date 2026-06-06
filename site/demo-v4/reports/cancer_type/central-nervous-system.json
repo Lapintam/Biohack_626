@@ -1,0 +1,304 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Central Nervous System",
+  "n_leads": 22,
+  "leads": [
+    {
+      "drug": "Temozolomide",
+      "gene": "KLHL29",
+      "direction": "sensitive",
+      "tissue_rho": -0.568,
+      "tissue_p": 0.0011,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "TAGLN",
+      "direction": "resistant",
+      "tissue_rho": 0.543,
+      "tissue_p": 0.0019,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Stomach",
+        "Breast",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "UPP1",
+      "direction": "sensitive",
+      "tissue_rho": -0.485,
+      "tissue_p": 0.0067,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "DUSP8",
+      "direction": "resistant",
+      "tissue_rho": 0.468,
+      "tissue_p": 0.0092,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "CDK2AP1",
+      "direction": "resistant",
+      "tissue_rho": 0.464,
+      "tissue_p": 0.0098,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "RHOBTB3",
+      "direction": "resistant",
+      "tissue_rho": 0.442,
+      "tissue_p": 0.0164,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "CAPN2",
+      "direction": "sensitive",
+      "tissue_rho": -0.421,
+      "tissue_p": 0.0205,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Breast",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SP140L",
+      "direction": "sensitive",
+      "tissue_rho": -0.427,
+      "tissue_p": 0.0209,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Stomach",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "MCF2L-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.409,
+      "tissue_p": 0.0248,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Gemcitabine",
+      "gene": "MARCH10",
+      "direction": "sensitive",
+      "tissue_rho": -0.396,
+      "tissue_p": 0.0337,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "FAM174B",
+      "direction": "sensitive",
+      "tissue_rho": -0.38,
+      "tissue_p": 0.0421,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "TSPAN13",
+      "direction": "sensitive",
+      "tissue_rho": -0.372,
+      "tissue_p": 0.0472,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "FLJ31356",
+      "direction": "sensitive",
+      "tissue_rho": -0.364,
+      "tissue_p": 0.0522,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Palbociclib",
+      "gene": "ID2",
+      "direction": "sensitive",
+      "tissue_rho": -0.355,
+      "tissue_p": 0.0542,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Cisplatin",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.39,
+      "tissue_p": 0.0593,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin",
+        "Stomach",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "DOCK5",
+      "direction": "sensitive",
+      "tissue_rho": -0.347,
+      "tissue_p": 0.0604,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Large Intestine",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "NNMT",
+      "direction": "resistant",
+      "tissue_rho": 0.344,
+      "tissue_p": 0.0631,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Stomach",
+        "Bladder",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "SQLE",
+      "direction": "sensitive",
+      "tissue_rho": -0.327,
+      "tissue_p": 0.0778,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "STUM",
+      "direction": "resistant",
+      "tissue_rho": 0.324,
+      "tissue_p": 0.0802,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "BCL2L11",
+      "direction": "sensitive",
+      "tissue_rho": -0.323,
+      "tissue_p": 0.0814,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Head and Neck",
+        "Ovary"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "FRMPD2",
+      "direction": "sensitive",
+      "tissue_rho": -0.336,
+      "tissue_p": 0.0864,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Pancreas",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "VASN",
+      "direction": "resistant",
+      "tissue_rho": 0.316,
+      "tissue_p": 0.0892,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Breast",
+        "Lung",
+        "Bladder"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Bladder",
+    "Breast",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Head and Neck",
+    "Large Intestine",
+    "Lung",
+    "Ovary",
+    "Pancreas",
+    "Skin",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

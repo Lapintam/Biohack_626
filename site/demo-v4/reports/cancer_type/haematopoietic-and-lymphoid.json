@@ -1,0 +1,369 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Haematopoietic and Lymphoid",
+  "n_leads": 176,
+  "leads": [
+    {
+      "drug": "Olaparib",
+      "gene": "ID2",
+      "direction": "sensitive",
+      "tissue_rho": -0.41,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "RNF215",
+      "direction": "sensitive",
+      "tissue_rho": -0.467,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Kidney",
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Niraparib",
+      "gene": "DHCR24",
+      "direction": "sensitive",
+      "tissue_rho": -0.426,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Niraparib",
+      "gene": "ADAMTSL5",
+      "direction": "sensitive",
+      "tissue_rho": -0.458,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Pancreas",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "LRRC49",
+      "direction": "resistant",
+      "tissue_rho": 0.453,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "RASAL2-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.479,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "tissue_rho": 0.475,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "RASAL2",
+      "direction": "resistant",
+      "tissue_rho": 0.531,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "NACC2",
+      "direction": "resistant",
+      "tissue_rho": 0.422,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "FOXA1",
+      "direction": "resistant",
+      "tissue_rho": 0.43,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "FKBP9",
+      "direction": "resistant",
+      "tissue_rho": 0.418,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "GALNT11",
+      "direction": "resistant",
+      "tissue_rho": 0.416,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "tissue_rho": 0.44,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "RASAL2",
+      "direction": "resistant",
+      "tissue_rho": 0.463,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "tissue_rho": 0.484,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "PDGFC",
+      "direction": "resistant",
+      "tissue_rho": 0.459,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "FOXA1",
+      "direction": "resistant",
+      "tissue_rho": 0.452,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "NACC2",
+      "direction": "resistant",
+      "tissue_rho": 0.434,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "tissue_rho": 0.503,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "RASAL2-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.455,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "LRRC49",
+      "direction": "resistant",
+      "tissue_rho": 0.418,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "GALNT11",
+      "direction": "resistant",
+      "tissue_rho": 0.461,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "RASAL2",
+      "direction": "resistant",
+      "tissue_rho": 0.541,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "FKBP9",
+      "direction": "resistant",
+      "tissue_rho": 0.403,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "FOXA1",
+      "direction": "resistant",
+      "tissue_rho": 0.465,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "TERT",
+      "direction": "resistant",
+      "tissue_rho": 0.427,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "CDK2AP1",
+      "direction": "resistant",
+      "tissue_rho": 0.408,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Central Nervous System"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "KCTD11",
+      "direction": "sensitive",
+      "tissue_rho": -0.487,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Olaparib",
+      "gene": "TRIM32",
+      "direction": "sensitive",
+      "tissue_rho": -0.403,
+      "tissue_p": 0.0001,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "PINK1",
+      "direction": "sensitive",
+      "tissue_rho": -0.399,
+      "tissue_p": 0.0001,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Bladder",
+    "Breast",
+    "Central Nervous System",
+    "Esophagus",
+    "Head and Neck",
+    "Kidney",
+    "Large Intestine",
+    "Lung",
+    "Ovary",
+    "Pancreas",
+    "Peripheral Nervous System",
+    "Skin",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

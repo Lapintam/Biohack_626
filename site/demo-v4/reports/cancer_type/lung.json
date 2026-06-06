@@ -1,0 +1,403 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Lung",
+  "n_leads": 108,
+  "leads": [
+    {
+      "drug": "Trametinib",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.383,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Peripheral Nervous System",
+        "Skin",
+        "Large Intestine",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "NACC2",
+      "direction": "resistant",
+      "tissue_rho": 0.37,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "CAPN14",
+      "direction": "sensitive",
+      "tissue_rho": -0.543,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "NACC2",
+      "direction": "resistant",
+      "tissue_rho": 0.433,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "CAPN14",
+      "direction": "sensitive",
+      "tissue_rho": -0.497,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "EPS8L2",
+      "direction": "resistant",
+      "tissue_rho": 0.545,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "LCN2",
+      "direction": "resistant",
+      "tissue_rho": 0.399,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "DLX1",
+      "direction": "sensitive",
+      "tissue_rho": -0.505,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "PLEKHO1",
+      "direction": "sensitive",
+      "tissue_rho": -0.461,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Head and Neck"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "NNMT",
+      "direction": "resistant",
+      "tissue_rho": 0.463,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Central Nervous System",
+        "Stomach",
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "TCTEX1D4",
+      "direction": "resistant",
+      "tissue_rho": 0.434,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "BTBD19",
+      "direction": "resistant",
+      "tissue_rho": 0.407,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Breast",
+        "Kidney"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "NOSTRIN",
+      "direction": "resistant",
+      "tissue_rho": 0.366,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "VASN",
+      "direction": "resistant",
+      "tissue_rho": 0.398,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Central Nervous System",
+        "Breast",
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "HCG21",
+      "direction": "resistant",
+      "tissue_rho": 0.381,
+      "tissue_p": 0.0,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "SH3PXD2A",
+      "direction": "resistant",
+      "tissue_rho": 0.46,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Peripheral Nervous System"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "CAPN2",
+      "direction": "sensitive",
+      "tissue_rho": -0.448,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Stomach",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "CAPN2",
+      "direction": "sensitive",
+      "tissue_rho": -0.411,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Breast",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "NNMT",
+      "direction": "sensitive",
+      "tissue_rho": -0.389,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "HCG21",
+      "direction": "resistant",
+      "tissue_rho": 0.469,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "UPP1",
+      "direction": "sensitive",
+      "tissue_rho": -0.446,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Esophagus",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "NEDD4L",
+      "direction": "sensitive",
+      "tissue_rho": -0.469,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SLC16A11",
+      "direction": "resistant",
+      "tissue_rho": 0.488,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Peripheral Nervous System"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "LINC00460",
+      "direction": "sensitive",
+      "tissue_rho": -0.399,
+      "tissue_p": 0.0,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Kidney",
+        "Breast",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "FLJ31356",
+      "direction": "sensitive",
+      "tissue_rho": -0.432,
+      "tissue_p": 0.0,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Central Nervous System"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.354,
+      "tissue_p": 0.0001,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Peripheral Nervous System",
+        "Large Intestine"
+      ]
+    },
+    {
+      "drug": "Afatinib",
+      "gene": "CNN3",
+      "direction": "sensitive",
+      "tissue_rho": -0.344,
+      "tissue_p": 0.0001,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "TAGLN",
+      "direction": "resistant",
+      "tissue_rho": 0.36,
+      "tissue_p": 0.0001,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Stomach",
+        "Central Nervous System",
+        "Breast",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "SLC7A4",
+      "direction": "resistant",
+      "tissue_rho": 0.367,
+      "tissue_p": 0.0001,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "DRAXIN",
+      "direction": "resistant",
+      "tissue_rho": 0.355,
+      "tissue_p": 0.0001,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Bladder",
+    "Breast",
+    "Central Nervous System",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Head and Neck",
+    "Kidney",
+    "Large Intestine",
+    "Ovary",
+    "Pancreas",
+    "Peripheral Nervous System",
+    "Skin",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

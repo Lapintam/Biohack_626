@@ -1,0 +1,106 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Kidney",
+  "n_leads": 7,
+  "leads": [
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "KCTD15",
+      "direction": "resistant",
+      "tissue_rho": 0.564,
+      "tissue_p": 0.0284,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "LINC00460",
+      "direction": "sensitive",
+      "tissue_rho": -0.557,
+      "tissue_p": 0.031,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Breast",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "BTBD19",
+      "direction": "resistant",
+      "tissue_rho": 0.536,
+      "tissue_p": 0.048,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Cisplatin",
+      "gene": "C1orf54",
+      "direction": "resistant",
+      "tissue_rho": 0.555,
+      "tissue_p": 0.049,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "RNF215",
+      "direction": "sensitive",
+      "tissue_rho": -0.511,
+      "tissue_p": 0.0517,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "ZC2HC1A",
+      "direction": "sensitive",
+      "tissue_rho": -0.493,
+      "tissue_p": 0.0618,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "SPRY4",
+      "direction": "resistant",
+      "tissue_rho": 0.443,
+      "tissue_p": 0.0983,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    }
+  ],
+  "connects_to": [
+    "Breast",
+    "Haematopoietic and Lymphoid",
+    "Lung",
+    "Skin",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

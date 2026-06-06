@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Strata — methylation-defined responder subgroups</title>
+<meta name="description" content="Strata is MethylGKB's discovery agent: it scans the methylome against a drug's response, recovers the responder subgroup hidden inside a heterogeneous indication, and writes the opportunity brief — live." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="strata.css" />
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">METHYLGKB</a>
+  <span class="brand-divider"></span>
+  <span class="brand-sub">by Polymer Genomics</span>
+  <nav class="site-nav">
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="science.html">The Science</a>
+    <a class="nav-link" href="explore.html">Explore</a>
+    <a class="nav-link is-active" href="strata.html">Strata</a>
+    <a class="nav-link" href="strata-v2.html">Strata v2</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="wrap hero" style="padding-bottom:40px;">
+    <p class="section-marker">§01 — Strata · the discovery agent</p>
+    <h1 style="font-size:clamp(34px,5vw,52px);max-width:20ch;">
+      Find the responder subgroup <span class="em">hidden inside the indication.</span>
+    </h1>
+    <p class="lede">
+      <strong>One method, not two drugs.</strong> Strata reads a methylome against any
+      outcome — drug response, survival, toxicity — and names the methylation-defined
+      subgroup that responds, with the biology behind it. A general engine <strong>pointing
+      toward</strong> methylation-guided <strong>clinical decision support</strong> —
+      <strong>research-use today</strong>; drug response is just the first proof.
+    </p>
+
+    <!-- THE METHOD (the loop, named explicitly) -->
+    <p class="strata-method">
+      <span class="sm-label">the loop</span>
+      methylome × outcome
+      <span class="sm-arrow">→</span> rank methylation markers
+      <span class="sm-arrow">→</span> name the responder subgroup
+      <span class="sm-arrow">→</span> validate against known biology
+    </p>
+
+    <!-- RUN SELECTOR -->
+    <p class="strata-runcap">
+      Two of <strong>286</strong> drugs in the GDSC panel — illustrative instances. The same
+      engine runs on <em>any</em> methylome × outcome pair.
+    </p>
+    <div class="strata-runbar" id="runBar" role="tablist" aria-label="Demo runs">
+      <button class="strata-runtab is-active" data-run="Palbociclib" role="tab" aria-selected="true">
+        <span class="rt-tag rt-tag-control">Positive control</span>
+        <span class="rt-name">Palbociclib</span>
+        <span class="rt-sub">Pfizer's Ibrance · CDK4/6 · screen #1 marker: MTAP (9p21 co-deletion with CDKN2A)</span>
+      </button>
+      <button class="strata-runtab" data-run="Luminespib" role="tab" aria-selected="false">
+        <span class="rt-tag rt-tag-novel">Novel hit</span>
+        <span class="rt-name">Luminespib</span>
+        <span class="rt-sub">HSP90 inhibitor · screen-derived hypothesis</span>
+      </button>
+    </div>
+
+    <div class="strata-runctl">
+      <div class="src-goal" id="goalLine"></div>
+      <button class="btn btn-primary" id="runBtn">▶ Run discovery</button>
+    </div>
+  </section>
+
+  <!-- TRANSCRIPT (the agent reasoning, animated) -->
+  <section class="wrap section" id="transcriptSection" style="padding-top:0;border-top:none;">
+    <p class="section-marker">§02 — Agent transcript</p>
+    <h2 class="h2">Watch the agent reason.</h2>
+    <div class="agent-explainer">
+      <span class="ae-label">What the agent is doing</span>
+      <p>
+        An AI agent (Claude) is given a goal and four tools —
+        <strong>list&nbsp;drugs · scan the methylome for markers · test a subgroup · write the brief</strong>.
+        It decides which tools to run, reads the results, <strong>recognizes the biology</strong>
+        (e.g. that MTAP is the known CDK4/6 control), and writes the brief.
+        The engine does the statistics; <strong>the agent does the judgment.</strong>
+        The headline evidence is the continuous correlation (Spearman&nbsp;&rho;&nbsp;/&nbsp;q); the
+        median-split subgroup is just the operational cut. Below is a recorded run, played back step by step.
+      </p>
+    </div>
+    <div class="transcript" id="transcript" aria-live="polite"></div>
+  </section>
+
+  <!-- FIGURES + MARKERS + BRIEF (revealed after the transcript) -->
+  <section class="wrap section" id="resultsSection" hidden>
+    <p class="section-marker">§03 — What the screen found</p>
+    <h2 class="h2">Figures, markers, and the brief.</h2>
+
+    <div class="fig-grid" id="figGrid"></div>
+
+    <div class="strata-cols">
+      <div class="strata-col">
+        <h3 class="h3" style="margin-top:8px;">Top response markers</h3>
+        <p class="body" style="margin-bottom:14px;">
+          Per-gene methylation Spearman-correlated against drug AUC (lower AUC = more sensitive).
+          A negative rho means methylation marks sensitivity. FDR q &lt; 0.1.
+        </p>
+        <div class="marker-table-wrap">
+          <table class="marker-table" id="markerTable">
+            <thead><tr><th>Gene</th><th class="num">rho</th><th class="num">q-value</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="strata-col">
+        <h3 class="h3" style="margin-top:8px;">Opportunity brief</h3>
+        <p class="body" style="margin-bottom:14px;">
+          Generated by the agent in a portfolio-ROI framing — the artifact a business-development team reads.
+        </p>
+        <div class="brief" id="brief"></div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:36px;">
+      <strong>Illustrative prototype — research use only.</strong> Markers are derived from the GDSC
+      cell-line screen; novel hits are <em>screen-derived hypotheses</em>, not validated companion
+      diagnostics. Their credibility comes from the same unbiased screen recovering the known
+      9p21 / MTAP–CDKN2A → palbociclib positive control: MTAP is the screen's #1 marker
+      (CDKN2A's co-deleted 9p21 neighbor), and CDKN2A itself is recovered deeper in the ranked
+      list — see the canonical-biomarker check below the marker table. Not for clinical decision-making.
+    </div>
+
+    <div class="hero-actions" style="margin-top:28px;">
+      <a class="btn btn-secondary" href="science.html">The evidence</a>
+    </div>
+  </section>
+
+  <!-- SCALE / NVIDIA -->
+  <section class="wrap section" id="scaleSection">
+    <p class="section-marker">§04 — Scale · where this goes</p>
+    <h2 class="h2">The kernel is GPU-shaped by construction.</h2>
+    <p class="lead" style="margin-bottom:18px;">
+      Strata's core operation is one Spearman correlation per gene per drug —
+      embarrassingly parallel over (gene × drug × cohort). Discovery is cheap and
+      decentralizing; what gets expensive is <em>re-screening the whole space as the
+      data grows</em>, and that cost lands on exactly the layer we own.
+    </p>
+    <div class="scale-grid" id="scaleGrid"></div>
+    <p class="body" id="scaleProse" style="margin-top:18px;"></p>
+    <div class="note scale-note">
+      <strong>The bridge.</strong> Every licensed marker→response association is a
+      formal, provenance-stamped claim. Strata is the working on-ramp to the
+      <strong>Polymer claims universe</strong> — a federated graph where contributors
+      generate associations on their own compute and a GPU-bound center keeps the
+      universe cross-checked and coherent. Generation decentralizes; verification is
+      the moat — and verification is RAPIDS-native by construction.
+      <span class="scale-line">You build the engines for autonomous science — we're the structured memory they write to.</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-links">
+    <a href="index.html">Overview</a>
+    <span class="foot-dot">·</span>
+    <a href="science.html">The Science</a>
+    <span class="foot-dot">·</span>
+    <a href="explore.html">Explore</a>
+    <span class="foot-dot">·</span>
+    <a href="strata.html">Strata</a>
+  </div>
+  <div class="foot-meta">
+    <a class="ruo" href="#" title="Not for clinical or diagnostic use. Prototype. Data provided as-is.">Research use only</a>
+    <span class="foot-dot">·</span>
+    <span class="copy">© 2026 Polymer Genomics</span>
+  </div>
+</footer>
+
+<script src="strata.js"></script>
+</body>
+</html>

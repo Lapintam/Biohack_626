@@ -1,0 +1,355 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Large Intestine",
+  "n_leads": 26,
+  "leads": [
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "CDKN2B-AS1",
+      "direction": "sensitive",
+      "tissue_rho": -0.521,
+      "tissue_p": 0.0011,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "RHPN1-AS1",
+      "direction": "sensitive",
+      "tissue_rho": -0.482,
+      "tissue_p": 0.0029,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "PLX-4720",
+      "gene": "PLOD2",
+      "direction": "sensitive",
+      "tissue_rho": -0.47,
+      "tissue_p": 0.0044,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "USP51",
+      "direction": "sensitive",
+      "tissue_rho": -0.445,
+      "tissue_p": 0.0066,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary",
+        "Haematopoietic and Lymphoid",
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "MACROD1",
+      "direction": "sensitive",
+      "tissue_rho": -0.418,
+      "tissue_p": 0.014,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "NDRG1",
+      "direction": "sensitive",
+      "tissue_rho": -0.379,
+      "tissue_p": 0.0225,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Rucaparib",
+      "gene": "PINK1",
+      "direction": "sensitive",
+      "tissue_rho": -0.367,
+      "tissue_p": 0.0276,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "SLC16A11",
+      "direction": "resistant",
+      "tissue_rho": 0.367,
+      "tissue_p": 0.0303,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.353,
+      "tissue_p": 0.0322,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Breast",
+        "Skin",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Olaparib",
+      "gene": "DHCR24",
+      "direction": "sensitive",
+      "tissue_rho": -0.335,
+      "tissue_p": 0.0425,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.332,
+      "tissue_p": 0.0448,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Head and Neck",
+        "Skin",
+        "Breast",
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "DOCK5",
+      "direction": "sensitive",
+      "tissue_rho": -0.339,
+      "tissue_p": 0.0498,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Central Nervous System",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.324,
+      "tissue_p": 0.0505,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin",
+        "Breast",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.321,
+      "tissue_p": 0.0525,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Peripheral Nervous System",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Palbociclib",
+      "gene": "FAM219B",
+      "direction": "sensitive",
+      "tissue_rho": -0.316,
+      "tissue_p": 0.0571,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "NFIB",
+      "direction": "sensitive",
+      "tissue_rho": -0.322,
+      "tissue_p": 0.0592,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Esophagus",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "OTOP3",
+      "direction": "resistant",
+      "tissue_rho": 0.325,
+      "tissue_p": 0.0604,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Dabrafenib",
+      "gene": "EFHD1",
+      "direction": "sensitive",
+      "tissue_rho": -0.315,
+      "tissue_p": 0.0617,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Pancreas",
+        "Ovary",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "COL4A4",
+      "direction": "sensitive",
+      "tissue_rho": -0.301,
+      "tissue_p": 0.0699,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Ovary",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "ITGA9-AS1",
+      "direction": "sensitive",
+      "tissue_rho": -0.313,
+      "tissue_p": 0.0716,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "PLX-4720",
+      "gene": "ELF4",
+      "direction": "sensitive",
+      "tissue_rho": -0.297,
+      "tissue_p": 0.0739,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary",
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "TUBB2A",
+      "direction": "sensitive",
+      "tissue_rho": -0.288,
+      "tissue_p": 0.0839,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "LTBP1",
+      "direction": "sensitive",
+      "tissue_rho": -0.291,
+      "tissue_p": 0.0846,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "PLX-4720",
+      "gene": "EFHD1",
+      "direction": "sensitive",
+      "tissue_rho": -0.287,
+      "tissue_p": 0.0854,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "PSCA",
+      "direction": "sensitive",
+      "tissue_rho": -0.278,
+      "tissue_p": 0.0962,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.277,
+      "tissue_p": 0.0971,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Peripheral Nervous System",
+        "Lung",
+        "Skin",
+        "Breast"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Breast",
+    "Central Nervous System",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Head and Neck",
+    "Lung",
+    "Ovary",
+    "Pancreas",
+    "Peripheral Nervous System",
+    "Skin"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

@@ -1,0 +1,570 @@
+{
+  "thesis": "Start from molecular state, not disease taxonomy. Surface opportunities an expert is STRUCTURALLY unable to reach.",
+  "gates": [
+    {
+      "id": "taxonomy",
+      "title": "The taxonomy prior",
+      "expert": "Trained, funded, and regulated by organ/histology. The unit of analysis is the indication.",
+      "agent": "Groups cell lines by molecular state across ~30 cancer types; the organ is a variable to adjust away, never a boundary.",
+      "evidence": "Hero leads hold tissue-agnostically across unrelated indications."
+    },
+    {
+      "id": "prestige",
+      "title": "The known-gene prior",
+      "expert": "Evaluates hypotheses about famous genes (KRAS, TP53). Won't fund a hypothesis about a gene they've never heard of.",
+      "agent": "Ranks all 17,181 genes with zero prestige prior; surfaces the functionally-validated long tail.",
+      "evidence": "Hero gene ID2 is a developmental TF, not a PARP/DDR gene \u2014 invisible to a domain prior."
+    },
+    {
+      "id": "control",
+      "title": "Multivariate confound control",
+      "expert": "Reasons over one or two variables; cannot residualize the whole genome against latent axes in their head.",
+      "agent": "Residualizes response + all genes against tissue + latent methylome PCs (SVA/RUV-style) simultaneously.",
+      "evidence": "Caught a 9p21 copy-number artifact masquerading as methylation \u2014 a confound naive analysis reports as a finding."
+    }
+  ],
+  "funnel": [
+    {
+      "stage": "All promoter genes",
+      "n": 17181,
+      "note": "unbiased, genome-wide"
+    },
+    {
+      "stage": "Global-axis-controlled response candidates",
+      "n": "~300\u2013500/drug",
+      "note": "tissue + methylome PCs removed"
+    },
+    {
+      "stage": "Functionally silenced (RNA-seq)",
+      "n": "~160/drug",
+      "note": "promoter-meth \u2193 own expression"
+    },
+    {
+      "stage": "Externally replicated",
+      "n": 7,
+      "note": "PRISM (+CTRP); same direction, p<0.05"
+    }
+  ],
+  "hero_cards": [
+    {
+      "drug": "Olaparib",
+      "gene": "ID2",
+      "direction": "sensitive",
+      "gdsc_r": -0.33,
+      "prism_r": -0.122,
+      "prism_p": 0.0229,
+      "ctrp_r": -0.252,
+      "ctrp_p": 0.0,
+      "silencing_r": -0.214,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "gene_note": "Inhibitor of DNA-binding 2 \u2014 a developmental/differentiation transcription factor. NOT a canonical PARP/DDR gene; no expert would prioritize it for a PARP inhibitor.",
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 1,
+        "by_tissue": [
+          {
+            "tissue": "Haematopoietic and Lymphoid",
+            "n": 94,
+            "rho": -0.41,
+            "p": 0.0
+          },
+          {
+            "tissue": "Skin",
+            "n": 35,
+            "rho": -0.246,
+            "p": 0.1538
+          },
+          {
+            "tissue": "Esophagus",
+            "n": 17,
+            "rho": -0.193,
+            "p": 0.4585
+          },
+          {
+            "tissue": "Bladder",
+            "n": 14,
+            "rho": -0.176,
+            "p": 0.5472
+          },
+          {
+            "tissue": "Breast",
+            "n": 41,
+            "rho": -0.165,
+            "p": 0.304
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 36,
+            "rho": -0.09,
+            "p": 0.6007
+          },
+          {
+            "tissue": "Lung",
+            "n": 116,
+            "rho": -0.065,
+            "p": 0.489
+          },
+          {
+            "tissue": "Stomach",
+            "n": 20,
+            "rho": -0.035,
+            "p": 0.8824
+          }
+        ]
+      }
+    },
+    {
+      "drug": "Olaparib",
+      "gene": "OTULINL",
+      "direction": "sensitive",
+      "gdsc_r": -0.292,
+      "prism_r": -0.11,
+      "prism_p": 0.0395,
+      "ctrp_r": -0.228,
+      "ctrp_p": 0.0,
+      "silencing_r": -0.414,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "gene_note": "OTULIN-like (deubiquitinase-related). Essentially uncharacterized in drug response.",
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 4,
+        "significant": 2,
+        "by_tissue": [
+          {
+            "tissue": "Haematopoietic and Lymphoid",
+            "n": 95,
+            "rho": -0.346,
+            "p": 0.0006
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 37,
+            "rho": -0.333,
+            "p": 0.0442
+          },
+          {
+            "tissue": "Kidney",
+            "n": 15,
+            "rho": -0.211,
+            "p": 0.451
+          },
+          {
+            "tissue": "Central Nervous System",
+            "n": 30,
+            "rho": -0.2,
+            "p": 0.2882
+          },
+          {
+            "tissue": "Pancreas",
+            "n": 22,
+            "rho": 0.021,
+            "p": 0.9265
+          },
+          {
+            "tissue": "Esophagus",
+            "n": 19,
+            "rho": 0.03,
+            "p": 0.9034
+          },
+          {
+            "tissue": "Bladder",
+            "n": 15,
+            "rho": 0.064,
+            "p": 0.8199
+          },
+          {
+            "tissue": "Peripheral Nervous System",
+            "n": 11,
+            "rho": 0.064,
+            "p": 0.8512
+          }
+        ]
+      }
+    },
+    {
+      "drug": "Olaparib",
+      "gene": "TRIM32",
+      "direction": "sensitive",
+      "gdsc_r": -0.281,
+      "prism_r": -0.114,
+      "prism_p": 0.033,
+      "ctrp_r": -0.194,
+      "ctrp_p": 0.0001,
+      "silencing_r": -0.098,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "gene_note": "TRIM-family E3 ubiquitin ligase. Not a known PARP-response gene.",
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1,
+        "by_tissue": [
+          {
+            "tissue": "Haematopoietic and Lymphoid",
+            "n": 95,
+            "rho": -0.403,
+            "p": 0.0001
+          },
+          {
+            "tissue": "Peripheral Nervous System",
+            "n": 11,
+            "rho": -0.364,
+            "p": 0.2716
+          },
+          {
+            "tissue": "Skin",
+            "n": 35,
+            "rho": -0.246,
+            "p": 0.154
+          },
+          {
+            "tissue": "Bladder",
+            "n": 15,
+            "rho": -0.125,
+            "p": 0.6571
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 37,
+            "rho": -0.118,
+            "p": 0.4864
+          },
+          {
+            "tissue": "Lung",
+            "n": 116,
+            "rho": -0.082,
+            "p": 0.383
+          },
+          {
+            "tissue": "Central Nervous System",
+            "n": 29,
+            "rho": -0.073,
+            "p": 0.7051
+          },
+          {
+            "tissue": "Head and Neck",
+            "n": 16,
+            "rho": -0.046,
+            "p": 0.8668
+          }
+        ]
+      }
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "NACC2",
+      "direction": "resistant",
+      "gdsc_r": 0.299,
+      "prism_r": 0.134,
+      "prism_p": 0.0103,
+      "ctrp_r": 0.296,
+      "ctrp_p": 0.00047,
+      "silencing_r": -0.377,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "gene_note": "",
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 2,
+        "by_tissue": [
+          {
+            "tissue": "Esophagus",
+            "n": 17,
+            "rho": -0.245,
+            "p": 0.343
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 37,
+            "rho": -0.217,
+            "p": 0.1961
+          },
+          {
+            "tissue": "Ovary",
+            "n": 26,
+            "rho": -0.03,
+            "p": 0.8852
+          },
+          {
+            "tissue": "Kidney",
+            "n": 15,
+            "rho": -0.029,
+            "p": 0.9195
+          },
+          {
+            "tissue": "Peripheral Nervous System",
+            "n": 11,
+            "rho": -0.027,
+            "p": 0.9366
+          },
+          {
+            "tissue": "Head and Neck",
+            "n": 16,
+            "rho": -0.015,
+            "p": 0.9569
+          },
+          {
+            "tissue": "Central Nervous System",
+            "n": 30,
+            "rho": -0.01,
+            "p": 0.9563
+          },
+          {
+            "tissue": "Breast",
+            "n": 41,
+            "rho": 0.002,
+            "p": 0.9905
+          }
+        ]
+      }
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "TSPAN13",
+      "direction": "sensitive",
+      "gdsc_r": -0.261,
+      "prism_r": -0.159,
+      "prism_p": 0.0256,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.171,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "gene_note": "Tetraspanin-13, a membrane scaffold. No prior link to temozolomide.",
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 1,
+        "by_tissue": [
+          {
+            "tissue": "Central Nervous System",
+            "n": 29,
+            "rho": -0.372,
+            "p": 0.0472
+          },
+          {
+            "tissue": "Head and Neck",
+            "n": 16,
+            "rho": -0.354,
+            "p": 0.1788
+          },
+          {
+            "tissue": "Pancreas",
+            "n": 22,
+            "rho": -0.167,
+            "p": 0.4579
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 36,
+            "rho": -0.161,
+            "p": 0.3469
+          },
+          {
+            "tissue": "Skin",
+            "n": 34,
+            "rho": -0.15,
+            "p": 0.3987
+          },
+          {
+            "tissue": "Kidney",
+            "n": 15,
+            "rho": -0.05,
+            "p": 0.8584
+          },
+          {
+            "tissue": "Ovary",
+            "n": 26,
+            "rho": -0.047,
+            "p": 0.8206
+          },
+          {
+            "tissue": "Haematopoietic and Lymphoid",
+            "n": 92,
+            "rho": 0.014,
+            "p": 0.8914
+          }
+        ]
+      }
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "gdsc_r": -0.205,
+      "prism_r": -0.104,
+      "prism_p": 0.0464,
+      "ctrp_r": -0.03,
+      "ctrp_p": 0.72866,
+      "silencing_r": -0.394,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "gene_note": "NEDD4-binding protein 3. Not a known MEK-pathway gene.",
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 11,
+        "significant": 2,
+        "by_tissue": [
+          {
+            "tissue": "Head and Neck",
+            "n": 16,
+            "rho": -0.444,
+            "p": 0.0848
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 37,
+            "rho": -0.332,
+            "p": 0.0448
+          },
+          {
+            "tissue": "Skin",
+            "n": 34,
+            "rho": -0.299,
+            "p": 0.0862
+          },
+          {
+            "tissue": "Breast",
+            "n": 40,
+            "rho": -0.265,
+            "p": 0.0988
+          },
+          {
+            "tissue": "Lung",
+            "n": 117,
+            "rho": -0.197,
+            "p": 0.0332
+          },
+          {
+            "tissue": "Haematopoietic and Lymphoid",
+            "n": 96,
+            "rho": -0.192,
+            "p": 0.0605
+          },
+          {
+            "tissue": "Esophagus",
+            "n": 18,
+            "rho": -0.171,
+            "p": 0.4984
+          },
+          {
+            "tissue": "Ovary",
+            "n": 26,
+            "rho": -0.15,
+            "p": 0.4632
+          }
+        ]
+      }
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "COL4A3",
+      "direction": "sensitive",
+      "gdsc_r": -0.104,
+      "prism_r": -0.106,
+      "prism_p": 0.041,
+      "ctrp_r": -0.155,
+      "ctrp_p": 0.07229,
+      "silencing_r": -0.335,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "gene_note": "",
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1,
+        "by_tissue": [
+          {
+            "tissue": "Esophagus",
+            "n": 20,
+            "rho": -0.502,
+            "p": 0.0243
+          },
+          {
+            "tissue": "Ovary",
+            "n": 26,
+            "rho": -0.296,
+            "p": 0.1415
+          },
+          {
+            "tissue": "Peripheral Nervous System",
+            "n": 11,
+            "rho": -0.191,
+            "p": 0.5739
+          },
+          {
+            "tissue": "Large Intestine",
+            "n": 37,
+            "rho": -0.159,
+            "p": 0.347
+          },
+          {
+            "tissue": "Skin",
+            "n": 35,
+            "rho": -0.151,
+            "p": 0.3866
+          },
+          {
+            "tissue": "Stomach",
+            "n": 20,
+            "rho": -0.116,
+            "p": 0.6269
+          },
+          {
+            "tissue": "Central Nervous System",
+            "n": 30,
+            "rho": -0.113,
+            "p": 0.5529
+          },
+          {
+            "tissue": "Lung",
+            "n": 117,
+            "rho": -0.062,
+            "p": 0.5074
+          }
+        ]
+      }
+    }
+  ],
+  "honesty": [
+    "Effect sizes are modest (single-gene methylation\u2192response is weak/diffuse). The claim is directional concordance across independent screens + functional silencing \u2014 not a large effect.",
+    "These are cell-line results: defensible novel HYPOTHESES (evidence ladder ~L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert then adjudicates. It removes the structural gate; it does not replace expert judgment."
+  ]
+}

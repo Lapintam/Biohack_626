@@ -1,0 +1,387 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Stomach",
+  "n_leads": 28,
+  "leads": [
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "KCTD15",
+      "direction": "resistant",
+      "tissue_rho": 0.674,
+      "tissue_p": 0.0011,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Kidney"
+      ]
+    },
+    {
+      "drug": "Dabrafenib",
+      "gene": "KDELC1",
+      "direction": "resistant",
+      "tissue_rho": 0.609,
+      "tissue_p": 0.0044,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Afatinib",
+      "gene": "TBC1D30",
+      "direction": "sensitive",
+      "tissue_rho": -0.602,
+      "tissue_p": 0.005,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "CNKSR1",
+      "direction": "resistant",
+      "tissue_rho": 0.61,
+      "tissue_p": 0.0056,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "LCN2",
+      "direction": "resistant",
+      "tissue_rho": 0.573,
+      "tissue_p": 0.013,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SLC7A4",
+      "direction": "resistant",
+      "tissue_rho": 0.526,
+      "tissue_p": 0.0173,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Skin",
+        "Esophagus",
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Cisplatin",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.514,
+      "tissue_p": 0.0244,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Skin",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "tissue_rho": 0.505,
+      "tissue_p": 0.0276,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "CAPN2",
+      "direction": "sensitive",
+      "tissue_rho": -0.502,
+      "tissue_p": 0.0286,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "CRYBG2",
+      "direction": "resistant",
+      "tissue_rho": 0.501,
+      "tissue_p": 0.0289,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Ovary"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "TRNP1",
+      "direction": "sensitive",
+      "tissue_rho": -0.483,
+      "tissue_p": 0.0311,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "TAGLN",
+      "direction": "resistant",
+      "tissue_rho": 0.479,
+      "tissue_p": 0.0326,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Central Nervous System",
+        "Breast",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "CAPN14",
+      "direction": "sensitive",
+      "tissue_rho": -0.457,
+      "tissue_p": 0.0427,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "tissue_rho": 0.467,
+      "tissue_p": 0.0439,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "tissue_rho": 0.462,
+      "tissue_p": 0.0466,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Cisplatin",
+      "gene": "MRPL35",
+      "direction": "sensitive",
+      "tissue_rho": -0.482,
+      "tissue_p": 0.0503,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Breast",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "CYP39A1",
+      "direction": "sensitive",
+      "tissue_rho": -0.442,
+      "tissue_p": 0.0508,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "NNMT",
+      "direction": "sensitive",
+      "tissue_rho": -0.454,
+      "tissue_p": 0.0512,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "KCTD11",
+      "direction": "sensitive",
+      "tissue_rho": -0.431,
+      "tissue_p": 0.058,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Niraparib",
+      "gene": "ABCA17P",
+      "direction": "sensitive",
+      "tissue_rho": -0.425,
+      "tissue_p": 0.0695,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Pancreas",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "SYNPO",
+      "direction": "sensitive",
+      "tissue_rho": -0.421,
+      "tissue_p": 0.0726,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SP140L",
+      "direction": "sensitive",
+      "tissue_rho": -0.417,
+      "tissue_p": 0.0755,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Central Nervous System",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "WLS",
+      "direction": "sensitive",
+      "tissue_rho": -0.406,
+      "tissue_p": 0.0756,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "AFDN",
+      "direction": "resistant",
+      "tissue_rho": 0.392,
+      "tissue_p": 0.087,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "DOCK9",
+      "direction": "sensitive",
+      "tissue_rho": -0.388,
+      "tissue_p": 0.091,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Esophagus",
+        "Ovary",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Niraparib",
+      "gene": "PINK1",
+      "direction": "sensitive",
+      "tissue_rho": -0.408,
+      "tissue_p": 0.0927,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "NNMT",
+      "direction": "resistant",
+      "tissue_rho": 0.396,
+      "tissue_p": 0.0928,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Central Nervous System",
+        "Bladder",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "SH3PXD2A",
+      "direction": "resistant",
+      "tissue_rho": 0.379,
+      "tissue_p": 0.0994,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Bladder",
+    "Breast",
+    "Central Nervous System",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Kidney",
+    "Lung",
+    "Ovary",
+    "Pancreas",
+    "Skin"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "type": "drug",
+  "drug": "Olaparib",
+  "target": "PARP1, PARP2",
+  "pathway": "Genome integrity",
+  "funnel": {
+    "genes_scanned": 13799,
+    "response_candidates": 40,
+    "functionally_silenced": 11,
+    "externally_replicated": 10,
+    "lines": 448
+  },
+  "leads": [
+    {
+      "gene": "ID2",
+      "direction": "sensitive",
+      "gdsc_r": -0.33,
+      "prism_r": -0.122,
+      "prism_p": 0.0229,
+      "ctrp_r": -0.252,
+      "ctrp_p": 0.0,
+      "silencing_r": -0.214,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 1
+      },
+      "gene_note": "Inhibitor of DNA-binding 2 \u2014 a developmental/differentiation transcription factor. NOT a canonical PARP/DDR gene; no expert would prioritize it for a PARP inhibitor."
+    },
+    {
+      "gene": "TRIM32",
+      "direction": "sensitive",
+      "gdsc_r": -0.281,
+      "prism_r": -0.114,
+      "prism_p": 0.033,
+      "ctrp_r": -0.194,
+      "ctrp_p": 0.0001,
+      "silencing_r": -0.098,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1
+      },
+      "gene_note": "TRIM-family E3 ubiquitin ligase. Not a known PARP-response gene."
+    },
+    {
+      "gene": "N6AMT1",
+      "direction": "sensitive",
+      "gdsc_r": -0.436,
+      "prism_r": -0.072,
+      "prism_p": 0.2504,
+      "ctrp_r": -0.302,
+      "ctrp_p": 0.0,
+      "silencing_r": -0.17,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 12,
+        "same_direction": 7,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "SLC38A6",
+      "direction": "sensitive",
+      "gdsc_r": -0.344,
+      "prism_r": -0.045,
+      "prism_p": 0.418,
+      "ctrp_r": -0.168,
+      "ctrp_p": 0.00082,
+      "silencing_r": -0.099,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "ENTPD7",
+      "direction": "sensitive",
+      "gdsc_r": -0.335,
+      "prism_r": -0.09,
+      "prism_p": 0.0982,
+      "ctrp_r": -0.238,
+      "ctrp_p": 0.0,
+      "silencing_r": -0.163,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "PINK1",
+      "direction": "sensitive",
+      "gdsc_r": -0.325,
+      "prism_r": -0.072,
+      "prism_p": 0.1893,
+      "ctrp_r": -0.146,
+      "ctrp_p": 0.00376,
+      "silencing_r": -0.098,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "WWC1",
+      "direction": "sensitive",
+      "gdsc_r": -0.324,
+      "prism_r": -0.09,
+      "prism_p": 0.1011,
+      "ctrp_r": -0.226,
+      "ctrp_p": 1e-05,
+      "silencing_r": -0.373,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "DHCR24",
+      "direction": "sensitive",
+      "gdsc_r": -0.322,
+      "prism_r": -0.043,
+      "prism_p": 0.4181,
+      "ctrp_r": -0.183,
+      "ctrp_p": 0.00024,
+      "silencing_r": -0.267,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "LINC00866",
+      "direction": "sensitive",
+      "gdsc_r": -0.321,
+      "prism_r": -0.035,
+      "prism_p": 0.5275,
+      "ctrp_r": -0.162,
+      "ctrp_p": 0.00137,
+      "silencing_r": -0.144,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "GOLGA7B",
+      "direction": "sensitive",
+      "gdsc_r": -0.32,
+      "prism_r": -0.028,
+      "prism_p": 0.5986,
+      "ctrp_r": -0.161,
+      "ctrp_p": 0.00134,
+      "silencing_r": -0.205,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "TUBB2A",
+      "direction": "sensitive",
+      "gdsc_r": -0.288,
+      "prism_r": -0.057,
+      "prism_p": 0.2888,
+      "ctrp_r": -0.067,
+      "ctrp_p": 0.1828,
+      "silencing_r": -0.267,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 0
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "ID2",
+    "direction": "sensitive",
+    "gdsc_r": -0.33,
+    "prism_r": -0.122,
+    "prism_p": 0.0229,
+    "ctrp_r": -0.252,
+    "ctrp_p": 0.0,
+    "silencing_r": -0.214,
+    "screens": [
+      "GDSC",
+      "PRISM",
+      "CTRP"
+    ],
+    "n_screens": 3,
+    "evidence_level": "L5",
+    "replicated": true,
+    "recurrence": {
+      "tissues_tested": 14,
+      "same_direction": 9,
+      "significant": 1
+    },
+    "gene_note": "Inhibitor of DNA-binding 2 \u2014 a developmental/differentiation transcription factor. NOT a canonical PARP/DDR gene; no expert would prioritize it for a PARP inhibitor."
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

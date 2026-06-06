@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Strata — System Map</title>
+<style>
+  @page { size: letter; margin: 15mm 14mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    color: #1a1a1f; font-size: 11px; line-height: 1.52; margin: 0;
+  }
+  .doc { max-width: 740px; margin: 0 auto; }
+  .mono { font-family: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; }
+
+  header { border-bottom: 2px solid #0f62fe; padding-bottom: 12px; margin-bottom: 18px; }
+  .kicker { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #0f62fe; font-weight: 700; margin: 0 0 5px; }
+  h1 { font-size: 24px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 7px; color: #0a0a0f; }
+  .sub { font-size: 11px; color: #52525b; margin: 0; }
+
+  .intro {
+    background: #eef4ff; border-left: 3px solid #0f62fe; border-radius: 3px;
+    padding: 11px 15px; margin: 0 0 20px; font-size: 11px; line-height: 1.5;
+  }
+  .intro strong { color: #0a0a0f; }
+
+  section { margin-bottom: 18px; }
+  h2 { font-size: 14.5px; letter-spacing: -0.01em; margin: 0 0 9px; color: #0a0a0f; display: flex; align-items: baseline; gap: 9px; }
+  h2 .n {
+    font-family: "SF Mono", Menlo, monospace; font-size: 11px; color: #fff; background: #0f62fe;
+    width: 20px; height: 20px; min-width: 20px; border-radius: 3px; display: inline-flex;
+    align-items: center; justify-content: center; font-weight: 700;
+  }
+  h3 { font-size: 11.5px; margin: 13px 0 5px; color: #0a0a0f; }
+  p { margin: 0 0 8px; }
+  strong { color: #0a0a0f; }
+  em { color: #3f3f46; }
+
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 10px; }
+  th { text-align: left; background: #f0f4fb; color: #3f3f46; font-weight: 700; padding: 6px 8px; border: 1px solid #dde5f1;
+       text-transform: uppercase; letter-spacing: 0.04em; font-size: 8.6px; }
+  td { padding: 6px 8px; border: 1px solid #e7ecf4; vertical-align: top; }
+  td code, p code, li code { font-family: "SF Mono", Menlo, monospace; font-size: 9.5px; background: #f3f5f9; padding: 1px 4px; border-radius: 2px; color: #0a3a8f; }
+  .num { color: #0f62fe; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  pre.flow {
+    font-family: "SF Mono", Menlo, monospace; font-size: 8.8px; line-height: 1.45; color: #2a2a30;
+    background: #f6f8fc; border: 1px solid #e2e8f3; border-radius: 3px; padding: 12px 14px;
+    margin: 6px 0 10px; white-space: pre; overflow: visible;
+  }
+
+  .corebox { border: 1px solid #b9c9ec; background: #f4f8ff; border-radius: 3px; padding: 11px 15px; margin: 8px 0 12px; }
+  .corebox .lbl { font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; color: #0f62fe; font-weight: 700; display: block; margin-bottom: 5px; }
+  .corebox p:last-child { margin-bottom: 0; }
+
+  .rails { border: 1.5px solid #e0a93c; background: #fdf7ec; border-radius: 4px; padding: 12px 16px 8px; margin: 6px 0 4px; }
+  .rails .lbl { font-size: 9.5px; letter-spacing: 0.09em; text-transform: uppercase; color: #b06f17; font-weight: 700; display: block; margin-bottom: 7px; }
+  ol.rails-list { margin: 0; padding-left: 18px; }
+  ol.rails-list li { margin-bottom: 6px; font-size: 10.3px; line-height: 1.5; color: #3a2f1c; }
+  ol.rails-list li strong { color: #1a1a1f; }
+
+  ul.tight { margin: 4px 0 8px; padding-left: 18px; }
+  ul.tight li { margin-bottom: 4px; }
+
+  footer { margin-top: 16px; font-size: 9px; color: #a1a1aa; border-top: 1px solid #ececf0; padding-top: 7px; }
+  h2, table, .corebox, .rails, pre.flow, .intro { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header>
+    <p class="kicker">MethylGKB · Strata · internal reference</p>
+    <h1>System Map — Data Assets &amp; Inference Rules</h1>
+    <p class="sub">A precise, source-derived inventory of what we have. 2026-06-05 · live demo: methylkb.vercel.app/strata.html</p>
+  </header>
+
+  <div class="intro">
+    <strong>What this is:</strong> every data asset (what it is, where it came from, exact shape), every inference rule (the methods that turn data into claims, with exact parameters), how they compose, and the epistemic rails that keep it honest. All raw data is external + public; everything else is derived.
+  </div>
+
+  <section>
+    <h2><span class="n">1</span> Data assets</h2>
+    <p>Five real external datasets. Two non-negotiable facts: GDSC methylation is <strong>gene-level imputed, not CpG-island</strong> (one &beta; per gene), and the GDSC join key is <code>SANGER_MODEL_ID</code> &rarr; <code>COSMIC_ID</code>.</p>
+
+    <h3>1A · GDSC — drug-response substrate (Cell Model Passports / Sanger)</h3>
+    <table>
+      <thead><tr><th style="width:18%">Asset</th><th style="width:30%">File · size</th><th style="width:30%">Shape / contents</th><th style="width:22%">Loader</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Methylation</strong></td><td><code>methylation_imputed.csv.gz</code> · 59 MB gz (~175 MB raw) · figshare 43146652</td><td>Gene-level imputed &beta;; <span class="num">~1,055 lines × 14,608 genes</span>, &beta; &isin; [0,1]</td><td><code>load_gdsc_methylation()</code></td></tr>
+        <tr><td><strong>Drug response</strong></td><td><code>GDSC2_fitted_dose_response_27Oct23.xlsx</code> · 21 MB</td><td>Long: <span class="num">242,036 rows, 286 drugs, 969 lines</span>. <code>COSMIC_ID, drug_name, ln_ic50, auc</code>. <strong>Lower AUC = more sensitive.</strong></td><td><code>load_gdsc_drug_response()</code></td></tr>
+        <tr><td><strong>Annotations</strong></td><td><code>model_list_20260420.csv</code> · 936 KB</td><td>COSMIC-indexed: cell_line_name, tissue, cancer_type, SIDM</td><td><code>load_gdsc_annotations()</code></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:10px;color:#52525b;">Loaders map SIDM&rarr;COSMIC via <code>model_list</code> and drop rows lacking a COSMIC_ID (methylation 1,055/1,523 retained; all 969 drug lines map). Gene-level imputation is <em>why MGMT&rarr;temozolomide is null here</em> — see rails.</p>
+
+    <h3>1B · TCGA-LAML — real-patient survival axis (UCSC Xena, GDC hub)</h3>
+    <table>
+      <thead><tr><th style="width:18%">Asset</th><th style="width:30%">File · size</th><th style="width:30%">Shape / contents</th><th style="width:22%">Loader</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Methylation</strong></td><td><code>TCGA-LAML.methylation450.tsv.gz</code> · 633 MB</td><td>Illumina <strong>450K</strong> &beta;, probes&times;samples &rarr; transposed; <span class="num">169 samples × ~417,326 probes</span></td><td><code>load_tcga_methylation()</code></td></tr>
+        <tr><td><strong>Survival</strong></td><td><code>TCGA-LAML.survival.tsv.gz</code> · 4 KB</td><td><code>os_time</code> (days), <code>os_event</code> (1=dead/0=censored); <span class="num">~169 join</span></td><td><code>load_tcga_clinical()</code></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:10px;color:#52525b;">Join on TCGA aliquot barcode (identical in both). Methylation QC: drop probes missing &gt;20% of samples, fill remaining NaN with per-probe mean. Only outcome is <strong>survival</strong>, not drug response.</p>
+
+    <h3>1C · Not available (named so we don't chase it)</h3>
+    <p><strong>BeatAML methylation + ex-vivo drug AUC</strong> — the ideal substrate (blood methylation + real drug response) — is <strong>dbGaP <code>phs001657</code>, controlled-access</strong>. This locked dataset is itself the pitch's "why these subgroups stay hidden." · Constants: <code>N_TOP_FEATURES=2000</code>, <code>RANDOM_STATE=0</code>.</p>
+
+    <h3>1D · &#9888; Methylation RESOLUTION — gene-level now, promoter-level as the upgrade</h3>
+    <div class="rails">
+      <span class="lbl">Under review 2026-06-05 · possible pre-Saturday change · the most important data caveat</span>
+      <p style="font-size:10.3px;color:#3a2f1c;margin-bottom:6px;"><strong>What we have (and who did it):</strong> GDSC methylation is <strong>provider-imputed, gene-level</strong> — one &beta; per gene (~14,608), distributed that way by Cell Model Passports (<code>…imputed_methylation.csv</code>; columns are gene symbols). The assay is probe-level (~450k CpG sites); CMP collapsed probes&rarr;genes and imputed missing values. <strong>We did NOT aggregate or impute it</strong> — we consume it as-is. (Our only imputation anywhere is a light per-probe mean-fill on the probe-level TCGA matrix, §1B.)</p>
+      <p style="font-size:10.3px;color:#3a2f1c;margin-bottom:6px;"><strong>Why it matters:</strong> the methylation that <em>regulates</em> a gene sits at its promoter CpG island, and promoter vs gene-body can differ or oppose; averaging the whole gene into one number washes out the promoter-specific signal. This is precisely why <strong>MGMT&rarr;temozolomide is null</strong> here (a promoter event); CDKN2A/MTAP survived because their signal is strong enough to persist through the averaging.</p>
+      <p style="font-size:10.3px;color:#3a2f1c;margin-bottom:0;"><strong>Upgrade path &rarr; promoter resolution</strong> (verify current files first): <strong>CCLE RRBS promoter methylation</strong> (DepMap; ~843 lines × ~17,182 promoter regions) joined to GDSC drug AUC or DepMap PRISM by cell-line ID; or a GEO Illumina 450K cell-line series. <code>rank_response_markers</code> is feature-agnostic — point it at a promoter/probe &beta;-matrix and the same Spearman+FDR scan runs at higher resolution. Cost: more features, fewer lines (~843 for CCLE), a cell-line ID join. Payoff: likely recovers MGMT&rarr;TMZ and sharpens every marker.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span> Inference rules</h2>
+    <div class="corebox">
+      <span class="lbl">THE core discovery rule — <code>rank_response_markers</code></span>
+      <p>For each of the ~14,608 genes: <code>spearmanr(gene &beta;, outcome AUC)</code> over shared non-NaN samples (n &asymp; 960) &rarr; <strong>Benjamini-Hochberg FDR</strong> &rarr; keep <strong>q &lt; 0.1</strong> &rarr; sort by <strong>|rho| desc</strong>. Returns <code>[gene, rho, pvalue, qvalue, n]</code>.</p>
+      <p><strong>Sign:</strong> negative rho = methylation marks <em>sensitivity</em>; positive = resistance. <strong>It is a hypothesis-generating screen — it selects on the outcome</strong> (see rails). Outcome-agnostic: swap drug AUC for survival/toxicity and it is the same rule.</p>
+    </div>
+    <ul class="tight">
+      <li><strong><code>discover_responder_subgroup</code></strong> — median-split lines on the top marker's &beta; (1=high, 0=low) &rarr; <code>test_drug_association</code>. Turns the continuous marker into an operational responder subgroup.</li>
+      <li><strong><code>test_drug_association</code></strong> — Kruskal-Wallis across cluster AUC distributions; responder = min-mean-AUC cluster; <code>effect = median(AUC) − responder mean</code>; graded.</li>
+      <li><strong><code>score_responder</code> thresholds</strong> — delta = median − cluster mean: <code>++</code> &gt;0.20 · <code>+</code> &gt;0.07 · <code>neutral</code> [−0.07,0.07] · <code>−</code> &lt;−0.07 · <code>−−</code> &lt;−0.20. (Real split effects ~0.03–0.05 &rarr; usually reads <code>neutral</code> by design.)</li>
+      <li><strong><code>select_variable_features</code> + <code>cluster_samples</code></strong> — top-variance features + KMeans (auto-k by silhouette, k&isin;[2,6]). <strong>NOT discovery</strong> — a lineage detector, used only for the UMAP landscape.</li>
+      <li><strong><code>differential_cpgs</code></strong> — per-gene Mann-Whitney subgroup-vs-rest for driver lists. <strong><code>annotate_cpgs</code></strong> is identity (feature = gene symbol).</li>
+      <li><strong><code>test_survival_association</code></strong> — multivariate log-rank + per-cluster KM. Currently fed unsupervised clusters &rarr; null. Marker-driven survival scan <em>not yet built</em>.</li>
+    </ul>
+    <h3>The agent (<code>loop.py</code> + <code>tools.py</code>)</h3>
+    <p>Four JSON-safe tools (<code>list_drugs</code>, <code>rank_markers</code>, <code>evaluate_subgroup</code>, <code>write_opportunity_brief</code>). Protocol: <code>list_drugs &rarr; rank_markers &rarr; pick the most interpretable top marker (prefer known biology, e.g. CDKN2A/MTAP for CDK4/6i) &rarr; evaluate_subgroup &rarr; write brief</code>. Two paths, identical output shape: <strong><code>_run_llm</code></strong> (Anthropic tool-use, <code>claude-opus-4-8</code>, MAX_TURNS=10) and <strong><code>_run_scripted</code></strong> (no key). Any API error &rarr; auto-fallback to scripted, never crashes. <code>_KNOWN_CONTROL_GENES={CDKN2A, MTAP}</code> fires the "recovers known biology" framing.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span> How it composes</h2>
+<pre class="flow">GDSC methylation  ┐
+(1055×14608 genes)├─► rank_response_markers ──► ranked markers ──┐
+GDSC drug AUC ────┘     Spearman/gene + FDR        (rho, q)       │
+   (286 drugs)                   │                                │
+                                 ▼ pick interpretable top marker  ├─► agent brief
+                      discover_responder_subgroup                 │   (LLM or scripted)
+                         median-split → Kruskal                   │
+                                 ▼                                 │
+                      figures (UMAP/AUC/heatmap) + driver genes ───┘
+                                                                   └─► site/demo/{drug}.json
+
+TCGA methylation + survival ─► cluster_samples (unsupervised) ─► log-rank + KM  (currently NULL)</pre>
+    <p><strong>Essence:</strong> for a given outcome, correlate every gene's methylation against it, FDR-rank the markers, cut the responder subgroup at the top marker, agent narrates + writes it up — with a positive control recovering known biology as the trust anchor.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span> Epistemic rails — the load-bearing part</h2>
+    <div class="rails">
+      <span class="lbl">These must survive a hostile reviewer</span>
+      <ol class="rails-list">
+        <li><strong>Trust comes from recovering known biology, not the subgroup p.</strong> The screen recovers CDKN2A/MTAP &rarr; Palbociclib cold (q=7.8e−25). That licenses the novel hits.</li>
+        <li><strong>The screen selects on the outcome &rarr; the median-split p is CIRCULAR</strong> — not independent validation. Always <strong>lead with the continuous Spearman rho / q-value</strong>; the split is just the operational cut. Novel hits = <strong>hypotheses</strong>.</li>
+        <li><strong>Effect sizes are small (~0.03–0.05 &Delta;AUC); grades read "neutral" despite tiny p</strong> (inflated by n&asymp;960). Never headline the split effect.</li>
+        <li><strong>Methylation is gene-level imputed (provider-side), not CpG-island.</strong> Consequence: <strong>MGMT&rarr;temozolomide is NULL</strong> (rho=−0.018, p=0.58) — promoter-island silencing is averaged out. That is why the control is CDKN2A/MTAP, not MGMT. <strong>&rarr; resolution upgrade path in §1D (under review, possibly pre-Saturday).</strong></li>
+        <li><strong>Unsupervised clustering is a lineage detector</strong> (blood vs solid), not the discovery axis.</li>
+        <li><strong>The TCGA survival split is an honest NULL</strong> (log-rank p=0.84). Kept as a real-patient landscape, never claimed as a result.</li>
+        <li><strong>GDSC = lab cell lines, public data — proof-of-method, not a clinical product.</strong> Novel hits are leads to test.</li>
+        <li>A future survival / any-outcome marker scan <strong>inherits the same leakage</strong> — frame it exploratory; validate held-out/external before any claim.</li>
+        <li><strong>Don't conflate tissue compartments.</strong> Tumor (PD), liver (PK), and blood (host/immune) methylomes are largely tissue-specific and not interchangeable; blood is a poor proxy for liver/tumor at regulatory loci. GDSC = <strong>tumor-only</strong>. In a clinical cohort a subgroup is a correlation, not a mechanism, without metadata — see §7.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span> Established results</h2>
+    <table>
+      <thead><tr><th style="width:20%">Role</th><th style="width:30%">Marker &rarr; Drug</th><th style="width:12%">rho</th><th style="width:14%">q</th><th style="width:24%">Note</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Positive control</strong></td><td>CDKN2A &rarr; Palbociclib</td><td class="num">−0.336</td><td class="num">7.8e−25</td><td>rank 120/12,333; top marker <strong>MTAP</strong> −0.440, q=6.3e−43 (9p21 co-deletion)</td></tr>
+        <tr><td>Novel hit A</td><td>DAPK1 &rarr; Luminespib</td><td class="num">−0.346</td><td class="num">3.2e−26</td><td>HSP90i; top marker COBL. Hypothesis.</td></tr>
+        <tr><td>Novel hit B</td><td>FKBP1A / RASSF1 &rarr; Vorinostat</td><td class="num">+0.607 / +0.419</td><td class="num">1.3e−93</td><td>HDACi; resistance-direction. Hypothesis.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span> Derived artifacts &amp; what generalizes</h2>
+    <ul class="tight">
+      <li><strong><code>site/demo/</code></strong> (served on Vercel): <code>Palbociclib.json</code> (live agent, <code>mode:llm</code>), <code>Luminespib.json</code> (scripted), figures, <code>scale.json</code>. The public page <strong>replays these — no API calls / no key in the browser</strong>.</li>
+      <li><strong><code>notes/</code></strong>: GDSC_SCHEMA, TCGA_SCHEMA, MGMT_GATE, DEMO_HITS, NOVEL_HITS, NVIDIA_PITCH. <strong><code>docs/</code></strong>: spec, plan, explainer, this map.</li>
+      <li><strong>Generalization:</strong> the engine only needs <code>(methylation matrix, outcome vector keyed by sample)</code> — outcome-agnostic by construction. Drug response is fully wired (286 drugs); survival exists as data + an unsupervised null; a <strong>marker-driven survival scan is not yet built</strong>.</li>
+      <li><strong>In-flight (parked, branch <code>feat/strata-explorer</code>):</strong> a static explorer over all 286 drugs + survival axis + extensible outcome manifest, plus a Fly-deployable FastAPI backend for live scans (front-end static&harr;live switch). Nothing committed yet.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span> Tissue compartments &amp; mechanistic attribution</h2>
+    <p>DNA methylation is <strong>strongly tissue-specific</strong> — one compartment's methylome is a <strong>poor proxy</strong> for another's. Blood&harr;liver concordance is locus-dependent (a minority of genetically-driven CpGs track; regulatory CpGs do not). Pan-tissue clocks work only because they use a curated cross-tissue-stable CpG set. For drug metabolism, <strong>CYP450/UGT/transporter regulation is hepatic and is not readable from peripheral blood.</strong></p>
+    <table>
+      <thead><tr><th style="width:16%">Compartment</th><th style="width:30%">Methylation governs</th><th style="width:34%">Role in the drug-response chain</th><th style="width:20%">In our data?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tumor</strong></td><td>cell-intrinsic sensitivity (MGMT, CDKN2A…)</td><td><strong>Pharmacodynamics</strong> — does the target respond</td><td>&#10003; GDSC cell lines</td></tr>
+        <tr><td><strong>Liver</strong></td><td>drug-metabolizing enzymes (CYP450, UGT), transporters</td><td><strong>Pharmacokinetics</strong> — how much drug reaches the target</td><td>&#10007; hepatic-only</td></tr>
+        <tr><td><strong>Blood / immune</strong></td><td>hematopoiesis, immune state, CHIP, inflammation</td><td><strong>Host context</strong> — immune-mediated efficacy + toxicity</td><td>&#10007; (the PB thesis)</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:10px;color:#52525b;"><strong>GDSC is the tumor compartment only</strong> — one clean compartment, no PK/host confound; that is why it is a clean proof-of-method. A real clinical cohort <strong>mixes all three</strong> (blood draw = immune cells; cfDNA = tumor + normal; biopsy = tumor + stroma), so a responder subgroup could be driven by any compartment — or a confound (age, cell composition, genotype/mQTL, batch).</p>
+    <div class="corebox">
+      <span class="lbl">Principle</span>
+      <p style="font-size:11.5px;"><strong>Clinical Cohort Response Subgroups Require Metadata for Mechanistic Attribution.</strong></p>
+      <p>A methylation-defined response subgroup is, on its own, a <strong>black-box correlation</strong>. Going from <em>which</em> subgroup responds to <em>why</em> requires metadata that attributes the signal to a compartment and mechanism: <strong>tissue source · cell-type deconvolution · genotype/mQTL · age/clock · mutation/CNV · treatment · batch</strong>. Without it you have a predictor, not a mechanism — and nothing safe to act on clinically. <strong>The engine finds the subgroup; the metadata layer earns the attribution.</strong> (Turns the limitation into the roadmap — what to collect — and aligns with the paired-design Mol-CBC architecture.)</p>
+    </div>
+  </section>
+
+  <footer>
+    MethylGKB · Strata — internal system map. Illustrative research prototype; not for clinical or diagnostic use. Markers from the public GDSC cell-line screen; novel hits are screen-derived hypotheses.
+  </footer>
+
+</div>
+</body>
+</html>

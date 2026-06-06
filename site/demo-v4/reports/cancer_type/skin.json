@@ -1,0 +1,371 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Skin",
+  "n_leads": 26,
+  "leads": [
+    {
+      "drug": "PLX-4720",
+      "gene": "PLOD2",
+      "direction": "sensitive",
+      "tissue_rho": -0.518,
+      "tissue_p": 0.0017,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Large Intestine"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "RNF215",
+      "direction": "sensitive",
+      "tissue_rho": -0.465,
+      "tissue_p": 0.0049,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Kidney",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Gemcitabine",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.465,
+      "tissue_p": 0.0049,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Pancreas",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "PLX-4720",
+      "gene": "ELF4",
+      "direction": "sensitive",
+      "tissue_rho": -0.436,
+      "tissue_p": 0.0088,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary",
+        "Large Intestine"
+      ]
+    },
+    {
+      "drug": "Gemcitabine",
+      "gene": "ELOVL2-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.391,
+      "tissue_p": 0.0201,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SLC7A4",
+      "direction": "resistant",
+      "tissue_rho": 0.359,
+      "tissue_p": 0.0373,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Esophagus",
+        "Stomach",
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Palbociclib",
+      "gene": "ID2",
+      "direction": "sensitive",
+      "tissue_rho": -0.353,
+      "tissue_p": 0.0375,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "PLX-4720",
+      "gene": "RAMP1",
+      "direction": "sensitive",
+      "tissue_rho": -0.412,
+      "tissue_p": 0.0405,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.35,
+      "tissue_p": 0.0426,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Breast",
+        "Large Intestine",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "PLX-4720",
+      "gene": "PHF10",
+      "direction": "sensitive",
+      "tissue_rho": -0.339,
+      "tissue_p": 0.046,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Gemcitabine",
+      "gene": "MARCH10",
+      "direction": "sensitive",
+      "tissue_rho": -0.332,
+      "tissue_p": 0.0514,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Cisplatin",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.409,
+      "tissue_p": 0.0523,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Stomach",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "RHOBTB3",
+      "direction": "resistant",
+      "tissue_rho": 0.331,
+      "tissue_p": 0.0599,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.318,
+      "tissue_p": 0.0672,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.313,
+      "tissue_p": 0.0675,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Peripheral Nervous System",
+        "Lung",
+        "Large Intestine",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "GHRL",
+      "direction": "resistant",
+      "tissue_rho": 0.317,
+      "tissue_p": 0.0678,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.308,
+      "tissue_p": 0.0765,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Large Intestine",
+        "Breast",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "USP51",
+      "direction": "sensitive",
+      "tissue_rho": -0.303,
+      "tissue_p": 0.0771,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Large Intestine",
+        "Ovary",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Rucaparib",
+      "gene": "PINK1",
+      "direction": "sensitive",
+      "tissue_rho": -0.305,
+      "tissue_p": 0.0797,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Large Intestine"
+      ]
+    },
+    {
+      "drug": "Rapamycin",
+      "gene": "TERT",
+      "direction": "resistant",
+      "tissue_rho": 0.298,
+      "tissue_p": 0.0817,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.297,
+      "tissue_p": 0.0829,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Breast",
+        "Lung",
+        "Head and Neck",
+        "Peripheral Nervous System"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.299,
+      "tissue_p": 0.0862,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Head and Neck",
+        "Large Intestine",
+        "Breast",
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "TMEM198",
+      "direction": "sensitive",
+      "tissue_rho": -0.292,
+      "tissue_p": 0.0882,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "ELOVL2-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.292,
+      "tissue_p": 0.0889,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Niraparib",
+      "gene": "C1orf54",
+      "direction": "resistant",
+      "tissue_rho": 0.297,
+      "tissue_p": 0.0938,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Ovary"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "ARL4A",
+      "direction": "sensitive",
+      "tissue_rho": -0.285,
+      "tissue_p": 0.097,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Ovary"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Bladder",
+    "Breast",
+    "Central Nervous System",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Head and Neck",
+    "Kidney",
+    "Large Intestine",
+    "Lung",
+    "Ovary",
+    "Pancreas",
+    "Peripheral Nervous System",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

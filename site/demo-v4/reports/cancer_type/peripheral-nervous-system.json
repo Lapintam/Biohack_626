@@ -1,0 +1,151 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Peripheral Nervous System",
+  "n_leads": 10,
+  "leads": [
+    {
+      "drug": "Trametinib",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.791,
+      "tissue_p": 0.0037,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Skin",
+        "Large Intestine",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.736,
+      "tissue_p": 0.0098,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.691,
+      "tissue_p": 0.0186,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Breast",
+        "Lung",
+        "Skin",
+        "Head and Neck"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "tissue_rho": -0.691,
+      "tissue_p": 0.0186,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Large Intestine"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "FAM217B",
+      "direction": "sensitive",
+      "tissue_rho": -0.685,
+      "tissue_p": 0.0289,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Navitoclax",
+      "gene": "SH3PXD2A",
+      "direction": "resistant",
+      "tissue_rho": 0.627,
+      "tissue_p": 0.0388,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SLC16A11",
+      "direction": "resistant",
+      "tissue_rho": 0.56,
+      "tissue_p": 0.073,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "RASGEF1B",
+      "direction": "sensitive",
+      "tissue_rho": -0.55,
+      "tissue_p": 0.0793,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "ILDR1",
+      "direction": "sensitive",
+      "tissue_rho": -0.564,
+      "tissue_p": 0.0897,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "PODXL",
+      "direction": "sensitive",
+      "tissue_rho": -0.535,
+      "tissue_p": 0.0899,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    }
+  ],
+  "connects_to": [
+    "Breast",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Head and Neck",
+    "Large Intestine",
+    "Lung",
+    "Ovary",
+    "Skin"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

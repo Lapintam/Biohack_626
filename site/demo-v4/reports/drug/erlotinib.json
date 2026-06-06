@@ -1,0 +1,88 @@
+{
+  "type": "drug",
+  "drug": "Erlotinib",
+  "target": "EGFR",
+  "pathway": "EGFR signaling",
+  "funnel": {
+    "genes_scanned": 13759,
+    "response_candidates": 6,
+    "functionally_silenced": 2,
+    "externally_replicated": 1,
+    "lines": 439
+  },
+  "leads": [
+    {
+      "gene": "LINC01148",
+      "direction": "resistant",
+      "gdsc_r": 0.142,
+      "prism_r": 0.123,
+      "prism_p": 0.0297,
+      "ctrp_r": 0.051,
+      "ctrp_p": 0.36282,
+      "silencing_r": -0.1,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 13,
+        "same_direction": 7,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "MT1M",
+      "direction": "sensitive",
+      "gdsc_r": -0.151,
+      "prism_r": -0.008,
+      "prism_p": 0.8828,
+      "ctrp_r": -0.098,
+      "ctrp_p": 0.05509,
+      "silencing_r": -0.588,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 2
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "LINC01148",
+    "direction": "resistant",
+    "gdsc_r": 0.142,
+    "prism_r": 0.123,
+    "prism_p": 0.0297,
+    "ctrp_r": 0.051,
+    "ctrp_p": 0.36282,
+    "silencing_r": -0.1,
+    "screens": [
+      "GDSC",
+      "PRISM"
+    ],
+    "n_screens": 2,
+    "evidence_level": "L4",
+    "replicated": true,
+    "recurrence": {
+      "tissues_tested": 13,
+      "same_direction": 7,
+      "significant": 1
+    },
+    "gene_note": ""
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

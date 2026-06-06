@@ -1,0 +1,151 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Head and Neck",
+  "n_leads": 10,
+  "leads": [
+    {
+      "drug": "Talazoparib",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.647,
+      "tissue_p": 0.0067,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Breast",
+        "Lung",
+        "Skin",
+        "Peripheral Nervous System"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "LRRC49",
+      "direction": "resistant",
+      "tissue_rho": 0.618,
+      "tissue_p": 0.0108,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "PTMS",
+      "direction": "sensitive",
+      "tissue_rho": -0.629,
+      "tissue_p": 0.0121,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Palbociclib",
+      "gene": "CCNJL",
+      "direction": "resistant",
+      "tissue_rho": 0.596,
+      "tissue_p": 0.0149,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Palbociclib",
+      "gene": "ACY1",
+      "direction": "sensitive",
+      "tissue_rho": -0.561,
+      "tissue_p": 0.0238,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "LRRC49",
+      "direction": "resistant",
+      "tissue_rho": 0.553,
+      "tissue_p": 0.0263,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Pancreas"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "PLEKHO1",
+      "direction": "sensitive",
+      "tissue_rho": -0.506,
+      "tissue_p": 0.0456,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Gefitinib",
+      "gene": "GREB1L",
+      "direction": "sensitive",
+      "tissue_rho": -0.456,
+      "tissue_p": 0.0759,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.444,
+      "tissue_p": 0.0848,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Large Intestine",
+        "Skin",
+        "Breast",
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Temozolomide",
+      "gene": "BCL2L11",
+      "direction": "sensitive",
+      "tissue_rho": -0.444,
+      "tissue_p": 0.0848,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary",
+        "Central Nervous System"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Breast",
+    "Central Nervous System",
+    "Haematopoietic and Lymphoid",
+    "Large Intestine",
+    "Lung",
+    "Ovary",
+    "Pancreas",
+    "Peripheral Nervous System",
+    "Skin"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

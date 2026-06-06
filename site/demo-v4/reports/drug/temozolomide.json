@@ -1,0 +1,374 @@
+{
+  "type": "drug",
+  "drug": "Temozolomide",
+  "target": "DNA alkylating agent",
+  "pathway": "DNA replication",
+  "funnel": {
+    "genes_scanned": 13799,
+    "response_candidates": 40,
+    "functionally_silenced": 19,
+    "externally_replicated": 1,
+    "lines": 447
+  },
+  "leads": [
+    {
+      "gene": "TSPAN13",
+      "direction": "sensitive",
+      "gdsc_r": -0.261,
+      "prism_r": -0.159,
+      "prism_p": 0.0256,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.171,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 1
+      },
+      "gene_note": "Tetraspanin-13, a membrane scaffold. No prior link to temozolomide."
+    },
+    {
+      "gene": "MPP7",
+      "direction": "sensitive",
+      "gdsc_r": -0.31,
+      "prism_r": -0.073,
+      "prism_p": 0.3007,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.102,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "RAPGEF5",
+      "direction": "sensitive",
+      "gdsc_r": -0.26,
+      "prism_r": -0.105,
+      "prism_p": 0.1412,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.383,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "RASGEF1B",
+      "direction": "sensitive",
+      "gdsc_r": -0.258,
+      "prism_r": -0.071,
+      "prism_p": 0.3359,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.26,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "SORL1",
+      "direction": "sensitive",
+      "gdsc_r": -0.243,
+      "prism_r": -0.04,
+      "prism_p": 0.5793,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.423,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "PODXL",
+      "direction": "sensitive",
+      "gdsc_r": -0.239,
+      "prism_r": 0.062,
+      "prism_p": 0.3827,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.148,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "NDRG1",
+      "direction": "sensitive",
+      "gdsc_r": -0.221,
+      "prism_r": -0.11,
+      "prism_p": 0.1194,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.117,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 5,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "ST3GAL5-AS1",
+      "direction": "sensitive",
+      "gdsc_r": -0.2,
+      "prism_r": -0.091,
+      "prism_p": 0.1953,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.245,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "JAZF1-AS1",
+      "direction": "sensitive",
+      "gdsc_r": -0.199,
+      "prism_r": -0.037,
+      "prism_p": 0.599,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.202,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "BAIAP2",
+      "direction": "sensitive",
+      "gdsc_r": -0.189,
+      "prism_r": -0.097,
+      "prism_p": 0.1649,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.198,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "BCL2L11",
+      "direction": "sensitive",
+      "gdsc_r": -0.185,
+      "prism_r": 0.119,
+      "prism_p": 0.0904,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.178,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "KLHL29",
+      "direction": "sensitive",
+      "gdsc_r": -0.181,
+      "prism_r": 0.047,
+      "prism_p": 0.503,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.411,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "MYCL",
+      "direction": "sensitive",
+      "gdsc_r": -0.18,
+      "prism_r": -0.012,
+      "prism_p": 0.8619,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.311,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 12,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "LTBP1",
+      "direction": "sensitive",
+      "gdsc_r": -0.18,
+      "prism_r": -0.015,
+      "prism_p": 0.8352,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.289,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "NIPAL1",
+      "direction": "sensitive",
+      "gdsc_r": -0.162,
+      "prism_r": -0.034,
+      "prism_p": 0.6262,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.326,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 0
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "TSPAN13",
+    "direction": "sensitive",
+    "gdsc_r": -0.261,
+    "prism_r": -0.159,
+    "prism_p": 0.0256,
+    "ctrp_r": null,
+    "ctrp_p": null,
+    "silencing_r": -0.171,
+    "screens": [
+      "GDSC",
+      "PRISM"
+    ],
+    "n_screens": 2,
+    "evidence_level": "L4",
+    "replicated": true,
+    "recurrence": {
+      "tissues_tested": 14,
+      "same_direction": 7,
+      "significant": 1
+    },
+    "gene_note": "Tetraspanin-13, a membrane scaffold. No prior link to temozolomide."
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

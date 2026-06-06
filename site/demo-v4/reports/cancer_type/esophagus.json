@@ -1,0 +1,354 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Esophagus",
+  "n_leads": 25,
+  "leads": [
+    {
+      "drug": "Talazoparib",
+      "gene": "NFIB",
+      "direction": "sensitive",
+      "tissue_rho": -0.697,
+      "tissue_p": 0.0009,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Large Intestine"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "TAGLN",
+      "direction": "resistant",
+      "tissue_rho": 0.718,
+      "tissue_p": 0.0017,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Stomach",
+        "Central Nervous System",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Gemcitabine",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.623,
+      "tissue_p": 0.0044,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Pancreas",
+        "Skin"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "CCDC60",
+      "direction": "sensitive",
+      "tissue_rho": -0.691,
+      "tissue_p": 0.0062,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "DOCK9",
+      "direction": "sensitive",
+      "tissue_rho": -0.575,
+      "tissue_p": 0.0101,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Ovary",
+        "Stomach",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Cisplatin",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.618,
+      "tissue_p": 0.0108,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Skin",
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Afatinib",
+      "gene": "TBC1D30",
+      "direction": "sensitive",
+      "tissue_rho": -0.538,
+      "tissue_p": 0.0143,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Stomach",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "TMEM184A",
+      "direction": "sensitive",
+      "tissue_rho": -0.543,
+      "tissue_p": 0.02,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Pancreas",
+        "Ovary",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "tissue_rho": -0.541,
+      "tissue_p": 0.0205,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast",
+        "Large Intestine",
+        "Skin",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Erlotinib",
+      "gene": "MT1M",
+      "direction": "sensitive",
+      "tissue_rho": -0.544,
+      "tissue_p": 0.0238,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Palbociclib",
+      "gene": "RUSC2",
+      "direction": "resistant",
+      "tissue_rho": 0.506,
+      "tissue_p": 0.0272,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "COL4A3",
+      "direction": "sensitive",
+      "tissue_rho": -0.491,
+      "tissue_p": 0.028,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary"
+      ]
+    },
+    {
+      "drug": "Afatinib",
+      "gene": "CNN3",
+      "direction": "sensitive",
+      "tissue_rho": -0.484,
+      "tissue_p": 0.036,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "ENTPD7",
+      "direction": "sensitive",
+      "tissue_rho": -0.474,
+      "tissue_p": 0.0402,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "UPP1",
+      "direction": "sensitive",
+      "tissue_rho": -0.473,
+      "tissue_p": 0.0409,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Central Nervous System",
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "TMEM198",
+      "direction": "sensitive",
+      "tissue_rho": -0.466,
+      "tissue_p": 0.0443,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "ENKD1",
+      "direction": "resistant",
+      "tissue_rho": 0.453,
+      "tissue_p": 0.0517,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "TMEM198",
+      "direction": "sensitive",
+      "tissue_rho": -0.44,
+      "tissue_p": 0.0522,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Skin",
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "GP9",
+      "direction": "resistant",
+      "tissue_rho": 0.502,
+      "tissue_p": 0.0567,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Palbociclib",
+      "gene": "RNF141",
+      "direction": "sensitive",
+      "tissue_rho": -0.468,
+      "tissue_p": 0.0579,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "FAM217B",
+      "direction": "sensitive",
+      "tissue_rho": -0.441,
+      "tissue_p": 0.0585,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Peripheral Nervous System",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "TMEM184A",
+      "direction": "sensitive",
+      "tissue_rho": -0.449,
+      "tissue_p": 0.0615,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Ovary",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Olaparib",
+      "gene": "GOLGA7B",
+      "direction": "sensitive",
+      "tissue_rho": -0.418,
+      "tissue_p": 0.084,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SLC7A4",
+      "direction": "resistant",
+      "tissue_rho": 0.397,
+      "tissue_p": 0.0922,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Skin",
+        "Stomach",
+        "Bladder"
+      ]
+    },
+    {
+      "drug": "Talazoparib",
+      "gene": "SQLE",
+      "direction": "sensitive",
+      "tissue_rho": -0.42,
+      "tissue_p": 0.0937,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Central Nervous System"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Bladder",
+    "Breast",
+    "Central Nervous System",
+    "Haematopoietic and Lymphoid",
+    "Large Intestine",
+    "Lung",
+    "Ovary",
+    "Pancreas",
+    "Peripheral Nervous System",
+    "Skin",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

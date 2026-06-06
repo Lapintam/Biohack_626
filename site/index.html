@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MethylGKB — pharmacogenomics for the methylome</title>
+<meta name="description" content="MethylGKB reads the methylome from a single whole-blood array and turns it into pharmacogenomic insight — what will work, what won't, what's toxic. The PharmGKB for methylation." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">METHYLGKB</a>
+  <span class="brand-divider"></span>
+  <span class="brand-sub">by Polymer Genomics</span>
+  <nav class="site-nav">
+    <a class="nav-link is-active" href="index.html">Overview</a>
+    <a class="nav-link" href="science.html">The Science</a>
+    <a class="nav-link" href="explore.html">Explore</a>
+    <a class="nav-link" href="report.html">Report</a>
+    <a class="nav-link" href="strata.html">Strata</a>
+    <a class="btn btn-primary btn-sm" href="report.html">See a report →</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="wrap hero">
+    <p class="section-marker">§01 — Pharmaco-epigenomics</p>
+    <h1>Everyone's getting sequenced. <span class="em">Almost no one gets an answer.</span></h1>
+    <p class="lede">
+      Whole-genome sequencing is everywhere — and mostly inert. The actionable layer isn't the sequence you
+      inherited; it's the <strong>methylome</strong>: the regulatory state your cells are in right now.
+      MethylGKB reads it from a single <strong>whole-blood methylation array</strong> and turns it into
+      pharmacogenomic insight — what will work, what won't, what's toxic.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="explore.html">Explore the knowledge base →</a>
+      <a class="btn btn-secondary" href="science.html">See the evidence</a>
+    </div>
+
+    <!-- Signature motif: a methylation (CpG / beta) track, rendered live -->
+    <div class="beta-strip">
+      <div class="beta-strip-head">
+        <span class="beta-strip-title">Whole-blood methylation readout · chr10 · MGMT promoter window</span>
+        <span class="beta-strip-title">β = 0.00 → 1.00</span>
+      </div>
+      <div class="beta-track" id="betaTrack" aria-hidden="true"></div>
+      <div class="beta-scale"></div>
+      <div class="beta-scale-labels">
+        <span>0.0 — unmethylated</span>
+        <span>0.5</span>
+        <span>1.0 — methylated</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE GAP / METRICS -->
+  <section class="wrap section">
+    <p class="section-marker">§02 — The white space</p>
+    <h2 class="h2">There is no PharmGKB for methylation. We're building it.</h2>
+    <p class="lead">
+      Drug-response knowledge splits into two worlds that rarely touch — germline variant guidelines and
+      cancer cell-line screens — and <strong>neither curates methylation</strong>. The one portal that
+      integrates it isn't a knowledge base. That empty quadrant is the product.
+    </p>
+    <div class="metrics" style="margin-top:40px;">
+      <div class="metric">
+        <div class="val teal">0.97</div>
+        <div class="label">Best-case AUROC for methylation-only drug-response prediction across 987 GDSC cell lines, transferring to patient temozolomide response.</div>
+        <div class="src">PLOS ONE 2021</div>
+      </div>
+      <div class="metric">
+        <div class="val rose">5<span class="muted" style="font-size:24px;"> / 39</span></div>
+        <div class="label">Drugs where the FDA and CPIC fully agree on dosing — out of 39 they share. Two authoritative sources, in open contradiction.</div>
+        <div class="src">Hertz, AJHP 2022</div>
+      </div>
+      <div class="metric">
+        <div class="val blue">0</div>
+        <div class="label">Curated, queryable pharmaco-epigenomic knowledge bases in existence. The field is named but has no operational resource.</div>
+        <div class="src">Field survey, verified</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM, FRAMED AS LAYERS -->
+  <section class="wrap section">
+    <p class="section-marker">§03 — Why sequence isn't enough</p>
+    <h2 class="h2">The genome says who you are. The methylome says what to do about it.</h2>
+    <div class="compare">
+      <div class="panel muted-panel">
+        <div class="tag dim">Sequence layer · static</div>
+        <h3 class="h3">What WGS gives you</h3>
+        <p class="body">
+          A fixed inheritance. Powerful for rare-disease and a handful of germline pharmacogenes — but
+          for most patients it returns variants of uncertain significance and little a clinician can act on
+          today. It can't see regulatory state, environment, or how a cell is actually behaving.
+        </p>
+      </div>
+      <div class="panel">
+        <div class="tag live">Methylation layer · dynamic</div>
+        <h3 class="h3">What the methylome gives you</h3>
+        <p class="body">
+          A live regulatory readout from whole blood. Methylation already carries the canonical, clinically
+          deployed drug biomarker (MGMT → temozolomide), predicts cytotoxic response on its own, and changes
+          with disease and exposure. It's the layer where the actionable signal lives — and it's cheap to read.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="wrap section">
+    <p class="section-marker">§04 — What MethylGKB is</p>
+    <h2 class="h2">A curated knowledge base of methylation → drug-response associations.</h2>
+    <p class="lead">
+      Every association is a structured, evidence-graded claim: a methylation locus that predicts response
+      to a drug, with its grade, provenance, and the contradictions it lives among — retained, not smoothed over.
+    </p>
+    <div class="cards">
+      <a class="card" href="explore.html">
+        <div class="kicker">Knowledge base</div>
+        <h3 class="h3">The claims</h3>
+        <p>Locus → predicts-response-to → drug, each pre-graded (PharmGKB 1A–4 / CPIC A–D) and provenance-stamped. Browse, filter, cite.</p>
+        <span class="go">Explore →</span>
+      </a>
+      <a class="card" href="science.html">
+        <div class="kicker">Evidence</div>
+        <h3 class="h3">The science</h3>
+        <p>Why methylation predicts drug response, where it's proven, where it isn't, and the discordances that make this a frontier.</p>
+        <span class="go">Read the wedge →</span>
+      </a>
+      <a class="card" href="report.html">
+        <div class="kicker">Report</div>
+        <h3 class="h3">The readout</h3>
+        <p>One whole-blood methylome → an evidence-graded PGx report: favorable, caution, avoid — with the claim behind every call.</p>
+        <span class="go">See a report →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- THE LOOP / VISION TEASER -->
+  <section class="wrap section">
+    <p class="section-marker">§05 — Where it goes</p>
+    <h2 class="h2">A knowledge base that grows itself.</h2>
+    <p class="lead">
+      MethylGKB sits on Polymer's formal-claims substrate. Contradictions — like FDA vs CPIC — aren't errors
+      to resolve; they're the richest seed. An agent walks the base, finds tensions and gaps, proposes the
+      conditioning variable that reconciles them, verifies each new claim against its own evidence, and
+      integrates it. Knowledge accumulates instead of evaporating.
+    </p>
+    <div class="hero-actions" style="margin-top:32px;">
+      <a class="btn btn-secondary" href="explore.html#api">See a claim →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-links">
+    <a href="index.html">Overview</a>
+    <span class="foot-dot">·</span>
+    <a href="science.html">The Science</a>
+    <span class="foot-dot">·</span>
+    <a href="explore.html">Explore</a>
+    <span class="foot-dot">·</span>
+    <a href="explore.html#api">API</a>
+  </div>
+  <div class="foot-meta">
+    <a class="ruo" href="#" title="Not for clinical or diagnostic use. Prototype. Data provided as-is.">Research use only</a>
+    <span class="foot-dot">·</span>
+    <span class="copy">© 2026 Polymer Genomics</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

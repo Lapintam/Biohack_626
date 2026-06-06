@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Strata — How it works</title>
+<style>
+  @page { size: letter; margin: 16mm 15mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    color: #1a1a1f; font-size: 12.5px; line-height: 1.58; margin: 0;
+  }
+  .doc { max-width: 720px; margin: 0 auto; }
+  .mono { font-family: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace; }
+
+  header { border-bottom: 2px solid #0f62fe; padding-bottom: 14px; margin-bottom: 22px; }
+  .kicker { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #0f62fe; font-weight: 700; margin: 0 0 6px; }
+  h1 { font-size: 27px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 8px; color: #0a0a0f; }
+  .sub { font-size: 12.5px; color: #52525b; margin: 0; }
+  .sub a { color: #0f62fe; text-decoration: none; }
+
+  .tldr {
+    background: #eef4ff; border-left: 3px solid #0f62fe; border-radius: 3px;
+    padding: 14px 18px; margin: 0 0 26px;
+  }
+  .tldr .lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #0f62fe; font-weight: 700; display: block; margin-bottom: 5px; }
+  .tldr p { margin: 0; font-size: 14px; line-height: 1.5; color: #1a1a1f; }
+  .tldr em { color: #0a0a0f; font-style: italic; }
+
+  section { margin-bottom: 22px; }
+  h2 { font-size: 16px; letter-spacing: -0.01em; margin: 0 0 9px; color: #0a0a0f; display: flex; align-items: baseline; gap: 10px; }
+  h2 .n {
+    font-family: "SF Mono", Menlo, monospace; font-size: 12px; color: #fff; background: #0f62fe;
+    width: 22px; height: 22px; min-width: 22px; border-radius: 3px; display: inline-flex;
+    align-items: center; justify-content: center; font-weight: 700;
+  }
+  p { margin: 0 0 11px; }
+  strong { color: #0a0a0f; }
+  .lead-q { font-size: 14px; color: #0a0a0f; font-weight: 600; border-left: 3px solid #c9d4e8; padding-left: 14px; margin: 4px 0 12px; }
+
+  .loop {
+    font-family: "SF Mono", Menlo, monospace; font-size: 11.5px; color: #3f3f46;
+    background: #f5f7fb; border: 1px solid #e2e8f3; border-radius: 3px;
+    padding: 10px 14px; margin: 6px 0 12px;
+  }
+  .loop .arr { color: #0f62fe; }
+
+  .box {
+    border: 1px solid #e7c8a0; background: #fdf6ec; border-radius: 3px;
+    padding: 13px 16px; margin: 12px 0;
+  }
+  .box .lbl { font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: #b06f17; font-weight: 700; display: block; margin-bottom: 5px; }
+  .box p { margin: 0; font-size: 11.8px; line-height: 1.5; color: #4a3a22; }
+
+  ul.levels { list-style: none; padding: 0; margin: 6px 0 0; }
+  ul.levels li { padding: 9px 0 9px 0; border-top: 1px solid #ececf0; }
+  ul.levels li:first-child { border-top: none; }
+  ul.levels .tag { font-weight: 700; color: #0f62fe; }
+
+  .punch {
+    margin-top: 26px; border-top: 2px solid #0f62fe; padding-top: 14px;
+    font-size: 13.5px; color: #0a0a0f;
+  }
+  .punch .lbl { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #0f62fe; font-weight: 700; display: block; margin-bottom: 5px; }
+  .punch em { font-style: italic; }
+
+  footer { margin-top: 22px; font-size: 10px; color: #a1a1aa; border-top: 1px solid #ececf0; padding-top: 8px; }
+  section, .tldr, .box, .punch { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header>
+    <p class="kicker">MethylGKB · Strata</p>
+    <h1>How Strata works</h1>
+    <p class="sub">Methylation-guided responder discovery · live demo at <a href="https://methylkb.vercel.app/strata.html">methylkb.vercel.app/strata.html</a></p>
+  </header>
+
+  <div class="tldr">
+    <span class="lbl">The 10-second version</span>
+    <p><em>"Two patients with the same cancer can respond completely differently to the same drug. Strata reads their DNA's chemical 'settings' and figures out which patients are the responders — automatically. We proved it works by having an AI rediscover a known drug-marker on its own, then go find new ones."</em></p>
+  </div>
+
+  <section>
+    <h2><span class="n">1</span> What is this?</h2>
+    <p>Your DNA has more than just the genetic <em>code</em>. It also carries chemical tags sitting on top of it — called <strong>methylation</strong> — that act like <strong>dimmer switches</strong>, turning genes up or down without changing the underlying code. Two people (or two tumors) with the <strong>same diagnosis</strong> can have very different dimmer-switch settings. That is a big reason the same drug cures one person and does nothing for another.</p>
+    <p><strong>Strata is an AI agent that reads those dimmer-switch patterns and finds the hidden group of patients a drug actually works on.</strong> You give it a set of samples — each with its methylation readout and how it responded to a drug — and it automatically works out which switches separate the responders from everyone else, names that subgroup, and writes up what it found.</p>
+    <p>The famous real-world example of this idea: <strong>MGMT methylation</strong> already tells doctors which brain-tumor patients respond to a specific chemotherapy. One dimmer switch defines a whole treatment decision. The bet behind Strata: <strong>there are many more of these buried in the data, and a human can't eyeball them — but an agent can.</strong></p>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span> What question does it answer?</h2>
+    <p class="lead-q">"Inside a disease where a drug only helps some people, who are the responders — and can we spot them ahead of time from their methylation alone?"</p>
+    <p>And the bigger version: it is not locked to drugs. Swap "drug response" for <em>any</em> outcome — survival, toxicity, disease progression — and it answers the same shape of question: <strong>which molecular subgroup is hiding inside this messy population?</strong> That is why it ladders up to <strong>clinical decision support</strong>, not just "a methylation-and-drugs tool."</p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span> What data does it depend on?</h2>
+    <p>Dead simple — it needs <strong>two tables that share an ID</strong>:</p>
+    <div class="loop">
+      <strong>1. Methylation</strong> &nbsp;—&nbsp; for each sample, the dimmer-switch reading on each gene<br/>
+      <strong>2. An outcome</strong> &nbsp;—&nbsp; for each sample, what happened (e.g. how well a drug worked)
+    </div>
+    <p>It joins them on the sample ID and scans. That is it. For the demo we used <strong>public data</strong>: a database called <strong>GDSC</strong> — about 1,055 lab-grown cancer cell lines, methylation on ~14,600 genes, paired with how each line responded to <strong>286 drugs</strong>. (Plus a set of real leukemia patients for the survival angle.)</p>
+    <div class="box">
+      <span class="lbl">Be honest about the scope (so no one catches you out)</span>
+      <p>This is a <strong>proof that the method works</strong>, run on lab cell lines and public data — not a finished clinical product. The "new" drug-markers it finds are <strong>leads to test</strong>, not proven. What makes them credible: the <strong>same</strong> unbiased scan <strong>rediscovered a textbook marker on its own</strong> — CDKN2A / MTAP → palbociclib (Pfizer's own drug, Ibrance). If it finds the known answer cold, you trust the new ones more.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span> How can I use it?</h2>
+    <ul class="levels">
+      <li><span class="tag">Just look.</span> Open <strong>methylkb.vercel.app/strata.html</strong>, click a drug, hit <strong>▶ Run discovery</strong>, and watch the agent reason step by step: scan the methylome <span class="arr">→</span> rank the markers <span class="arr">→</span> name the responder subgroup <span class="arr">→</span> check it against known biology <span class="arr">→</span> write the brief. (The Palbociclib run is the real live agent; it is recorded so the link works for anyone, no key needed.)</li>
+      <li><span class="tag">Run it yourself.</span> Point the engine at any methylation table + any outcome table, and it returns the responder subgroups and a written brief.</li>
+      <li><span class="tag">The vision.</span> Today it is 2 of 286 drugs; the same loop runs on any methylome-vs-outcome question. At scale — every patient's methylome against every therapy and outcome — it becomes a <strong>methylation-guided decision-support layer</strong> (and that scale is exactly where the GPU / NVIDIA story kicks in).</li>
+    </ul>
+  </section>
+
+  <div class="punch">
+    <span class="lbl">One line for the skeptics</span>
+    <em>"It found the known biology by itself before we asked it to find anything new — that's why the new findings are worth a look."</em>
+  </div>
+
+  <footer>
+    MethylGKB · Strata — illustrative research prototype. Not for clinical or diagnostic use. Markers from the public GDSC cell-line screen; novel hits are screen-derived hypotheses.
+  </footer>
+
+</div>
+</body>
+</html>

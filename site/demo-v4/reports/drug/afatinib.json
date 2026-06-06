@@ -1,0 +1,179 @@
+{
+  "type": "drug",
+  "drug": "Afatinib",
+  "target": "EGFR, ERBB2",
+  "pathway": "EGFR signaling",
+  "funnel": {
+    "genes_scanned": 13786,
+    "response_candidates": 8,
+    "functionally_silenced": 6,
+    "externally_replicated": 4,
+    "lines": 447
+  },
+  "leads": [
+    {
+      "gene": "ECHDC1",
+      "direction": "sensitive",
+      "gdsc_r": -0.25,
+      "prism_r": -0.041,
+      "prism_p": 0.5743,
+      "ctrp_r": -0.228,
+      "ctrp_p": 2e-05,
+      "silencing_r": -0.129,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "FGF2",
+      "direction": "sensitive",
+      "gdsc_r": -0.229,
+      "prism_r": -0.09,
+      "prism_p": 0.2464,
+      "ctrp_r": -0.24,
+      "ctrp_p": 1e-05,
+      "silencing_r": -0.675,
+      "screens": [
+        "GDSC",
+        "CTRP"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "JPH2",
+      "direction": "sensitive",
+      "gdsc_r": -0.213,
+      "prism_r": -0.193,
+      "prism_p": 0.008,
+      "ctrp_r": -0.102,
+      "ctrp_p": 0.05856,
+      "silencing_r": -0.114,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 13,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "CNN3",
+      "direction": "sensitive",
+      "gdsc_r": -0.18,
+      "prism_r": -0.21,
+      "prism_p": 0.004,
+      "ctrp_r": -0.06,
+      "ctrp_p": 0.26794,
+      "silencing_r": -0.649,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 12,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "TBC1D30",
+      "direction": "sensitive",
+      "gdsc_r": -0.16,
+      "prism_r": -0.044,
+      "prism_p": 0.5482,
+      "ctrp_r": -0.071,
+      "ctrp_p": 0.19091,
+      "silencing_r": -0.123,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "POU4F3",
+      "direction": "resistant",
+      "gdsc_r": 0.001,
+      "prism_r": -0.033,
+      "prism_p": 0.6506,
+      "ctrp_r": 0.063,
+      "ctrp_p": 0.24192,
+      "silencing_r": -0.103,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 4,
+        "significant": 0
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "ECHDC1",
+    "direction": "sensitive",
+    "gdsc_r": -0.25,
+    "prism_r": -0.041,
+    "prism_p": 0.5743,
+    "ctrp_r": -0.228,
+    "ctrp_p": 2e-05,
+    "silencing_r": -0.129,
+    "screens": [
+      "GDSC",
+      "CTRP"
+    ],
+    "n_screens": 2,
+    "evidence_level": "L4",
+    "replicated": true,
+    "recurrence": {
+      "tissues_tested": 14,
+      "same_direction": 8,
+      "significant": 0
+    },
+    "gene_note": ""
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

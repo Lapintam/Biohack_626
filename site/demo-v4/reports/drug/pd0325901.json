@@ -1,0 +1,372 @@
+{
+  "type": "drug",
+  "drug": "PD0325901",
+  "target": "MEK1, MEK2",
+  "pathway": "ERK MAPK signaling",
+  "funnel": {
+    "genes_scanned": 13799,
+    "response_candidates": 40,
+    "functionally_silenced": 30,
+    "externally_replicated": 0,
+    "lines": 448
+  },
+  "leads": [
+    {
+      "gene": "C11orf74",
+      "direction": "resistant",
+      "gdsc_r": 0.301,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.337,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "NACC2",
+      "direction": "resistant",
+      "gdsc_r": 0.3,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.377,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "RASAL2-AS1",
+      "direction": "resistant",
+      "gdsc_r": 0.28,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.32,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "RASAL2",
+      "direction": "resistant",
+      "gdsc_r": 0.278,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.309,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 2,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "DSCAS",
+      "direction": "resistant",
+      "gdsc_r": 0.277,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.248,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 3
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "LRRC49",
+      "direction": "resistant",
+      "gdsc_r": 0.275,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.338,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "FKBP9",
+      "direction": "resistant",
+      "gdsc_r": 0.259,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.349,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "FOXA1",
+      "direction": "resistant",
+      "gdsc_r": 0.259,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.68,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 11,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "DOCK9",
+      "direction": "sensitive",
+      "gdsc_r": -0.254,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.275,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "GALNT11",
+      "direction": "resistant",
+      "gdsc_r": 0.249,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.401,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "N4BP3",
+      "direction": "sensitive",
+      "gdsc_r": -0.205,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.394,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 10,
+        "significant": 1
+      },
+      "gene_note": "NEDD4-binding protein 3. Not a known MEK-pathway gene."
+    },
+    {
+      "gene": "LINC02495",
+      "direction": "sensitive",
+      "gdsc_r": -0.199,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.443,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "JSRP1",
+      "direction": "sensitive",
+      "gdsc_r": -0.199,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.278,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 9,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "PSCA",
+      "direction": "sensitive",
+      "gdsc_r": -0.155,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.189,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 11,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "TMEM184A",
+      "direction": "sensitive",
+      "gdsc_r": -0.142,
+      "prism_r": null,
+      "prism_p": null,
+      "ctrp_r": null,
+      "ctrp_p": null,
+      "silencing_r": -0.667,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 8,
+        "significant": 1
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "C11orf74",
+    "direction": "resistant",
+    "gdsc_r": 0.301,
+    "prism_r": null,
+    "prism_p": null,
+    "ctrp_r": null,
+    "ctrp_p": null,
+    "silencing_r": -0.337,
+    "screens": [
+      "GDSC"
+    ],
+    "n_screens": 1,
+    "evidence_level": "L3",
+    "replicated": false,
+    "recurrence": {
+      "tissues_tested": 14,
+      "same_direction": 8,
+      "significant": 2
+    },
+    "gene_note": ""
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

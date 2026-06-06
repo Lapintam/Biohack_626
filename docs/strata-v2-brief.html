@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Strata v2 — Cross-Indication Opportunity Engine</title>
+<style>
+  @page { size: letter; margin: 15mm 14mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    color: #1a1a1f; font-size: 11px; line-height: 1.52; margin: 0; }
+  .doc { max-width: 740px; margin: 0 auto; }
+  header { border-bottom: 2px solid #0f62fe; padding-bottom: 12px; margin-bottom: 18px; }
+  .kicker { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #0f62fe; font-weight: 700; margin: 0 0 5px; }
+  h1 { font-size: 24px; line-height: 1.13; letter-spacing: -0.01em; margin: 0 0 7px; color: #0a0a0f; }
+  .sub { font-size: 11px; color: #52525b; margin: 0; }
+  .sub a { color: #0f62fe; text-decoration: none; }
+  .intro { background: #eef4ff; border-left: 3px solid #0f62fe; border-radius: 3px; padding: 11px 15px; margin: 0 0 20px; font-size: 11.5px; line-height: 1.5; }
+  .intro strong { color: #0a0a0f; }
+  section { margin-bottom: 18px; }
+  h2 { font-size: 14.5px; letter-spacing: -0.01em; margin: 0 0 9px; color: #0a0a0f; display: flex; align-items: baseline; gap: 9px; }
+  h2 .n { font-family: "SF Mono", Menlo, monospace; font-size: 11px; color: #fff; background: #0f62fe; width: 20px; height: 20px; min-width: 20px; border-radius: 3px; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
+  h3 { font-size: 11.5px; margin: 13px 0 5px; color: #0a0a0f; }
+  p { margin: 0 0 8px; }
+  strong { color: #0a0a0f; }
+  em { color: #3f3f46; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 9.6px; }
+  th { text-align: left; background: #f0f4fb; color: #3f3f46; font-weight: 700; padding: 6px 8px; border: 1px solid #dde5f1; text-transform: uppercase; letter-spacing: 0.04em; font-size: 8.4px; }
+  td { padding: 6px 8px; border: 1px solid #e7ecf4; vertical-align: top; }
+  td code, p code, li code { font-family: "SF Mono", Menlo, monospace; font-size: 9.3px; background: #f3f5f9; padding: 1px 4px; border-radius: 2px; color: #0a3a8f; }
+  .num { color: #0f62fe; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .badge { font-family: "SF Mono", Menlo, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 5px; border-radius: 3px; }
+  .l3 { color: #15803D; border: 1px solid #15803D; background: rgba(21,128,61,0.07); }
+  .l2 { color: #b06f17; border: 1px solid #d8a24a; background: #fdf6ec; }
+  .nul { color: #9a1a1a; border: 1px solid #c46b6b; background: #fdeeee; }
+  .corebox { border: 1px solid #b9c9ec; background: #f4f8ff; border-radius: 3px; padding: 11px 15px; margin: 8px 0 12px; }
+  .corebox .lbl { font-size: 9px; letter-spacing: 0.09em; text-transform: uppercase; color: #0f62fe; font-weight: 700; display: block; margin-bottom: 5px; }
+  .corebox p:last-child { margin-bottom: 0; }
+  .rails { border: 1.5px solid #e0a93c; background: #fdf7ec; border-radius: 4px; padding: 12px 16px 8px; margin: 6px 0 4px; }
+  .rails .lbl { font-size: 9.5px; letter-spacing: 0.09em; text-transform: uppercase; color: #b06f17; font-weight: 700; display: block; margin-bottom: 7px; }
+  ol.rails-list, ul.tight { margin: 0; padding-left: 18px; }
+  ol.rails-list li { margin-bottom: 6px; font-size: 10.3px; line-height: 1.5; color: #3a2f1c; }
+  ol.rails-list li strong { color: #1a1a1f; }
+  ul.tight li { margin-bottom: 4px; }
+  .ladder { font-family: "SF Mono", Menlo, monospace; font-size: 9.4px; color: #3f3f46; background: #f6f8fc; border: 1px solid #e2e8f3; border-radius: 3px; padding: 9px 13px; margin: 6px 0 8px; line-height: 1.8; }
+  footer { margin-top: 16px; font-size: 9px; color: #a1a1aa; border-top: 1px solid #ececf0; padding-top: 7px; }
+  h2, table, .corebox, .rails, .intro, .ladder { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <header>
+    <p class="kicker">MethylGKB · Strata v2 · cross-indication opportunity engine</p>
+    <h1>Start from the molecular state, not the disease.</h1>
+    <p class="sub">As-built reference · 2026-06-06 · live: <a href="https://methylkb.vercel.app/strata-v2.html">methylkb.vercel.app/strata-v2.html</a></p>
+  </header>
+
+  <div class="intro">
+    <strong>What this is.</strong> v1 found a methylation-defined responder subgroup for <em>one drug, inside one indication</em> — which pharma already does. <strong>v2 ranks methylation-defined drug-response states that hold ACROSS the indication taxonomy</strong> — mechanism-anchored, tissue-confound-controlled, and evidence-graded — to surface opportunities the expert-gated, indication-organized review is structurally least equipped to find. Research-use, GDSC cell-line proof-of-method.
+  </div>
+
+  <section>
+    <h2><span class="n">1</span> The reframe</h2>
+    <p>Expert review is organized by <strong>indication</strong> and <strong>drug class</strong>; the highest-value opportunities are the ones that <strong>cut across</strong> those boxes — a state hidden inside a heterogeneous indication, or a mechanism connecting two conditions thought unrelated. So: <strong>stop organizing by disease taxonomy, organize by molecular state.</strong> Then a "hidden subgroup" and a "cross-indication connection" fall out of the same structure: the <em>same</em> methylation state recurring across different diseases is a repurposing-shaped opportunity. The v1 methylation→response engine becomes the <em>atom</em>; the product is the <strong>search over molecular states that cross the taxonomy.</strong></p>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span> The method</h2>
+    <div class="corebox">
+      <span class="lbl">Two rules, applied per drug</span>
+      <p><strong>1 · Tissue-confound safeguard.</strong> A marker→drug signal is <em>tissue-agnostic</em> only if it survives <strong>within-tissue</strong> (per-cancer-type) AND <strong>tissue adjustment</strong> (within-tissue-residualized correlation, <code>r_adj</code>). Pooled significance alone may be lineage — proven: blind clustering recovers lineage, and a naive all-gene tissue-adjusted scan is non-specific (R1b).</p>
+      <p><strong>2 · Mechanism anchor.</strong> Don't scan all ~14,600 genes (methylation co-correlation makes that meaningless). Restrict each drug's search to its <strong>own mechanism genes</strong> — GDSC's `PUTATIVE_TARGET` (87% of drugs) + a curated `PATHWAY_NAME`→genes map (100%, tumor-suppressor-emphasized; zero external dependency). Every hit is interpretable by construction.</p>
+    </div>
+    <h3>Evidence ladder — grade every opportunity</h3>
+    <div class="ladder">
+      <span class="num">L0</span> pooled association &nbsp;·&nbsp; <span class="num">L1</span> interpretable / known biology &nbsp;·&nbsp; <span class="num">L2</span> survives tissue adjustment<br/>
+      <span class="num">L3</span> tissue-agnostic — consistent across ≥3 cancer types &nbsp;·&nbsp; <span class="num">L4</span> mechanism path &nbsp;·&nbsp; <span class="num">L5</span> external support &nbsp;·&nbsp; <span class="num">L6</span> clinical
+    </div>
+    <p style="font-size:10px;color:#52525b;">v1 ≈ L1. v2 targets <strong>L2–L3</strong>; L4 (mechanism) is annotation, not proof. Novel leads are <strong>screen-derived hypotheses</strong>.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span> What the engine found</h2>
+    <table>
+      <thead><tr><th style="width:15%">Role</th><th style="width:30%">State → Drug(s)</th><th style="width:9%">Level</th><th style="width:20%">r_adj / pooled ρ</th><th style="width:26%">Note</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Positive control</strong></td><td>9p21 / <strong>MTAP</strong> → <strong>Palbociclib</strong> (Cell cycle)</td><td><span class="badge l3">L3</span></td><td class="num">−0.196 / −0.461 · sig 5 tissues</td><td><strong>replicated</strong> by Ribociclib (L2). CONFIRMATION — published PLOS One 2019.</td></tr>
+        <tr><td><strong>Novel lead A</strong></td><td><strong>INPP4B</strong> → mTOR/PI3K inhibitors (Rapamycin, Dactolisib, AZD8055)</td><td><span class="badge l3">L3</span></td><td class="num">−0.14…−0.21 · sig 3 tissues</td><td><strong>replicated across 3 drugs of the class.</strong> PI3K-pathway TS silencing → mTORi dependence. Hypothesis.</td></tr>
+        <tr><td><strong>Novel lead B</strong></td><td><strong>SFRP1</strong> → WNT modulators (SB216763, CHIR-99021)</td><td><span class="badge l3">L3</span></td><td class="num">−0.169 / −0.183 · sig 6 tissues</td><td>most cross-tissue. Classic pan-cancer WNT-antagonist methylation. Hypothesis.</td></tr>
+        <tr><td><strong>Negative control</strong></td><td>MGMT → Temozolomide</td><td><span class="badge nul">null</span></td><td class="num">+0.078 · 0 tissues</td><td>no tissue-agnostic signal — engine doesn't force the canonical (gene-level) story.</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:10px;color:#52525b;">Plus a <strong>20-row ranked opportunity table</strong> (the portfolio-triage view). Level counts across the panel: L3 = 16, L2 = 83. <strong>The replication across drug classes</strong> (CDK4/6i→9p21 ×2; mTOR-pathway→INPP4B ×3) is the key real-biology signal — not single-hit noise.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span> How it was validated (the research pass)</h2>
+    <ul class="tight">
+      <li><strong>R1</strong> — tissue-confound probe: MTAP/CDKN2A→palbociclib SURVIVES within-tissue + adjustment (60–74% retained, sig in 5 tissues) = genuinely tissue-agnostic. The thesis is real.</li>
+      <li><strong>R1b</strong> — naive all-gene tissue-adjusted ranking REJECTED: ~8k of 14.6k genes co-significant, obscure top markers (methylation co-correlation). → forced the mechanism anchor.</li>
+      <li><strong>R2</strong> — deep-research (cited): novelty = combination only; annotation SOLVED (GDSC's own columns); positive control is confirmation; published corroboration of the confound (PMC7906305).</li>
+      <li><strong>R3a</strong> — the mechanism-anchored engine + the results above.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span> Novelty &amp; honesty rails</h2>
+    <div class="rails">
+      <span class="lbl">Must survive a hostile reviewer</span>
+      <ol class="rails-list">
+        <li><strong>Novelty is the combination/framing only</strong> — methylation-state ranked <em>across</em> the taxonomy + mechanism-anchored + provenance. NOT novel: methylation-as-feature, the biology, or the tissue-agnostic paradigm. <strong>Cite Comms Biol 2023</strong> (does GDSC methylation→drug but <em>cancer-type-stratified</em>) and <strong>CellMinerCDB</strong> (methylation×drug but <em>per-query</em>).</li>
+        <li><strong>The positive control is CONFIRMATION, not discovery</strong> (CDKN2A→palbociclib published). It licenses the novel leads; the leads are <strong>hypotheses</strong>.</li>
+        <li><strong>Tissue-agnostic ≠ cross-compartment.</strong> This is tumor cell-line, gene-level methylation — not blood / liver / immune / PK / patient, and not clinical decision support.</li>
+        <li><strong>"Graph" is roadmap.</strong> v2 ships an opportunity <em>map / ranked table</em>, not a knowledge graph with traversal.</li>
+        <li><strong>Mechanism cards are annotation, not proof</strong> of causality. Median-split / single-tissue effects are not independent validation; the discovery statistic is the tissue-adjusted association.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span> Built vs roadmap</h2>
+    <p><strong>Built + deployed (additive; v1 untouched):</strong> the mechanism-anchored, tissue-agnostic, evidence-graded engine; the opportunity table; the demo page (<code>strata-v2.html</code>) with agent transcript, featured cards + live per-tissue recurrence panels, mechanism cards, negative control, evidence ladder. Scripts: <code>v2_tissue_confound_probe.py</code>, <code>v2_mechanism_anchored.py</code>, <code>generate_v2_demo.py</code>. 24/24 tests pass.</p>
+    <p><strong>Roadmap (pitch as horizon, not built):</strong> multi-omic molecular state (+ expression / mutation / CNV); a real knowledge graph + autonomous traversal; external/orthogonal validation (PRISM, CTRP, CCLE); patient-cohort + compartment attribution; the federated claims universe.</p>
+  </section>
+
+  <footer>
+    MethylGKB · Strata v2 — as-built reference. Illustrative research prototype; not for clinical or diagnostic use. GDSC cell-line, gene-level methylation; novel leads are screen-derived hypotheses, evidence-graded.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Bladder",
+  "n_leads": 19,
+  "leads": [
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "CUTALP",
+      "direction": "sensitive",
+      "tissue_rho": -0.693,
+      "tissue_p": 0.0041,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "GALNT11",
+      "direction": "resistant",
+      "tissue_rho": 0.682,
+      "tissue_p": 0.0051,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "GAL3ST1",
+      "direction": "resistant",
+      "tissue_rho": 0.701,
+      "tissue_p": 0.0052,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "KCNH3",
+      "direction": "resistant",
+      "tissue_rho": 0.636,
+      "tissue_p": 0.0109,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "ENKD1",
+      "direction": "resistant",
+      "tissue_rho": 0.579,
+      "tissue_p": 0.0238,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "FOXA1",
+      "direction": "resistant",
+      "tissue_rho": 0.575,
+      "tissue_p": 0.0249,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "FOXA1",
+      "direction": "resistant",
+      "tissue_rho": 0.554,
+      "tissue_p": 0.0323,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "SDC1",
+      "direction": "resistant",
+      "tissue_rho": 0.554,
+      "tissue_p": 0.0323,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Breast"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "RASAL2-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.553,
+      "tissue_p": 0.0326,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "VASN",
+      "direction": "resistant",
+      "tissue_rho": 0.532,
+      "tissue_p": 0.0412,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Central Nervous System",
+        "Breast",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Vorinostat",
+      "gene": "SLC7A4",
+      "direction": "resistant",
+      "tissue_rho": 0.532,
+      "tissue_p": 0.0412,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung",
+        "Skin",
+        "Esophagus",
+        "Stomach"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "GALNT11",
+      "direction": "resistant",
+      "tissue_rho": 0.529,
+      "tissue_p": 0.0428,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Trametinib",
+      "gene": "RASAL2-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.516,
+      "tissue_p": 0.0487,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Olaparib",
+      "gene": "WWC1",
+      "direction": "sensitive",
+      "tissue_rho": -0.516,
+      "tissue_p": 0.0491,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Breast"
+      ]
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "RUSC2",
+      "direction": "resistant",
+      "tissue_rho": 0.494,
+      "tissue_p": 0.0726,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "FOXA1",
+      "direction": "resistant",
+      "tissue_rho": 0.468,
+      "tissue_p": 0.0786,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "PD0325901",
+      "gene": "RASAL2-AS1",
+      "direction": "resistant",
+      "tissue_rho": 0.458,
+      "tissue_p": 0.0858,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Selumetinib",
+      "gene": "C11orf74",
+      "direction": "resistant",
+      "tissue_rho": 0.447,
+      "tissue_p": 0.0945,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Ovary"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "NNMT",
+      "direction": "resistant",
+      "tissue_rho": 0.462,
+      "tissue_p": 0.0965,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Central Nervous System",
+        "Stomach",
+        "Lung"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Breast",
+    "Central Nervous System",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Lung",
+    "Ovary",
+    "Skin",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "type": "drug",
+  "drug": "Dabrafenib",
+  "target": "BRAF",
+  "pathway": "ERK MAPK signaling",
+  "funnel": {
+    "genes_scanned": 13800,
+    "response_candidates": 15,
+    "functionally_silenced": 4,
+    "externally_replicated": 3,
+    "lines": 440
+  },
+  "leads": [
+    {
+      "gene": "STAT6",
+      "direction": "sensitive",
+      "gdsc_r": -0.228,
+      "prism_r": -0.123,
+      "prism_p": 0.0313,
+      "ctrp_r": -0.31,
+      "ctrp_p": 0.00031,
+      "silencing_r": -0.147,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 1
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "EFHD1",
+      "direction": "sensitive",
+      "gdsc_r": -0.18,
+      "prism_r": -0.191,
+      "prism_p": 0.0007,
+      "ctrp_r": -0.356,
+      "ctrp_p": 3e-05,
+      "silencing_r": -0.548,
+      "screens": [
+        "GDSC",
+        "PRISM",
+        "CTRP"
+      ],
+      "n_screens": 3,
+      "evidence_level": "L5",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 2
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "BIVM",
+      "direction": "resistant",
+      "gdsc_r": 0.175,
+      "prism_r": 0.114,
+      "prism_p": 0.0471,
+      "ctrp_r": 0.147,
+      "ctrp_p": 0.09586,
+      "silencing_r": -0.238,
+      "screens": [
+        "GDSC",
+        "PRISM"
+      ],
+      "n_screens": 2,
+      "evidence_level": "L4",
+      "replicated": true,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 7,
+        "significant": 0
+      },
+      "gene_note": ""
+    },
+    {
+      "gene": "KDELC1",
+      "direction": "resistant",
+      "gdsc_r": 0.139,
+      "prism_r": 0.041,
+      "prism_p": 0.4737,
+      "ctrp_r": 0.073,
+      "ctrp_p": 0.40634,
+      "silencing_r": -0.345,
+      "screens": [
+        "GDSC"
+      ],
+      "n_screens": 1,
+      "evidence_level": "L3",
+      "replicated": false,
+      "recurrence": {
+        "tissues_tested": 14,
+        "same_direction": 6,
+        "significant": 1
+      },
+      "gene_note": ""
+    }
+  ],
+  "hero": {
+    "gene": "STAT6",
+    "direction": "sensitive",
+    "gdsc_r": -0.228,
+    "prism_r": -0.123,
+    "prism_p": 0.0313,
+    "ctrp_r": -0.31,
+    "ctrp_p": 0.00031,
+    "silencing_r": -0.147,
+    "screens": [
+      "GDSC",
+      "PRISM",
+      "CTRP"
+    ],
+    "n_screens": 3,
+    "evidence_level": "L5",
+    "replicated": true,
+    "recurrence": {
+      "tissues_tested": 14,
+      "same_direction": 7,
+      "significant": 1
+    },
+    "gene_note": ""
+  },
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

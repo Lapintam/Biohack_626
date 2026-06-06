@@ -1,0 +1,25 @@
+{
+  "kernel": "per-gene Spearman(methylation, drug response), FDR-corrected",
+  "current": {
+    "genes": 14608,
+    "cell_lines": 959,
+    "drugs": 286,
+    "seconds_per_drug": 2.608,
+    "microseconds_per_correlation": 178.53,
+    "full_panel_correlations": 4177888,
+    "full_panel_seconds_cpu": 745.9
+  },
+  "biobank_projection": {
+    "assumption": {
+      "genes": 20000,
+      "drugs_or_outcomes": 1000,
+      "cohort_n": 1000000
+    },
+    "correlations": 20000000.0,
+    "cpu_seconds": 3723000.0,
+    "cpu_hours": 1034.2,
+    "cpu_days": 43.1,
+    "scale_factor_vs_gdsc": 4992.0
+  },
+  "note": "Projection is linear in the number of correlations on the measured per-correlation CPU cost; no GPU run is implied. The kernel is embarrassingly parallel over (gene x drug x cohort), which is exactly the shape RAPIDS / cuDF / cuML accelerate."
+}

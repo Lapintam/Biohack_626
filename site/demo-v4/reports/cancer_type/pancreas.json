@@ -1,0 +1,184 @@
+{
+  "type": "cancer_type",
+  "cancer_type": "Pancreas",
+  "n_leads": 13,
+  "leads": [
+    {
+      "drug": "Niraparib",
+      "gene": "ABCA17P",
+      "direction": "sensitive",
+      "tissue_rho": -0.645,
+      "tissue_p": 0.0038,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Stomach",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Dabrafenib",
+      "gene": "EFHD1",
+      "direction": "sensitive",
+      "tissue_rho": -0.522,
+      "tissue_p": 0.0126,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Ovary",
+        "Large Intestine",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "TMEM184A",
+      "direction": "sensitive",
+      "tissue_rho": -0.533,
+      "tissue_p": 0.0155,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Esophagus",
+        "Ovary",
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Nutlin-3a (-)",
+      "gene": "TEAD4",
+      "direction": "resistant",
+      "tissue_rho": 0.499,
+      "tissue_p": 0.018,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": []
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "B4GALNT3",
+      "direction": "resistant",
+      "tissue_rho": 0.497,
+      "tissue_p": 0.0186,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Refametinib",
+      "gene": "LRRC49",
+      "direction": "resistant",
+      "tissue_rho": 0.49,
+      "tissue_p": 0.0282,
+      "evidence_level": "L3",
+      "replicated": false,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Head and Neck"
+      ]
+    },
+    {
+      "drug": "Niraparib",
+      "gene": "ADAMTSL5",
+      "direction": "sensitive",
+      "tissue_rho": -0.499,
+      "tissue_p": 0.035,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Gemcitabine",
+      "gene": "SLFN11",
+      "direction": "resistant",
+      "tissue_rho": 0.44,
+      "tissue_p": 0.0405,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": [
+        "Lung",
+        "Skin",
+        "Esophagus"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "FRMPD2",
+      "direction": "sensitive",
+      "tissue_rho": -0.424,
+      "tissue_p": 0.0626,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Central Nervous System",
+        "Lung"
+      ]
+    },
+    {
+      "drug": "Venetoclax",
+      "gene": "SCN1B",
+      "direction": "resistant",
+      "tissue_rho": 0.396,
+      "tissue_p": 0.0682,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid"
+      ]
+    },
+    {
+      "drug": "Dasatinib",
+      "gene": "MAP3K13",
+      "direction": "sensitive",
+      "tissue_rho": -0.392,
+      "tissue_p": 0.071,
+      "evidence_level": "L5",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "MK-2206",
+      "gene": "KDF1",
+      "direction": "resistant",
+      "tissue_rho": 0.387,
+      "tissue_p": 0.0754,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": []
+    },
+    {
+      "drug": "Olaparib",
+      "gene": "ENTPD7",
+      "direction": "sensitive",
+      "tissue_rho": -0.384,
+      "tissue_p": 0.078,
+      "evidence_level": "L4",
+      "replicated": true,
+      "also_in": [
+        "Haematopoietic and Lymphoid",
+        "Lung"
+      ]
+    }
+  ],
+  "connects_to": [
+    "Central Nervous System",
+    "Esophagus",
+    "Haematopoietic and Lymphoid",
+    "Head and Neck",
+    "Large Intestine",
+    "Lung",
+    "Ovary",
+    "Skin",
+    "Stomach"
+  ],
+  "honesty": [
+    "Single-gene methylation->response is a weak, diffuse signal; the claim is directional concordance across independent screens + functional silencing, not a large effect.",
+    "Cell-line results: defensible novel hypotheses (evidence ladder ~L3-L5), not clinical claims.",
+    "The agent expands the hypothesis space the expert adjudicates; it removes the structural gate, it does not replace expert judgment."
+  ]
+}

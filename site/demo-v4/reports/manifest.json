@@ -1,0 +1,274 @@
+{
+  "drugs": [
+    {
+      "name": "Dasatinib",
+      "slug": "dasatinib",
+      "target": "ABL, SRC, Ephrins, PDGFR, KIT",
+      "n_leads": 15,
+      "replicated": 14
+    },
+    {
+      "name": "Trametinib",
+      "slug": "trametinib",
+      "target": "MEK1, MEK2",
+      "n_leads": 15,
+      "replicated": 13
+    },
+    {
+      "name": "Venetoclax",
+      "slug": "venetoclax",
+      "target": "BCL2",
+      "n_leads": 15,
+      "replicated": 13
+    },
+    {
+      "name": "Navitoclax",
+      "slug": "navitoclax",
+      "target": "BCL2, BCL-XL, BCL-W",
+      "n_leads": 15,
+      "replicated": 13
+    },
+    {
+      "name": "Rapamycin",
+      "slug": "rapamycin",
+      "target": "MTORC1",
+      "n_leads": 15,
+      "replicated": 11
+    },
+    {
+      "name": "Olaparib",
+      "slug": "olaparib",
+      "target": "PARP1, PARP2",
+      "n_leads": 11,
+      "replicated": 10
+    },
+    {
+      "name": "Gefitinib",
+      "slug": "gefitinib",
+      "target": "EGFR",
+      "n_leads": 15,
+      "replicated": 7
+    },
+    {
+      "name": "Afatinib",
+      "slug": "afatinib",
+      "target": "EGFR, ERBB2",
+      "n_leads": 6,
+      "replicated": 4
+    },
+    {
+      "name": "Dabrafenib",
+      "slug": "dabrafenib",
+      "target": "BRAF",
+      "n_leads": 4,
+      "replicated": 3
+    },
+    {
+      "name": "Gemcitabine",
+      "slug": "gemcitabine",
+      "target": "Pyrimidine antimetabolite",
+      "n_leads": 7,
+      "replicated": 3
+    },
+    {
+      "name": "Talazoparib",
+      "slug": "talazoparib",
+      "target": "PARP1, PARP2",
+      "n_leads": 11,
+      "replicated": 2
+    },
+    {
+      "name": "Rucaparib",
+      "slug": "rucaparib",
+      "target": "PARP1, PARP2",
+      "n_leads": 9,
+      "replicated": 2
+    },
+    {
+      "name": "Niraparib",
+      "slug": "niraparib",
+      "target": "PARP1, PARP2",
+      "n_leads": 14,
+      "replicated": 2
+    },
+    {
+      "name": "Selumetinib",
+      "slug": "selumetinib",
+      "target": "MEK1, MEK2",
+      "n_leads": 15,
+      "replicated": 2
+    },
+    {
+      "name": "Refametinib",
+      "slug": "refametinib",
+      "target": "MEK1, MEK2",
+      "n_leads": 15,
+      "replicated": 2
+    },
+    {
+      "name": "Temozolomide",
+      "slug": "temozolomide",
+      "target": "DNA alkylating agent",
+      "n_leads": 15,
+      "replicated": 1
+    },
+    {
+      "name": "PLX-4720",
+      "slug": "plx-4720",
+      "target": "BRAF",
+      "n_leads": 6,
+      "replicated": 1
+    },
+    {
+      "name": "Erlotinib",
+      "slug": "erlotinib",
+      "target": "EGFR",
+      "n_leads": 2,
+      "replicated": 1
+    },
+    {
+      "name": "MK-2206",
+      "slug": "mk-2206",
+      "target": "AKT1, AKT2",
+      "n_leads": 15,
+      "replicated": 1
+    },
+    {
+      "name": "Vorinostat",
+      "slug": "vorinostat",
+      "target": "HDAC inhibitor Class I, IIa, IIb, IV",
+      "n_leads": 15,
+      "replicated": 1
+    },
+    {
+      "name": "PD0325901",
+      "slug": "pd0325901",
+      "target": "MEK1, MEK2",
+      "n_leads": 15,
+      "replicated": 0
+    },
+    {
+      "name": "Palbociclib",
+      "slug": "palbociclib",
+      "target": "CDK4, CDK6",
+      "n_leads": 15,
+      "replicated": 0
+    },
+    {
+      "name": "Nutlin-3a (-)",
+      "slug": "nutlin-3a",
+      "target": "MDM2",
+      "n_leads": 15,
+      "replicated": 0
+    },
+    {
+      "name": "Alpelisib",
+      "slug": "alpelisib",
+      "target": "PI3Kalpha",
+      "n_leads": 0,
+      "replicated": 0
+    },
+    {
+      "name": "Cisplatin",
+      "slug": "cisplatin",
+      "target": "DNA crosslinker",
+      "n_leads": 9,
+      "replicated": 0
+    }
+  ],
+  "cancer_types": [
+    {
+      "name": "Haematopoietic and Lymphoid",
+      "slug": "haematopoietic-and-lymphoid",
+      "n_leads": 176
+    },
+    {
+      "name": "Lung",
+      "slug": "lung",
+      "n_leads": 108
+    },
+    {
+      "name": "Ovary",
+      "slug": "ovary",
+      "n_leads": 30
+    },
+    {
+      "name": "Breast",
+      "slug": "breast",
+      "n_leads": 29
+    },
+    {
+      "name": "Stomach",
+      "slug": "stomach",
+      "n_leads": 28
+    },
+    {
+      "name": "Large Intestine",
+      "slug": "large-intestine",
+      "n_leads": 26
+    },
+    {
+      "name": "Skin",
+      "slug": "skin",
+      "n_leads": 26
+    },
+    {
+      "name": "Esophagus",
+      "slug": "esophagus",
+      "n_leads": 25
+    },
+    {
+      "name": "Central Nervous System",
+      "slug": "central-nervous-system",
+      "n_leads": 22
+    },
+    {
+      "name": "Bladder",
+      "slug": "bladder",
+      "n_leads": 19
+    },
+    {
+      "name": "Pancreas",
+      "slug": "pancreas",
+      "n_leads": 13
+    },
+    {
+      "name": "Head and Neck",
+      "slug": "head-and-neck",
+      "n_leads": 10
+    },
+    {
+      "name": "Peripheral Nervous System",
+      "slug": "peripheral-nervous-system",
+      "n_leads": 10
+    },
+    {
+      "name": "Kidney",
+      "slug": "kidney",
+      "n_leads": 7
+    }
+  ],
+  "gates": [
+    {
+      "id": "taxonomy",
+      "title": "The taxonomy prior",
+      "expert": "Trained, funded, and regulated by organ/histology. The unit of analysis is the indication.",
+      "agent": "Groups cell lines by molecular state across ~30 cancer types; the organ is a variable to adjust away, never a boundary.",
+      "evidence": "Hero leads hold tissue-agnostically across unrelated indications."
+    },
+    {
+      "id": "prestige",
+      "title": "The known-gene prior",
+      "expert": "Evaluates hypotheses about famous genes (KRAS, TP53). Won't fund a hypothesis about a gene they've never heard of.",
+      "agent": "Ranks all 17,181 genes with zero prestige prior; surfaces the functionally-validated long tail.",
+      "evidence": "Hero gene ID2 is a developmental TF, not a PARP/DDR gene \u2014 invisible to a domain prior."
+    },
+    {
+      "id": "control",
+      "title": "Multivariate confound control",
+      "expert": "Reasons over one or two variables; cannot residualize the whole genome against latent axes in their head.",
+      "agent": "Residualizes response + all genes against tissue + latent methylome PCs (SVA/RUV-style) simultaneously.",
+      "evidence": "Caught a 9p21 copy-number artifact masquerading as methylation \u2014 a confound naive analysis reports as a finding."
+    }
+  ]
+}
