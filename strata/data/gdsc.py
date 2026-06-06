@@ -20,6 +20,8 @@ from strata.config import DATA_DIR
 GDSC_DIR = DATA_DIR / "gdsc"
 
 METHYLATION_FILE = GDSC_DIR / "methylation_imputed.csv.gz"
+METHYLATION_GENELEVEL_FILE = GDSC_DIR / "methylation_genelevel_bycosmic.csv.gz"
+METHYLATION_PROMOTER_FILE = GDSC_DIR / "methylation_promoter_bycosmic.csv.gz"
 DRUG_RESPONSE_FILE = GDSC_DIR / "GDSC2_fitted_dose_response_27Oct23.xlsx"
 MODEL_LIST_FILE = GDSC_DIR / "model_list_20260420.csv"
 
@@ -53,6 +55,46 @@ def load_gdsc_methylation() -> pd.DataFrame:
     # Guard against accidental duplicate COSMIC_IDs (keep first).
     df = df[~df.index.duplicated(keep="first")]
     return df
+
+
+def _load_cosmic_keyed_betas(path, dropna_cols: bool = False) -> pd.DataFrame:
+    """Load a COSMIC_ID-keyed beta matrix (gene-symbol columns) from `path`.
+
+    These matrices are already indexed by COSMIC_ID, so no SIDM crosswalk is
+    needed. Rows are COSMIC_ID (str), columns are gene symbols. The promoter
+    matrix contains NaNs (un-imputed); set ``dropna_cols`` to drop all-NaN
+    columns. Values are beta (~[0, 1]).
+    """
+    df = pd.read_csv(path, index_col=0, low_memory=False)
+    df.index = df.index.astype(str)
+    df.index.name = "COSMIC_ID"
+    df = df[~df.index.duplicated(keep="first")]
+    if dropna_cols:
+        df = df.dropna(axis=1, how="all")
+    return df
+
+
+def load_gdsc_methylation_genelevel() -> pd.DataFrame:
+    """Gene-level methylation beta matrix, natively keyed by COSMIC_ID.
+
+    Rows = COSMIC_ID (str), columns = gene symbols (~14.6k), values = beta.
+    Equivalent resolution to :func:`load_gdsc_methylation` but distributed
+    already COSMIC-keyed (no SIDM->COSMIC reindex).
+    """
+    return _load_cosmic_keyed_betas(METHYLATION_GENELEVEL_FILE)
+
+
+def load_gdsc_methylation_promoter() -> pd.DataFrame:
+    """Promoter-region methylation beta matrix, keyed by COSMIC_ID.
+
+    Rows = COSMIC_ID (str), columns = gene symbols (~17.2k promoters), values =
+    beta in [0, 1] with NaNs where a promoter was not measured (NOT imputed).
+
+    Promoter-CpG resolution preserves silencing signals that gene-level
+    averaging washes out (e.g. MGMT promoter methylation). Callers should
+    handle NaNs (e.g. impute per-column or restrict to covered genes).
+    """
+    return _load_cosmic_keyed_betas(METHYLATION_PROMOTER_FILE)
 
 
 def load_gdsc_drug_response() -> pd.DataFrame:

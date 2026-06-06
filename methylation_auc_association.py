@@ -27,15 +27,49 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr, rankdata
 
+from statsmodels.stats.multitest import multipletests
+
 from strata.data import gdsc
 from strata.engine.associate import rank_response_markers, discover_responder_subgroup
 
+SOURCES = {
+    "imputed": gdsc.load_gdsc_methylation,            # SIDM->COSMIC gene-level (default)
+    "genelevel": gdsc.load_gdsc_methylation_genelevel,  # COSMIC-native gene-level
+    "promoter": gdsc.load_gdsc_methylation_promoter,    # COSMIC-native promoter (has NaNs)
+}
 
-def build_table(drug_name, gene=None):
+
+def rank_markers_nan_safe(meth, auc, min_n=30):
+    """Per-gene Spearman(beta, AUC) that drops NaN beta PER GENE (needed for the
+    promoter matrix). BH-FDR; returns genes with q<0.1 sorted by |rho|."""
+    a = auc.astype(float)
+    common = meth.index.intersection(a.index)
+    M = meth.loc[common]
+    a = a.loc[common]
+    rows = []
+    av = a.to_numpy()
+    for gene in M.columns:
+        bv = M[gene].to_numpy(dtype=float)
+        mask = np.isfinite(bv) & np.isfinite(av)
+        n = int(mask.sum())
+        if n < min_n:
+            continue
+        rho, p = spearmanr(bv[mask], av[mask])
+        if np.isfinite(p):
+            rows.append((gene, float(rho), float(p), n))
+    df = pd.DataFrame(rows, columns=["gene", "rho", "pvalue", "n"])
+    if df.empty:
+        return df.assign(qvalue=[])
+    df["qvalue"] = multipletests(df["pvalue"], method="fdr_bh")[1]
+    sig = df[df["qvalue"] < 0.1].copy()
+    return sig.reindex(sig["rho"].abs().sort_values(ascending=False).index).reset_index(drop=True)
+
+
+def build_table(drug_name, gene=None, source="imputed"):
     """Tidy per-cell-line table: Beta(gene) | Drug_Name | AUC | Cancer_Type.
     If `gene` is None, Beta is omitted (use the full matrix for marker ranking).
     Returns (table, meth_aligned, auc_series, cancer_series)."""
-    meth = gdsc.load_gdsc_methylation()
+    meth = SOURCES[source]()
     drug = gdsc.load_gdsc_drug_response()
     anno = gdsc.load_gdsc_annotations()
 
@@ -82,10 +116,12 @@ def main():
     ap.add_argument("--drug", default="Palbociclib")
     ap.add_argument("--gene", default=None, help="focus gene (e.g. CDKN2A)")
     ap.add_argument("--top", type=int, default=15)
+    ap.add_argument("--source", default="imputed", choices=list(SOURCES),
+                    help="methylation matrix: imputed | genelevel | promoter")
     args = ap.parse_args()
 
-    table, meth_a, auc, cancer = build_table(args.drug, args.gene)
-    print(f"\n=== {args.drug}: {len(table)} cell lines with methylation + AUC ===")
+    table, meth_a, auc, cancer = build_table(args.drug, args.gene, args.source)
+    print(f"\n=== {args.drug} [{args.source}]: {len(table)} cell lines with methylation + AUC ===")
     print(f"AUC  mean={table.AUC.mean():.3f}  std={table.AUC.std():.3f}")
     print(f"cancer types: {cancer.nunique()}  (top: "
           f"{', '.join(cancer.value_counts().head(3).index)})")
@@ -93,7 +129,9 @@ def main():
     # ---- 1. genome-wide marker ranking: methylation vs AUC ----
     print(f"\n--- Top {args.top} methylation markers of {args.drug} response "
           f"(Spearman beta vs AUC, q<0.1) ---")
-    markers = rank_response_markers(meth_a, auc, min_n=30)
+    # promoter matrix has NaNs -> use the per-gene NaN-safe ranker
+    markers = (rank_markers_nan_safe(meth_a, auc, min_n=30) if args.source == "promoter"
+               else rank_response_markers(meth_a, auc, min_n=30))
     if markers.empty:
         print("  (no genes pass q<0.1)")
     else:
@@ -105,18 +143,21 @@ def main():
 
     # ---- 2. focus gene + cancer-type control ----
     if args.gene is not None:
-        beta = table["Beta"].to_numpy()
-        a = table["AUC"].to_numpy()
-        rho, p = spearmanr(beta, a)
+        beta = table["Beta"].to_numpy(dtype=float)
+        a = table["AUC"].to_numpy(dtype=float)
+        fin = np.isfinite(beta) & np.isfinite(a)            # promoter NaN-safe
+        rho, p = spearmanr(beta[fin], a[fin])
         print(f"\n--- Focus: {args.gene} methylation vs {args.drug} AUC ---")
-        print(f"raw Spearman rho={rho:+.3f}  p={p:.2e}  n={len(beta)}  "
+        print(f"raw Spearman rho={rho:+.3f}  p={p:.2e}  n={int(fin.sum())}  "
               f"({'sensitivity' if rho < 0 else 'resistance'} marker)")
 
         prho, pp, pn = partial_spearman_controlling_tissue(beta, a, cancer)
         print(f"tissue-controlled (within cancer type) rho={prho:+.3f}  p={pp:.2e}  n={pn}")
 
-        # median-split responder subgroup (reuses the engine)
-        clusters, assoc = discover_responder_subgroup(meth_a, auc, args.gene)
+        # median-split responder subgroup (reuses the engine; drop NaN betas first)
+        g_finite = meth_a[args.gene].dropna()
+        clusters, assoc = discover_responder_subgroup(
+            meth_a.loc[g_finite.index], auc.loc[auc.index.intersection(g_finite.index)], args.gene)
         print(f"median-split subgroup: effect(AUC drop)={assoc.effect_size:+.3f}  "
               f"p={assoc.pvalue:.2e}  grade={assoc.grade}  "
               f"(responder = {'high' if assoc.responder_label==1 else 'low'} methylation)")

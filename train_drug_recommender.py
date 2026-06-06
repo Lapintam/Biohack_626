@@ -48,15 +48,29 @@ LR = 2e-3
 VAL_FRAC, TEST_FRAC = 0.15, 0.15
 TOPK_REC, TOPK_TRUE = 5, 10
 
+SOURCES = {
+    "imputed": gdsc.load_gdsc_methylation,
+    "genelevel": gdsc.load_gdsc_methylation_genelevel,
+    "promoter": gdsc.load_gdsc_methylation_promoter,
+}
+
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--source", default="imputed", choices=list(SOURCES),
+                    help="methylation matrix: imputed | genelevel | promoter")
+    args = ap.parse_args()
+    SOURCE = args.source
+
     torch.manual_seed(SEED)
     rng = np.random.default_rng(SEED)
 
     # ---------- data ----------
-    meth = gdsc.load_gdsc_methylation()
+    meth = SOURCES[SOURCE]()
     drug = gdsc.load_gdsc_drug_response()
     anno = gdsc.load_gdsc_annotations()
+    print(f"methylation source = {SOURCE}  ({meth.shape[0]} lines x {meth.shape[1]} features)")
 
     lines = meth.index.to_numpy()
     line_pos = {c: i for i, c in enumerate(lines)}
@@ -83,6 +97,13 @@ def main():
 
     # ---------- features: top-variance genes on TRAIN lines, z-scored on train ----------
     Mfull = meth.to_numpy(dtype=np.float32)
+    # promoter matrix has NaNs -> impute with TRAIN-line column mean (leakage-safe)
+    if np.isnan(Mfull).any():
+        col_mean = np.nanmean(Mfull[train_line_mask], axis=0)
+        col_mean = np.where(np.isfinite(col_mean), col_mean, 0.0)
+        nan_rows, nan_cols = np.where(np.isnan(Mfull))
+        Mfull[nan_rows, nan_cols] = np.take(col_mean, nan_cols)
+        print(f"imputed {len(nan_rows):,} NaN beta cells with train-line column means")
     var = Mfull[train_line_mask].var(0)
     panel = np.argsort(var)[::-1][:N_GENES]
     M = Mfull[:, panel]
@@ -217,9 +238,12 @@ def main():
     for k in order_p:
         print(f"{drug_names[di[sel][k]]:<22}{te_pred_full[sel][k]:>10.3f}{y[sel][k]:>10.3f}")
 
+    # source-tagged filenames so promoter/genelevel don't clobber the default
+    suffix = "" if SOURCE == "imputed" else f"_{SOURCE}"
+
     # ---------- save pretrained encoder (encoder only; legacy) ----------
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    path = os.path.join(OUTPUT_DIR, "methylation_encoder.pt")
+    path = os.path.join(OUTPUT_DIR, f"methylation_encoder{suffix}.pt")
     torch.save({"encoder": net.encoder.state_dict(), "panel": panel,
                 "mu": mu, "sd": sd, "ymu": ymu, "ysd": ysd,
                 "drug_names": drug_names, "n_genes": N_GENES, "emb": EMB}, path)
@@ -261,9 +285,10 @@ def main():
         if len(examples) >= 5:
             break
 
-    poly = os.path.join(OUTPUT_DIR, "polymer_model.pt")
+    poly = os.path.join(OUTPUT_DIR, f"polymer_model{suffix}.pt")
     torch.save({
         "model_state": net.state_dict(),
+        "source": SOURCE,
         "panel_genes": panel_genes,
         "mu": np.asarray(mu), "sd": np.asarray(sd), "ymu": float(ymu), "ysd": float(ysd),
         "drug_names": drug_names, "drug_meta": drug_meta, "drug_mean": drug_mean_by_name,
